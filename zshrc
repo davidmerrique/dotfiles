@@ -22,8 +22,6 @@ compinit
 
 for topic_folder ($DOTFILES/*) if [ -d $topic_folder ]; then  fpath=($topic_folder $fpath); fi;
 
-source $ZSH/oh-my-zsh.sh
-
 # history settings
 setopt histignoredups
 HISTFILE=~/.zsh_history
@@ -66,7 +64,7 @@ if which rbenv &>/dev/null ; then
 fi
 
 # expand functions in the prompt
-setopt promptsubst
+# setopt promptsubst
 
 # z
 . `brew --prefix`/etc/profile.d/z.sh
@@ -78,10 +76,12 @@ colors
 export LSCOLORS="exfxcxdxbxegedabagacad"
 export CLICOLOR=true
 
-autoload -U promptinit && promptinit
+# autoload -U promptinit && promptinit
 
 # load dotfiles scripts
 export PATH="$HOME/.bin:$PATH"
+
+source $ZSH/oh-my-zsh.sh
 
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
