@@ -12,15 +12,16 @@ source $ZSH/oh-my-zsh.sh
 
 plugins=(osx composer git)
 
-autoload -U $DOTFILES/zsh/functions/*(:t)
+for topic_folder ($DOTFILES/*) if [ -d $topic_folder ]; then  fpath=($topic_folder $fpath); fi;
 
-export PATH="$HOME/.bin:$HOME/.rbenv/shims:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
+export PATH="$HOME/.bin:./bin:$HOME/.rbenv/shims:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
+export PATH="$(brew --prefix josegonzalez/php/php54)/bin:$PATH"
 
 # initialize autocomplete here, otherwise functions won't be loaded
 autoload -U compinit
 compinit
 
-for topic_folder ($DOTFILES/*) if [ -d $topic_folder ]; then  fpath=($topic_folder $fpath); fi;
+autoload -U $DOTFILES/zsh/functions/*(:t)
 
 # history settings
 setopt histignoredups
