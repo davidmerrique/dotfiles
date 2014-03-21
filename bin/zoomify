@@ -1,0 +1,70 @@
+#!/usr/bin/env bash
+#
+# Zoooooomify.
+
+set -e
+
+echo ''
+
+info () {
+  printf "  [ \033[00;34m..\033[0m ] $1"
+}
+
+user () {
+  printf "\r  [ \033[0;33m?\033[0m ] $1 "
+}
+
+success () {
+  printf "\r\033[2K  [ \033[00;32mOK\033[0m ] $1\n"
+}
+
+fail () {
+  printf "\r\033[2K  [\033[0;31mFAIL\033[0m] $1\n"
+  echo ''
+  exit
+}
+
+copy_images () {
+  shopt -s nullglob
+
+  if ! [ -z $1 ]; then
+    rm -rf $1
+    folder=$1
+  else
+    rm -rf zoom
+    folder="zoom"
+  fi
+
+  mkdir $folder
+
+  for file in *.tif; do
+    echo $file
+
+    mkdir -p $folder/${file%%.*}/TileGroup0
+
+    cp $file $folder/${file%%.*}/TileGroup0/${file%%.*}.tif
+
+    declare -A sizes
+    # sizes[size]=quality
+    sizes[160]=100
+    sizes[320]=90
+    sizes[640]=90
+    sizes[1280]=90
+    sizes[2560]=90
+    count=0
+
+    sizes_indexes=( ${!sizes[@]} )
+    IFS=$'\n' sizes_sorted=( $(echo -e "${sizes_indexes[@]/%/\n}" | sed -e 's/^ *//' -e '/^$/d' | sort -n) )
+
+    for i in "${sizes_sorted[@]}"; do
+      echo $i ${sizes[$i]}
+      gm mogrify -size ${i}X${i} -resize ${i}X${i}! -format jpg -unsharp 2x0.5+0.7+0 -quality ${sizes[$i]} $folder/${file%%.*}/TileGroup0/${file%%.*}.tif
+      mv $folder/${file%%.*}/TileGroup0/${file%%.*}.jpg $folder/${file%%.*}/TileGroup0/${count}-0-0.jpg
+      let count=count+1
+    done
+
+    rm $folder/${file%%.*}/TileGroup0/${file%%.*}.tif
+  done
+}
+
+copy_images $1

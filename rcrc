@@ -1,0 +1,2 @@
+EXCLUDES="README.md LICENSE Brewfile set-defaults.sh"
+DOTFILES_DIRS="$HOME/dotfiles"

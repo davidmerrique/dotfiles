@@ -1,0 +1,25 @@
+#!/bin/bash
+
+shopt -s nullglob
+
+date="$(date "+%Y-%m-%d")"
+folderTime="$(date "+%H%M%S")"
+
+dest="/Users/$USER/Documents/Desktop/$date"
+src=(/Users/$USER/Desktop/*)
+files="/Users/$USER/Desktop/*"
+
+if [ ${#src[@]} -gt 0 ]; then
+  if [ ! -d $dest ]; then
+    mkdir -p $dest
+  fi
+  if [[ ! -d "$dest/$folderTime" ]]; then
+    mkdir -p "$dest/$folderTime"
+  fi
+  for file in $files; do
+    mv "$file" "$dest/$folderTime"
+  done
+fi
+
+
+

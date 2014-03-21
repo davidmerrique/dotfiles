@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -e
+
+echo ''
+
+video_convert () {
+  mv $1 ${1%.*}-orig.${1##*.}
+  ffmpeg -i "${1%.*}-orig.${1##*.}" -preset veryslow ${1%.*}.mp4
+  ffmpeg -i "${1%.*}-orig.${1##*.}" -preset veryslow -strict -2 ${1%.*}.webm
+  ffmpeg2theora -o ${1%.*}.ogv "${1%.*}-orig.${1##*.}"
+}
+
+video_convert $1
