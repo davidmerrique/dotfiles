@@ -72,9 +72,9 @@ var fullscreen = S.operation("move", {
 });
 
 var centered = S.operation("move", {
-  "x": "screenOriginX+500",
+  "x": "screenOriginX+200",
   "y": "screenOriginY+130",
-  "width": "screenSizeX-1000",
+  "width": "screenSizeX-400",
   "height": "screenSizeY-260"
 });
 
