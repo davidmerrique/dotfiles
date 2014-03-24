@@ -38,6 +38,7 @@ install ack
 #install exiv2
 install git
 #install imagemagick
+install graphicsmagick --with-libtiff 
 install lynx
 install node
 install pigz

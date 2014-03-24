@@ -20,8 +20,9 @@ fi
 
 for topic_folder ($DOTFILES/*) if [ -d $topic_folder ]; then  fpath=($topic_folder $fpath); fi;
 
-export PATH="$HOME/.bin:./bin:$HOME/.rbenv/shims:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
 export PATH="$(brew --prefix josegonzalez/php/php54)/bin:$PATH"
+# export PATH="$HOME/.bin:./bin:$HOME/.rbenv/shims:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$PATH"
+export PATH="$HOME/.rbenv/shims:$HOME/.rbenv/bin:$HOME/.bin:$HOME/bin:./bin:/usr/local/bin:/usr/local/sbin:$HOME/.sfs:$DOTFILES/bin:$DOTFILES/py:/usr/local/share/npm/bin:$PATH:/usr/local/mysql/bin:$PATH:$HOME/.composer/bin:$PATH"
 
 eval "$(rbenv init -)"
 
@@ -86,9 +87,6 @@ export LSCOLORS="exfxcxdxbxegedabagacad"
 export CLICOLOR=true
 
 # autoload -U promptinit && promptinit
-
-# load dotfiles scripts
-export PATH="$HOME/.bin:$PATH"
 
 source $ZSH/oh-my-zsh.sh
 
