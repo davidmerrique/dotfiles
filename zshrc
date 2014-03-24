@@ -23,6 +23,8 @@ for topic_folder ($DOTFILES/*) if [ -d $topic_folder ]; then  fpath=($topic_fold
 export PATH="$HOME/.bin:./bin:$HOME/.rbenv/shims:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
 export PATH="$(brew --prefix josegonzalez/php/php54)/bin:$PATH"
 
+eval "$(rbenv init -)"
+
 # initialize autocomplete here, otherwise functions won't be loaded
 autoload -U compinit
 compinit
