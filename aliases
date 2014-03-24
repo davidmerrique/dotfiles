@@ -9,6 +9,18 @@ then
   alias la='gls -A --color'
 fi
 
+# Use `hub` as our git wrapper:
+#   http://defunkt.github.com/hub/
+hub_path=$(which hub)
+if (( $+commands[hub] ))
+then
+  alias git=$hub_path
+fi
+
+function git_current_branch() {
+  git symbolic-ref HEAD 2> /dev/null | sed -e 's/refs\/heads\///'
+}
+
 alias ll="gls -laFG --color"
 alias flushdns="dscacheutil -flushcache"
 alias showhidden="defaults write com.apple.finder AppleShowAllFiles TRUE && killall Finder"
@@ -31,7 +43,6 @@ alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
 # Shortcuts
-alias mzw="cd ~/Sites/mzwallace/mzwallace.com"
 alias d="cd ~/Documents/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
@@ -131,18 +142,6 @@ alias spoton="sudo mdutil -a -i on"
 alias reload!='. ~/.zshrc'
 
 
-# Use `hub` as our git wrapper:
-#   http://defunkt.github.com/hub/
-hub_path=$(which hub)
-if (( $+commands[hub] ))
-then
-  alias git=$hub_path
-fi
-
-function git_current_branch() {
-  git symbolic-ref HEAD 2> /dev/null | sed -e 's/refs\/heads\///'
-}
-
 # git aliases
 alias gs='git status -sb' # upgrade your git if -sb breaks for you. it's fun.
 alias gcam='git commit -am'
@@ -167,3 +166,10 @@ alias grb='git rebase -p'
 alias gup='git remote update -p; git merge --ff-only @{u}'
 
 function gb() { git checkout -b "$@" ;}
+
+# Remove the hosts that I don't want to keep around- in this case, only
+# keep the first host. Like a boss.
+alias hosts="head -2 ~/.ssh/known_hosts | tail -1 > ~/.ssh/known_hosts"
+
+# Pipe my public key to my clipboard. Fuck you, pay me.
+alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
