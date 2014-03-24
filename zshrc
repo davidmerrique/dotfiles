@@ -12,6 +12,12 @@ source $ZSH/oh-my-zsh.sh
 
 plugins=(osx composer git)
 
+if [[ -n $SSH_CONNECTION ]]; then
+  export PS1='%m:%3~$(git_info_for_prompt)%# '
+else
+  export PS1='%3~$(git_info_for_prompt)%# '
+fi
+
 for topic_folder ($DOTFILES/*) if [ -d $topic_folder ]; then  fpath=($topic_folder $fpath); fi;
 
 export PATH="$HOME/.bin:./bin:$HOME/.rbenv/shims:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
