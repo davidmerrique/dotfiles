@@ -167,6 +167,7 @@ alias grb='git rebase -p'
 alias gup='git remote update -p; git merge --ff-only @{u}'
 
 function gb() { git checkout -b "$@" ;}
+function mkc() { mkdir -p "$@" && cd "$@" ;}
 
 # Remove the hosts that I don't want to keep around- in this case, only
 # keep the first host. Like a boss.
