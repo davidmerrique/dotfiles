@@ -8,7 +8,7 @@ export DOTFILES=$HOME/dotfiles
 
 source $ZSH/oh-my-zsh.sh
 
-plugins=(osx composer)
+plugins=(osx composer brew git)
 
 if [[ -n $SSH_CONNECTION ]]; then
   export PS1='%m:%3~$(git_info_for_prompt)%# '
@@ -17,6 +17,8 @@ else
 fi
 
 for topic_folder ($DOTFILES/*) if [ -d $topic_folder ]; then  fpath=($topic_folder $fpath); fi;
+
+fpath=(/usr/local/share/zsh/site-functions $fpath)
 
 export PATH="$HOME/.rbenv/shims:$HOME/.rbenv/bin:$HOME/.bin:$HOME/bin:./bin:/usr/local/bin:/usr/local/sbin:$HOME/.sfs:$DOTFILES/bin:$DOTFILES/py:/usr/local/share/npm/bin:$PATH:/usr/local/mysql/bin:$PATH:$HOME/.composer/bin:$PATH"
 
