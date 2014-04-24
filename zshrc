@@ -8,7 +8,7 @@ export DOTFILES=$HOME/dotfiles
 
 source $ZSH/oh-my-zsh.sh
 
-plugins=(osx composer brew git)
+plugins=(osx composer brew brew-cask git bower laravel laravel4 node npm rbenv z atom)
 
 if [[ -n $SSH_CONNECTION ]]; then
   export PS1='%m:%3~$(git_info_for_prompt)%# '
