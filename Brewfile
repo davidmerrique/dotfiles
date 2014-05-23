@@ -38,7 +38,7 @@ install ack
 #install exiv2
 install git
 #install imagemagick
-install graphicsmagick --with-libtiff 
+install graphicsmagick --with-libtiff
 install lynx
 install node
 install pigz
@@ -52,6 +52,7 @@ tap homebrew/versions
 install lua52
 
 install z
+install go
 
 # Remove outdated versions from the cellar
 cleanup

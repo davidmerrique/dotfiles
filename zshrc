@@ -20,7 +20,9 @@ for topic_folder ($DOTFILES/*) if [ -d $topic_folder ]; then  fpath=($topic_fold
 
 fpath=(/usr/local/share/zsh/site-functions $fpath)
 
-export PATH="$HOME/.rbenv/shims:$HOME/.rbenv/bin:$HOME/.bin:$HOME/bin:./bin:/usr/local/bin:/usr/local/sbin:$HOME/.sfs:$DOTFILES/bin:$DOTFILES/py:/usr/local/share/npm/bin:$PATH:/usr/local/mysql/bin:$PATH:$HOME/.composer/bin:$PATH"
+export GOPATH=$HOME/go
+
+export PATH="$HOME/.rbenv/shims:$HOME/.rbenv/bin:$HOME/.bin:$HOME/bin:./bin:/usr/local/bin:/usr/local/sbin:$HOME/.sfs:$DOTFILES/bin:$DOTFILES/py:/usr/local/share/npm/bin:$PATH:/usr/local/mysql/bin:$PATH:$HOME/.composer/bin:$PATH:$GOPATH/bin"
 
 eval "$(rbenv init -)"
 
