@@ -1,9 +1,10 @@
 #!/bin/sh
 
-# oh-my-zsh
 if [ ! -e $HOME/.oh-my-zsh ]; then
-  git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+  git clone git://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
 fi
+
+git clone git://github.com/chriskempson/base16-shell.git $HOME/.config/base16-shell
 
 git submodule init
 git submodule update
