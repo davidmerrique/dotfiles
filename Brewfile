@@ -18,17 +18,14 @@ install hub
 # Install wget with IRI support
 install wget --enable-iri
 
-# Install RingoJS and Narwhal
-# Note that the order in which these are installed is important; see http://git.io/brew-narwhal-ringo.
-install ringojs
-install narwhal
-
 # Install more recent versions of some OS X tools
 install vim --override-system-vi
 tap homebrew/dupes
 install homebrew/dupes/grep
 tap josegonzalez/homebrew-php
 install php54
+install php54-mcrypt
+install php54-memcached
 
 # This formula didn’t work well last time I tried it:
 #install homebrew/dupes/screen
@@ -37,7 +34,6 @@ install php54
 install ack
 #install exiv2
 install git
-#install imagemagick
 install graphicsmagick --with-libtiff
 install lynx
 install node
@@ -47,12 +43,15 @@ install rhino
 install tree
 install webkit2png
 install zopfli
+install rbenv
+install composer
+install rename
+install speedtest_cli
+install z
+install go
 
 tap homebrew/versions
 install lua52
-
-install z
-install go
 
 # cask - https://github.com/caskroom/homebrew-cask
 tap caskroom/cask
@@ -66,7 +65,6 @@ cask install font-source-sans-pro
 cask install font-source-serif-pro
 cask install font-fira-mono
 cask install font-fira-sans
-cask install font-fontawesome
 cask install font-droid-sans
 cask install font-droid-sans-mono
 cask install font-droid-serif
