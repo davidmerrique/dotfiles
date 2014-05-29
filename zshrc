@@ -1,12 +1,12 @@
 # oh-my-zsh configuration
 ZSH=$HOME/.oh-my-zsh
 
-ZSH_THEME="pure"
-
 # shortcut to this dotfiles path is DOTFILES
 export DOTFILES=$HOME/dotfiles
 
 source $ZSH/oh-my-zsh.sh
+
+ZSH_THEME="pure"
 
 plugins=(osx composer brew brew-cask git bower laravel laravel4 node npm rbenv z atom)
 
@@ -88,7 +88,7 @@ export CLICOLOR=true
 
 # autoload -U promptinit && promptinit
 
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
 
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
