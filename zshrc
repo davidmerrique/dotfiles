@@ -1,20 +1,19 @@
 # oh-my-zsh configuration
 ZSH=$HOME/.oh-my-zsh
+ZSH_THEME="pure"
 
 # shortcut to this dotfiles path is DOTFILES
 export DOTFILES=$HOME/dotfiles
 
 source $ZSH/oh-my-zsh.sh
 
-ZSH_THEME="pure"
-
 plugins=(osx composer brew brew-cask git bower laravel laravel4 node npm rbenv z atom)
 
-if [[ -n $SSH_CONNECTION ]]; then
-  export PS1='%m:%3~$(git_info_for_prompt)%# '
-else
-  export PS1='%3~$(git_info_for_prompt)%# '
-fi
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export PS1='%m:%3~$(git_info_for_prompt)%# '
+# else
+#   export PS1='%3~$(git_info_for_prompt)%# '
+# fi
 
 for topic_folder ($DOTFILES/*) if [ -d $topic_folder ]; then  fpath=($topic_folder $fpath); fi;
 
