@@ -8,9 +8,9 @@ fi
 
 git clone git://github.com/chriskempson/base16-shell.git $HOME/.config/base16-shell
 
-git submodule init
-git submodule update
-git submodule -q foreach git pull -q origin master
+git -C $DOTFILES submodule init
+git -C $DOTFILES submodule update
+git -C $DOTFILES submodule -q foreach git pull -q origin master
 
 git -C $HOME/.vim/bundle/vundle pull
 
