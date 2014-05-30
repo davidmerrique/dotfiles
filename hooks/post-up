@@ -1,6 +1,16 @@
 #!/bin/sh
 
+export DOTFILES=$HOME/.dotfiles
+
 if [ ! -e $HOME/.vim/bundle/vundle ]; then
   git clone https://github.com/gmarik/vundle.git $HOME/.vim/bundle/vundle
 fi
+git -C $HOME/.vim/bundle/vundle pull
 vim -u $HOME/.vimrc.bundles +BundleInstall +qa
+
+git submodule init
+git submodule update
+git submodule -q foreach git pull -q origin master
+
+rm $HOME/.oh-my-zsh/custom/pure.zsh-theme
+ln -s "$DOTFILES/zsh/pure/pure.zsh" $HOME/.oh-my-zsh/custom/pure.zsh-theme

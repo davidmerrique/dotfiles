@@ -1,2 +1,3 @@
 EXCLUDES="README.md LICENSE Brewfile set-defaults.sh"
-DOTFILES_DIRS="$HOME/dotfiles"
+DOTFILES_DIRS="$HOME/.dotfiles"
+SYMLINK_DIRS="iterm zsh/pure"

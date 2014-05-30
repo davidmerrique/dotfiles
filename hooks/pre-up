@@ -1,18 +1,11 @@
-#!/bin/sh 
+#!/bin/sh
 
-export DOTFILES=$HOME/dotfiles
+export DOTFILES=$HOME/.dotfiles
 
 if [ ! -e $HOME/.oh-my-zsh ]; then
   git clone git://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
 fi
 
-git clone git://github.com/chriskempson/base16-shell.git $HOME/.config/base16-shell
-
-git -C $DOTFILES submodule init
-git -C $DOTFILES submodule update
-git -C $DOTFILES submodule -q foreach git pull -q origin master
-
-git -C $HOME/.vim/bundle/vundle pull
-
-rm $HOME/.oh-my-zsh/custom/pure.zsh-theme
-ln -s "$DOTFILES/zsh/pure/pure.zsh" $HOME/.oh-my-zsh/custom/pure.zsh-theme
+if [ ! -e $HOME/.config/base16-shell ]; then
+  git clone git://github.com/chriskempson/base16-shell.git $HOME/.config/base16-shell
+fi
