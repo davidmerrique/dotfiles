@@ -32,8 +32,8 @@ alias de="derecho"
 alias art="php artisan"
 alias node='node --harmony'
 
-alias dotfiles="cd ~/.dotfiles"
-alias dotedit="atom ~/.dotfiles"
+alias dotfiles="cd $DOTFILES"
+alias dotedit="atom $DOTFILES"
 
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
