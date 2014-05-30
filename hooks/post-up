@@ -8,9 +8,7 @@ fi
 git -C $HOME/.vim/bundle/vundle pull
 vim -u $HOME/.vimrc.bundles +BundleInstall +qa
 
-git submodule init
-git submodule update
-git submodule -q foreach git pull -q origin master
+git -C $DOTFILES submodule update --init --recursive
 
 rm $HOME/.oh-my-zsh/custom/pure.zsh-theme
 ln -s "$DOTFILES/zsh/pure/pure.zsh" $HOME/.oh-my-zsh/custom/pure.zsh-theme
