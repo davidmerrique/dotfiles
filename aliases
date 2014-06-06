@@ -86,7 +86,7 @@ alias permissions="diskutil repairPermissions /"
 alias gurl="curl --compressed"
 
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='brew update; brew upgrade; npm cache clean -g; npm update npm -g; npm update -g; sudo -v; sudo gem update; sudo gem update --system; brew cleanup; brew linkapps'
+alias update='brew update; brew upgrade; npm cache clean -g; npm update npm -g; npm update -g; sudo -v; sudo gem update; sudo gem update --system; brew prune; brew cleanup; brew linkapps'
 
 # Launch iOS Simulator
 alias ios="open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app"
