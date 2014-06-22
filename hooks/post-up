@@ -10,5 +10,7 @@ vim -u $HOME/.vimrc.bundles +BundleInstall +qa
 
 git -C $DOTFILES submodule update --init --recursive
 
-rm $HOME/.oh-my-zsh/custom/pure.zsh-theme
+if [ -e $HOME/.oh-my-zsh/custom/pure.zsh-theme ]; then
+  rm $HOME/.oh-my-zsh/custom/pure.zsh-theme
+fi
 ln -s "$DOTFILES/zsh/pure/pure.zsh" $HOME/.oh-my-zsh/custom/pure.zsh-theme

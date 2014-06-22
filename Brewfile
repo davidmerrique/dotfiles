@@ -59,15 +59,11 @@ tap caskroom/fonts
 install brew-cask
 cask install font-inconsolata
 cask install font-open-sans
-cask install font-open-sans-condensed
 cask install font-source-code-pro
 cask install font-source-sans-pro
 cask install font-source-serif-pro
 cask install font-fira-mono
 cask install font-fira-sans
-cask install font-droid-sans
-cask install font-droid-sans-mono
-cask install font-droid-serif
 
 # Remove outdated versions from the cellar
 cleanup
