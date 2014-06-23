@@ -5,7 +5,7 @@ upgrade
 tap homebrew/dupes
 tap homebrew/versions
 tap homebrew/homebrew-php
-brew tap thoughtbot/formulae
+tap thoughtbot/formulae
 tap caskroom/cask
 tap caskroom/fonts
 
