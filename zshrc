@@ -2,20 +2,12 @@
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="pure"
 
-# shortcut to this dotfiles path is DOTFILES
+plugins=(osx composer brew brew-cask git bower laravel laravel4 node npm rbenv z atom)
+
 export DOTFILES=$HOME/.dotfiles
 export NVM_DIR=~/.nvm
 
 source $ZSH/oh-my-zsh.sh
-source $(brew --prefix nvm)/nvm.sh
-
-plugins=(osx composer brew brew-cask git bower laravel laravel4 node npm rbenv z atom)
-
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export PS1='%m:%3~$(git_info_for_prompt)%# '
-# else
-#   export PS1='%3~$(git_info_for_prompt)%# '
-# fi
 
 for topic_folder ($DOTFILES/*) if [ -d $topic_folder ]; then  fpath=($topic_folder $fpath); fi;
 
@@ -24,6 +16,8 @@ fpath=(/usr/local/share/zsh/site-functions $fpath)
 export GOPATH=$HOME/go
 
 export PATH="$HOME/.rbenv/shims:$HOME/.rbenv/bin:$HOME/.bin:$HOME/bin:./bin:/usr/local/bin:/usr/local/sbin:$HOME/.sfs:$DOTFILES/bin:$DOTFILES/py:/usr/local/share/npm/bin:$PATH:/usr/local/mysql/bin:$PATH:$HOME/.composer/bin:$PATH:$GOPATH/bin:./vendor/bin"
+
+source $(brew --prefix nvm)/nvm.sh
 
 eval "$(rbenv init -)"
 
@@ -73,9 +67,6 @@ export EDITOR=$VISUAL
 if which rbenv &>/dev/null ; then
   eval "$(rbenv init - --no-rehash)"
 fi
-
-# expand functions in the prompt
-# setopt promptsubst
 
 # z
 . `brew --prefix`/etc/profile.d/z.sh
