@@ -25,6 +25,7 @@ install git
 install graphicsmagick --with-libtiff
 install lynx
 install node
+install nvm
 install pigz
 install rename
 install rhino

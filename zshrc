@@ -4,8 +4,10 @@ ZSH_THEME="pure"
 
 # shortcut to this dotfiles path is DOTFILES
 export DOTFILES=$HOME/.dotfiles
+export NVM_DIR=~/.nvm
 
 source $ZSH/oh-my-zsh.sh
+source $(brew --prefix nvm)/nvm.sh
 
 plugins=(osx composer brew brew-cask git bower laravel laravel4 node npm rbenv z atom)
 
