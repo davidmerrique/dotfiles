@@ -39,6 +39,7 @@ install speedtest_cli
 install z
 install go
 install lua52
+install encfs
 install brew-cask
 
 cask install font-inconsolata
