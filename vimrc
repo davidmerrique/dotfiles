@@ -1,6 +1,7 @@
 " Use Vim settings, rather then Vi settings. This setting must be as early as
 " possible, as it has side effects.
 set nocompatible
+set encoding=utf-8
 
 " Leader
 let mapleader = " "
@@ -27,6 +28,8 @@ set gcr=a:blinkon0              "Disable cursor blink
 set visualbell                  "No sounds
 set autoread                    "Reload files changed outside vim
 set nowb
+set modeline                    "Allow modelines
+set title                       "Show file title in terminal tab
 
 set autoindent
 set smartindent
@@ -78,6 +81,10 @@ augroup vimrcEx
 
   " Set syntax highlighting for specific file types
   autocmd BufRead,BufNewFile Appraisals set filetype=ruby
+  autocmd BufRead,BufNewFile *.md set filetype=markdown
+
+  " Set relevant filetypes
+  autocmd BufRead,BufNewFile *.scss set filetype=css
   autocmd BufRead,BufNewFile *.md set filetype=markdown
 
   " Enable spellchecking for Markdown
