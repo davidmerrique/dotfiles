@@ -30,6 +30,10 @@ set autoread                    "Reload files changed outside vim
 set nowb
 set modeline                    "Allow modelines
 set title                       "Show file title in terminal tab
+set cursorline                  "Highlight current line
+set nohlsearch                  "Don’t keep results highlighted after searching
+set ignorecase                  "Ignore case when searching...
+set smartcase                   "...except if we input a capital letter
 
 set autoindent
 set smartindent
