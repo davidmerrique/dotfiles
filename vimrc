@@ -46,8 +46,6 @@ set hlsearch         "Hilight searches by default
 " set viminfo='100,f1  "Save up to 100 marks, enable capital marks
 set shellxquote=
 
-" execute pathogen#infect()
-
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
@@ -129,12 +127,12 @@ let g:snippetsEmu_key = "<S-Tab>"
 set wildmode=list:longest,list:full
 set complete=.,w,t
 function! InsertTabWrapper()
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
-    else
-        return "\<c-p>"
-    endif
+  let col = col('.') - 1
+  if !col || getline('.')[col - 1] !~ '\k'
+    return "\<tab>"
+  else
+    return "\<c-p>"
+  endif
 endfunction
 inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 

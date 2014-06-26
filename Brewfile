@@ -39,6 +39,8 @@ install z
 install go
 install lua52
 install encfs
+install cmake
+install macvim
 install brew-cask
 
 cask install font-inconsolata
