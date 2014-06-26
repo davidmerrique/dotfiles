@@ -5,7 +5,6 @@ ZSH_THEME="pure"
 plugins=(osx composer brew brew-cask git bower laravel laravel4 node npm rbenv z atom)
 
 export DOTFILES=$HOME/.dotfiles
-export NVM_DIR=~/.nvm
 
 source $ZSH/oh-my-zsh.sh
 
@@ -16,8 +15,6 @@ fpath=(/usr/local/share/zsh/site-functions $fpath)
 export GOPATH=$HOME/go
 
 export PATH="$HOME/.rbenv/shims:$HOME/.rbenv/bin:$HOME/.bin:$HOME/bin:./bin:/usr/local/bin:/usr/local/sbin:$HOME/.sfs:$DOTFILES/bin:$DOTFILES/py:/usr/local/share/npm/bin:$PATH:/usr/local/mysql/bin:$PATH:$HOME/.composer/bin:$PATH:$GOPATH/bin:./vendor/bin"
-
-source $(brew --prefix nvm)/nvm.sh
 
 eval "$(rbenv init -)"
 
