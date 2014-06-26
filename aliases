@@ -26,10 +26,6 @@ alias flushdns="dscacheutil -flushcache"
 alias showhidden="defaults write com.apple.finder AppleShowAllFiles TRUE && killall Finder"
 alias hidehidden="defaults write com.apple.finder AppleShowAllFiles FALSE && killall Finder"
 alias artisan="php artisan"
-alias abuild="artisan assets:build"
-alias awatch="artisan assets:watch"
-alias de="derecho"
-alias art="php artisan"
 alias node='node --harmony'
 
 alias dotfiles="cd $DOTFILES"
@@ -44,10 +40,6 @@ alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
 # Shortcuts
-alias d="cd ~/Documents/Dropbox"
-alias dl="cd ~/Downloads"
-alias dt="cd ~/Desktop"
-alias p="cd ~/Projects"
 alias g="git"
 alias h="history"
 alias j="jobs"
