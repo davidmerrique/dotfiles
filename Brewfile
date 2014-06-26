@@ -43,6 +43,7 @@ install cmake
 install macvim
 install brew-cask
 
+cask install qlstephen
 cask install font-inconsolata
 cask install font-open-sans
 cask install font-source-code-pro
