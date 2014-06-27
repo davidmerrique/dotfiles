@@ -32,6 +32,7 @@ install tree
 install webkit2png
 install zopfli
 install rbenv
+install ruby-build
 install composer
 install rename
 install speedtest_cli
