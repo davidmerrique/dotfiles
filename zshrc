@@ -54,7 +54,7 @@ bindkey -s "^T" "^[Isudo ^[A" # "t" for "toughguy"
 
 # Increases the open file descriptor limit, helps avoid errors when
 # running watch processes on a large number of files
-ulimit -n 1024
+ulimit -S -n 2048
 
 # use vim as the visual editor
 export VISUAL=vim
