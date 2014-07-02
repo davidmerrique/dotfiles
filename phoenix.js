@@ -98,8 +98,8 @@ moveFocusedWindowOn('m', mash, function(frame) {
 moveFocusedWindowOn('c', mash, function(frame) {
   frame.width *= 0.75;
   frame.height *= 0.75;
-  frame.x += frame.width * 0.125;
-  frame.y += frame.height * 0.125;
+  frame.x += frame.width * 0.15;
+  frame.y += frame.height * 0.15;
 });
 
 api.bind('right', ['ctrl', 'alt'], function() {
