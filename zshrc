@@ -14,20 +14,20 @@ fpath=(/usr/local/share/zsh/site-functions $fpath)
 
 export GOPATH=$HOME/go
 
-export PATH="$PATH:$HOME/.rbenv/shims"
-export PATH="$PATH:$HOME/.rbenv/bin"
-export PATH="$PATH:$HOME/.bin"
-export PATH="$PATH:$HOME/bin"
-export PATH="$PATH:$HOME/.composer/bin"
-export PATH="$PATH:$DOTFILES/bin"
-export PATH="$PATH:$GOPATH/bin"
-export PATH="$PATH:/usr/local/bin"
-export PATH="$PATH:/usr/local/sbin"
-export PATH="$PATH:/usr/local/share/npm/bin"
-export PATH="$PATH:/usr/local/mysql/bin"
-export PATH="$PATH:/usr/local/opt/coreutils/libexec/gnubin"
-export PATH="$PATH:./vendor/bin"
-export PATH="$PATH:./bin"
+export PATH="./bin:$PATH"
+export PATH="./vendor/bin:$PATH"
+export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/share/npm/bin:$PATH"
+export PATH="/usr/local/mysql/bin:$PATH"
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+export PATH="$HOME/.rbenv/shims:$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.bin:$PATH"
+export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/.composer/bin:$PATH"
+export PATH="$GOPATH/bin:$PATH"
+export PATH="$DOTFILES/bin:$PATH"
 
 PATH=$(echo "$PATH" | awk -v RS=':' -v ORS=":" '!a[$1]++{if (NR > 1) printf ORS; printf $a[$1]}')
 
