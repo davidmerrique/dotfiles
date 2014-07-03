@@ -13,6 +13,7 @@ install rcm
 install coreutils
 install findutils
 install bash
+install grc
 install hub
 install wget --enable-iri
 install vim --override-system-vi
