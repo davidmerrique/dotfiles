@@ -29,6 +29,8 @@ export PATH="$PATH:/usr/local/opt/coreutils/libexec/gnubin"
 export PATH="$PATH:./vendor/bin"
 export PATH="$PATH:./bin"
 
+PATH=$(echo "$PATH" | awk -v RS=':' -v ORS=":" '!a[$1]++{if (NR > 1) printf ORS; printf $a[$1]}')
+
 eval "$(rbenv init -)"
 
 # initialize autocomplete here, otherwise functions won't be loaded
