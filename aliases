@@ -133,7 +133,6 @@ alias gca='git commit -a'
 alias gco='git checkout'
 # alias gb='git branch'
 # alias gb='git checkout -b '
-alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 alias ggpnp='git pull origin $(current_branch) && git push origin $(current_branch)'
 # alias grb='git rebase master -i'
 alias oops='git commit --amend -m'

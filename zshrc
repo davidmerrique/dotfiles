@@ -14,7 +14,20 @@ fpath=(/usr/local/share/zsh/site-functions $fpath)
 
 export GOPATH=$HOME/go
 
-export PATH="$HOME/.rbenv/shims:$HOME/.rbenv/bin:$HOME/.bin:$HOME/bin:./bin:/usr/local/bin:/usr/local/sbin:$HOME/.sfs:$DOTFILES/bin:$DOTFILES/py:/usr/local/share/npm/bin:$PATH:/usr/local/mysql/bin:$PATH:$HOME/.composer/bin:$PATH:$GOPATH/bin:./vendor/bin"
+export PATH="$PATH:$HOME/.rbenv/shims"
+export PATH="$PATH:$HOME/.rbenv/bin"
+export PATH="$PATH:$HOME/.bin"
+export PATH="$PATH:$HOME/bin"
+export PATH="$PATH:$HOME/.composer/bin"
+export PATH="$PATH:$DOTFILES/bin"
+export PATH="$PATH:$GOPATH/bin"
+export PATH="$PATH:/usr/local/bin"
+export PATH="$PATH:/usr/local/sbin"
+export PATH="$PATH:/usr/local/share/npm/bin"
+export PATH="$PATH:/usr/local/mysql/bin"
+export PATH="$PATH:/usr/local/opt/coreutils/libexec/gnubin"
+export PATH="$PATH:./vendor/bin"
+export PATH="$PATH:./bin"
 
 eval "$(rbenv init -)"
 
@@ -42,6 +55,10 @@ setopt extendedglob
 
 # Allow [ or ] whereever you want
 unsetopt nomatch
+
+# Safeguard rm - https://github.com/sindresorhus/guides/blob/master/how-not-to-rm-yourself.md#safeguard-rm
+unsetopt RM_STAR_SILENT
+setopt RM_STAR_WAIT
 
 # handy keybindings
 bindkey "^A" beginning-of-line
