@@ -29,6 +29,5 @@ Bundle 'vim-scripts/ctags.vim'
 Bundle 'vim-scripts/tComment'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'chriskempson/base16-vim'
-Bundle 'Valloric/YouCompleteMe'
 
 filetype on
