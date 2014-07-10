@@ -10,6 +10,7 @@ tap caskroom/cask
 tap caskroom/fonts
 
 install rcm
+install php-version
 install coreutils
 install findutils
 install bash

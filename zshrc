@@ -79,6 +79,9 @@ ulimit -S -n 2048
 export VISUAL=vim
 export EDITOR=$VISUAL
 
+# PHP version
+source $(brew --prefix php-version)/php-version.sh && php-version 5
+
 # load rbenv if available
 if which rbenv &>/dev/null ; then
   eval "$(rbenv init - --no-rehash)"
