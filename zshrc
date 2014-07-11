@@ -2,7 +2,7 @@
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="pure"
 
-plugins=(osx composer brew brew-cask git bower laravel laravel4 node npm rbenv z atom)
+plugins=(osx composer brew brew-cask git bower laravel4 node npm rbenv z atom)
 
 export DOTFILES=$HOME/.dotfiles
 
@@ -15,24 +15,22 @@ fpath=(/usr/local/share/zsh/site-functions $fpath)
 export GOPATH=$HOME/go
 
 path=(
+  ./bin
+  ./vendor/bin
+  /usr/local/bin
+  /usr/local/sbin
+  /usr/local/share/npm/bin
+  /usr/local/mysql/bin
+  /usr/local/opt/coreutils/libexec/gnubin
+  $HOME/.rbenv/shims
+  $HOME/.rbenv/bin
+  $HOME/.bin
+  $HOME/bin
+  $HOME/.composer/bin
+  $GOPATH/bin
+  $DOTFILES/bin
   $path
-  ./bin:$path
-  ./vendor/bin:$path
-  /usr/local/bin:$path
-  /usr/local/sbin:$path
-  /usr/local/share/npm/bin:$path
-  /usr/local/mysql/bin:$path
-  /usr/local/opt/coreutils/libexec/gnubin:$path
-  $HOME/.rbenv/shims:$path
-  $HOME/.rbenv/bin:$path
-  $HOME/.bin:$path
-  $HOME/bin:$path
-  $HOME/.composer/bin:$path
-  $GOPATH/bin:$path
-  $DOTFILES/bin:$path
 )
-
-PATH=$(echo "$PATH" | awk -v RS=':' -v ORS=":" '!a[$1]++{if (NR > 1) printf ORS; printf $a[$1]}')
 
 eval "$(rbenv init -)"
 
