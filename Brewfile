@@ -9,6 +9,7 @@ tap thoughtbot/formulae
 tap caskroom/cask
 tap caskroom/fonts
 tap peco/peco
+tap mpv-player/mpv
 
 install rcm
 install php-version
@@ -47,6 +48,8 @@ install cmake
 install macvim
 install brew-cask
 install peco
+install --HEAD mpv-player/mpv/libass-ct
+install mpv
 
 cask install qlstephen
 cask install font-inconsolata
@@ -58,3 +61,5 @@ cask install font-fira-mono
 cask install font-fira-sans
 
 cleanup
+
+linkapps
