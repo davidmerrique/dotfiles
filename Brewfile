@@ -8,6 +8,7 @@ tap homebrew/homebrew-php
 tap thoughtbot/formulae
 tap caskroom/cask
 tap caskroom/fonts
+tap peco/peco
 
 install rcm
 install php-version
@@ -45,6 +46,7 @@ install encfs
 install cmake
 install macvim
 install brew-cask
+install peco
 
 cask install qlstephen
 cask install font-inconsolata
