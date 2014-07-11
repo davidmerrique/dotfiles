@@ -2,6 +2,9 @@
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="pure"
 
+NPM_PACKAGES="~/.npm-packages"
+NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
+
 plugins=(osx composer brew brew-cask git bower laravel4 node npm rbenv z atom)
 
 export DOTFILES=$HOME/.dotfiles
@@ -16,12 +19,7 @@ export GOPATH=$HOME/go
 
 path=(
   ./bin
-  ./vendor/bin
-  /usr/local/bin
-  /usr/local/sbin
-  /usr/local/share/npm/bin
-  /usr/local/mysql/bin
-  /usr/local/opt/coreutils/libexec/gnubin
+  $NPM_PACKAGES/bin
   $HOME/.rbenv/shims
   $HOME/.rbenv/bin
   $HOME/.bin
@@ -29,8 +27,19 @@ path=(
   $HOME/.composer/bin
   $GOPATH/bin
   $DOTFILES/bin
+  ./vendor/bin
+  /usr/local/bin
+  /usr/local/sbin
+  /usr/local/share/npm/bin
+  /usr/local/mysql/bin
+  /usr/local/opt/coreutils/libexec/gnubin
   $path
 )
+
+# Unset manpath so we can inherit from /etc/manpath via the `manpath`
+# command
+unset MANPATH  # delete if you already modified MANPATH elsewhere in your config
+MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
 eval "$(rbenv init -)"
 

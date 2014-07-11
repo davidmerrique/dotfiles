@@ -1,11 +1,15 @@
 #!/bin/sh
 
-export DOTFILES=$HOME/.dotfiles
+export DOTFILES=~/.dotfiles
 
-if [ ! -e $HOME/.oh-my-zsh ]; then
-  git clone git://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
+if [ ! -e ~/.oh-my-zsh ]; then
+  git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 fi
 
-if [ ! -e $HOME/.config/base16-shell ]; then
-  git clone git://github.com/chriskempson/base16-shell.git $HOME/.config/base16-shell
+if [ ! -e ~/.config/base16-shell ]; then
+  git clone git://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
+fi
+
+if [ ! -e ~/.npm-packages ]; then
+  mkdir ~/.npm-packages
 fi
