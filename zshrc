@@ -14,20 +14,23 @@ fpath=(/usr/local/share/zsh/site-functions $fpath)
 
 export GOPATH=$HOME/go
 
-export PATH="./bin:$PATH"
-export PATH="./vendor/bin:$PATH"
-export PATH="/usr/local/bin:$PATH"
-export PATH="/usr/local/sbin:$PATH"
-export PATH="/usr/local/share/npm/bin:$PATH"
-export PATH="/usr/local/mysql/bin:$PATH"
-export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-export PATH="$HOME/.rbenv/shims:$PATH"
-export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH="$HOME/.bin:$PATH"
-export PATH="$HOME/bin:$PATH"
-export PATH="$HOME/.composer/bin:$PATH"
-export PATH="$GOPATH/bin:$PATH"
-export PATH="$DOTFILES/bin:$PATH"
+path=(
+  $path
+  ./bin:$path
+  ./vendor/bin:$path
+  /usr/local/bin:$path
+  /usr/local/sbin:$path
+  /usr/local/share/npm/bin:$path
+  /usr/local/mysql/bin:$path
+  /usr/local/opt/coreutils/libexec/gnubin:$path
+  $HOME/.rbenv/shims:$path
+  $HOME/.rbenv/bin:$path
+  $HOME/.bin:$path
+  $HOME/bin:$path
+  $HOME/.composer/bin:$path
+  $GOPATH/bin:$path
+  $DOTFILES/bin:$path
+)
 
 PATH=$(echo "$PATH" | awk -v RS=':' -v ORS=":" '!a[$1]++{if (NR > 1) printf ORS; printf $a[$1]}')
 
