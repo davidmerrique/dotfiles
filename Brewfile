@@ -50,6 +50,7 @@ install brew-cask
 install peco
 install --HEAD mpv-player/mpv/libass-ct
 install mpv
+install homebrew/science/vips --with-webp --with-graphicsmagick
 
 cask install qlstephen
 cask install font-inconsolata
