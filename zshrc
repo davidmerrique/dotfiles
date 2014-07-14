@@ -5,7 +5,7 @@ ZSH_THEME="pure"
 NPM_PACKAGES="$HOME/.npm-packages"
 NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 
-plugins=(osx composer brew brew-cask git bower laravel4 node npm rbenv z atom)
+plugins=(osx composer brew brew-cask bower laravel4 node npm rbenv z atom)
 
 export DOTFILES=$HOME/.dotfiles
 

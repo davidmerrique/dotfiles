@@ -42,28 +42,33 @@ copy_images () {
 
     mkdir -p $folder/${file%%.*}/TileGroup0
 
-    cp $file $folder/${file%%.*}/TileGroup0/${file%%.*}.tif
-
     declare -A sizes
     # sizes[size]=quality
-    sizes[160]=100
-    sizes[320]=90
-    sizes[640]=90
-    sizes[1280]=90
-    sizes[2560]=90
+    sizes[160]=90
+    sizes[320]=85
+    sizes[640]=85
+    sizes[1280]=75
+    sizes[2560]=65
     count=0
 
     sizes_indexes=( ${!sizes[@]} )
-    IFS=$'\n' sizes_sorted=( $(echo -e "${sizes_indexes[@]/%/\n}" | sed -e 's/^ *//' -e '/^$/d' | sort -n) )
+    IFS=$'\n' sizes_sorted=($(sort -n <<<"${sizes_indexes[*]}"))
 
     for i in "${sizes_sorted[@]}"; do
       echo $i ${sizes[$i]}
-      gm mogrify -size ${i}X${i} -resize ${i}X${i}! -format jpg -unsharp 2x0.5+0.7+0 -quality ${sizes[$i]} $folder/${file%%.*}/TileGroup0/${file%%.*}.tif
-      mv $folder/${file%%.*}/TileGroup0/${file%%.*}.jpg $folder/${file%%.*}/TileGroup0/${count}-0-0.jpg
+      gm convert \
+      -size ${i}X${i} \
+      -resize ${i}X${i}! \
+      -format jpg \
+      -strip \
+      -interlace Plane \
+      -quality ${sizes[$i]}% \
+      -modulate 100,110 \
+      $file \
+      $folder/${file%%.*}/TileGroup0/${count}-0-0.jpg
       let count=count+1
     done
 
-    rm $folder/${file%%.*}/TileGroup0/${file%%.*}.tif
   done
 }
 
