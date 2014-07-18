@@ -90,7 +90,7 @@ export VISUAL=vim
 export EDITOR=$VISUAL
 
 # PHP version
-source $(brew --prefix php-version)/php-version.sh && php-version 5
+source $(brew --prefix php-version)/php-version.sh
 
 # load rbenv if available
 if which rbenv &>/dev/null ; then
