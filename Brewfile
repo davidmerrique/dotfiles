@@ -60,6 +60,7 @@ cask install font-source-sans-pro
 cask install font-source-serif-pro
 cask install font-fira-mono
 cask install font-fira-sans
+cask install font-input
 
 cleanup
 
