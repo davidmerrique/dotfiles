@@ -51,6 +51,7 @@ install peco
 install --HEAD mpv-player/mpv/libass-ct
 install mpv
 install homebrew/science/vips --with-webp --with-graphicsmagick
+install ffmpeg --with-theora --with-tools --with-libvorbis --with-libvpx
 
 cask install qlstephen
 cask install font-inconsolata
