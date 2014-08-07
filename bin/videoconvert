@@ -6,9 +6,9 @@ echo ''
 
 video_convert () {
   mv $1 ${1%.*}-orig.${1##*.}
-  ffmpeg -i "${1%.*}-orig.${1##*.}" -preset veryslow ${1%.*}.mp4
-  ffmpeg -i "${1%.*}-orig.${1##*.}" -preset veryslow -strict -2 ${1%.*}.webm
-  ffmpeg2theora -o ${1%.*}.ogv "${1%.*}-orig.${1##*.}"
+  ffmpeg -i "${1%.*}-orig.${1##*.}" -acodec aac -strict experimental -ac 2 -ab 128k -vcodec libx264 -preset slow -f mp4 -crf 22 ${1%.*}.mp4
+  ffmpeg -i "${1%.*}-orig.${1##*.}" -c:v libvpx -qmin 0 -qmax 50 -crf 5 -b:v 1M -c:a libvorbis ${1%.*}.webm
+  ffmpeg2theora -o ${1%.*}.ogv "${1%.*}-orig.${1##*.}" --videoquality 5 --audioquality 0  --frontend
 }
 
 video_convert $1
