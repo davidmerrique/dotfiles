@@ -1,19 +1,23 @@
 #!/bin/sh
 
-export DOTFILES=$HOME/.dotfiles
+export DOTFILES=~/.dotfiles
 
-if [ ! -e $HOME/.vim/bundle/Vundle.vim ]; then
+if [ ! -e ~/.vim/bundle/Vundle.vim ]; then
   git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
-git -C $HOME/.vim/bundle/Vundle.vim pull
-vim -u $HOME/.vimrc.bundles +PluginInstall +qall
+git -C ~/.vim/bundle/Vundle.vim pull
+vim -u ~/.vimrc.bundles +PluginInstall +qall
 
 git -C $DOTFILES submodule update --init --recursive
 
-if [ -e $HOME/.oh-my-zsh/custom/pure.zsh-theme ]; then
-  rm $HOME/.oh-my-zsh/custom/pure.zsh-theme
+if [ -e ~/.oh-my-zsh/custom/pure.zsh-theme ]; then
+  rm ~/.oh-my-zsh/custom/pure.zsh-theme
 fi
-ln -s "$DOTFILES/zsh/pure/pure.zsh" $HOME/.oh-my-zsh/custom/pure.zsh-theme
+ln -s "$DOTFILES/zsh/pure/pure.zsh" ~/.oh-my-zsh/custom/pure.zsh-theme
+
+if [ ! -e ~/.rbenv ]; then
+  ln -s /usr/local/opt/rbenv ~/.rbenv
+fi
 
 sudo /bin/cp -RfX $(brew --prefix osxfuse)/Library/Filesystems/osxfusefs.fs /Library/Filesystems
 sudo chmod +s /Library/Filesystems/osxfusefs.fs/Support/load_osxfusefs
