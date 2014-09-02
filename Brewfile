@@ -53,6 +53,7 @@ install mpv
 install homebrew/science/vips --with-webp --with-graphicsmagick
 install ffmpeg --with-theora --with-tools --with-libvorbis --with-libvpx
 install ffmpeg2theora
+install mobile-shell
 
 cask install qlstephen
 cask install font-inconsolata
@@ -60,8 +61,6 @@ cask install font-open-sans
 cask install font-source-code-pro
 cask install font-source-sans-pro
 cask install font-source-serif-pro
-cask install font-fira-mono
-cask install font-fira-sans
 cask install font-input
 
 cleanup
