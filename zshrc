@@ -92,7 +92,7 @@ source $(brew --prefix php-version)/php-version.sh
 
 # load rbenv if available
 if which rbenv &>/dev/null ; then
-  eval "$(rbenv init - --no-rehash)"
+  eval "$(rbenv init - zsh --no-rehash)"
 fi
 
 # z
