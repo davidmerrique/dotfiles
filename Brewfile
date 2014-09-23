@@ -11,6 +11,7 @@ tap caskroom/fonts
 tap peco/peco
 tap mpv-player/mpv
 
+install mackup
 install rcm
 install php-version
 install coreutils

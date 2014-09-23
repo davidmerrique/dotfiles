@@ -58,10 +58,6 @@ endif
 
 filetype plugin indent on
 
-silent !mkdir ~/.vim_backups > /dev/null 2>&1
-set undodir=~/.vim_backups
-set undofile
-
 colorscheme base16-default
 let base16colorspace=256
 highlight NonText guibg=#060606
