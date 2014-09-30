@@ -87,9 +87,8 @@ ulimit -S -n 2048
 export VISUAL=vim
 export EDITOR=$VISUAL
 
-# phpbrew
-source $HOME/.phpbrew/bashrc
-export PHPBREW_SET_PROMPT=1
+# php-version
+source $(brew --prefix php-version)/php-version.sh && php-version 5
 
 # load rbenv if available
 if which rbenv &>/dev/null ; then
