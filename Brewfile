@@ -11,9 +11,22 @@ tap caskroom/fonts
 tap peco/peco
 tap mpv-player/mpv
 
+install automake
+install autoconf
+install curl
+install pcre
+install re2c
+install mhash
+install libtool
+install icu4c
+install gettext
+install jpeg
+install libxml2
+install mcrypt
+install gmp
+install libevent
 install mackup
 install rcm
-install php-version
 install coreutils
 install findutils
 install bash
@@ -55,6 +68,8 @@ install homebrew/science/vips --with-webp --with-graphicsmagick
 install ffmpeg --with-theora --with-tools --with-libvorbis --with-libvpx
 install ffmpeg2theora
 install mobile-shell
+
+link icu4c
 
 cask install qlstephen
 cask install font-inconsolata
