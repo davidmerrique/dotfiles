@@ -68,6 +68,7 @@ install homebrew/science/vips --with-webp --with-graphicsmagick
 install ffmpeg --with-theora --with-tools --with-libvorbis --with-libvpx
 install ffmpeg2theora
 install mobile-shell
+install the_silver_searcher
 
 link icu4c
 
