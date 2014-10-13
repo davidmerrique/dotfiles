@@ -1,0 +1,116 @@
+#!/bin/bash
+
+brew update
+brew upgrade
+
+taps=(
+  homebrew/dupes
+  homebrew/versions
+  homebrew/homebrew-php
+  thoughtbot/formulae
+  caskroom/cask
+  caskroom/fonts
+  caskroom/versions
+  peco/peco
+  mpv-player/mpv
+)
+
+echo "tapping..."
+brew tap ${taps[@]}
+
+binaries=(
+  python
+  sqlite
+  sshfs
+  trash
+  automake
+  autoconf
+  curl
+  pcre
+  nmap
+  re2c
+  mhash
+  libtool
+  icu4c
+  gettext
+  jpeg
+  libxml2
+  mcrypt
+  gmp
+  libevent
+  mackup
+  rcm
+  coreutils
+  findutils
+  bash
+  grc
+  hub
+  wget --enable-iri
+  vim --override-system-vi
+  homebrew/dupes/grep
+  php54
+  php54-mcrypt
+  php54-memcached
+  ack
+  git
+  graphicsmagick --with-libtiff
+  lynx
+  node
+  pigz
+  rename
+  rhino
+  tree
+  webkit2png
+  zopfli
+  rbenv
+  ruby-build
+  composer
+  rename
+  speedtest_cli
+  z
+  go
+  lua52
+  encfs
+  cmake
+  macvim
+  brew-cask
+  peco
+  --HEAD mpv-player/mpv/libass-ct
+  mpv
+  homebrew/science/vips --with-webp --with-graphicsmagick
+  ffmpeg --with-theora --with-tools --with-libvorbis --with-libvpx
+  ffmpeg2theora
+  mobile-shell
+  the_silver_searcher
+)
+
+echo "installing binaries..."
+brew install ${binaries[@]}
+
+links=(
+  icu4c
+)
+
+echo "linking..."
+brew link ${links[@]}
+
+apps=(
+  filebot
+  qlstephen
+  font-inconsolata
+  font-open-sans
+  font-source-code-pro
+  font-source-sans-pro
+  font-source-serif-pro
+  font-input
+  font-m-plus
+  font-clear-sans
+  font-roboto
+)
+
+echo "installing apps..."
+brew cask install --appdir="/Applications" ${apps[@]}
+brew cask alfred link
+
+brew cleanup
+brew linkapps
