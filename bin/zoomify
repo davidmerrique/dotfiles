@@ -38,16 +38,17 @@ copy_images () {
 
     for i in "${sizes_sorted[@]}"; do
       echo $i ${sizes[$i]}
+
       gm convert \
       -size ${i}X${i} \
       -resize ${i}X${i}! \
       -format jpg \
       -strip \
-      -interlace Plane \
+      -interlace Line \
       -quality ${sizes[$i]}% \
-      -modulate 100,110 \
       $file \
       $folder/${file%%.*}/TileGroup0/${count}-0-0.jpg
+
       let count=count+1
     done
 
