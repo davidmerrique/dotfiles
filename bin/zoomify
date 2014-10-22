@@ -43,11 +43,16 @@ copy_images () {
       -size ${i}X${i} \
       -resize ${i}X${i}! \
       -format jpg \
-      -strip \
       -interlace Line \
       -quality ${sizes[$i]}% \
       $file \
       $folder/${file%%.*}/TileGroup0/${count}-0-0.jpg
+
+      if [ $file != "BODY.tif" ]; then
+        gm mogrify \
+        -strip \
+        $folder/${file%%.*}/TileGroup0/${count}-0-0.jpg
+      fi
 
       let count=count+1
     done
