@@ -1,7 +1,3 @@
-# oh-my-zsh configuration
-ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="pure"
-
 NPM_PACKAGES="$HOME/.npm-packages"
 NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 
@@ -9,11 +5,10 @@ plugins=(osx composer brew brew-cask bower laravel4 node npm rbenv z atom)
 
 export DOTFILES=$HOME/.dotfiles
 
-source $ZSH/oh-my-zsh.sh
-
 for topic_folder ($DOTFILES/*) if [ -d $topic_folder ]; then  fpath=($topic_folder $fpath); fi;
 
-fpath=(/usr/local/share/zsh/site-functions $fpath)
+fpath=( /usr/local/share/zsh/site-functions $fpath )
+fpath=( "$HOME/.zfunctions" $fpath )
 
 export GOPATH=$HOME/go
 
@@ -46,6 +41,9 @@ autoload -U compinit
 compinit
 
 autoload -U $DOTFILES/zsh/functions/*(:t)
+
+autoload -U promptinit && promptinit
+prompt pure
 
 # history settings
 setopt histignoredups
