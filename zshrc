@@ -110,3 +110,6 @@ BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
 
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
+
+# Syntax highlighting
+source $DOTFILES/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
