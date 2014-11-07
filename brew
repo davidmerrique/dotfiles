@@ -19,6 +19,7 @@ echo "tapping..."
 brew tap ${taps[@]}
 
 binaries=(
+  zsh
   python
   sqlite
   sshfs
