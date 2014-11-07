@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Check for Homebrew
+if test ! $(which brew); then
+  echo "Installing homebrew..."
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
 brew update
 brew upgrade
 
@@ -76,13 +82,12 @@ binaries=(
   speedtest_cli
   z
   go
-  lua52
   encfs
   cmake
   macvim
   brew-cask
   peco
-  --HEAD mpv-player/mpv/libass-ct
+  mpv-player/mpv/libass-ct --HEAD
   mpv
   homebrew/science/vips --with-webp --with-graphicsmagick
   ffmpeg --with-theora --with-tools --with-libvorbis --with-libvpx
@@ -92,10 +97,13 @@ binaries=(
 )
 
 echo "installing binaries..."
-brew install ${binaries[@]}
+for i in "${binaries[@]}"
+do
+  brew install $i
+done
 
 links=(
-  icu4c
+  icu4c --force
 )
 
 echo "linking..."
@@ -103,7 +111,7 @@ brew link ${links[@]}
 
 apps=(
   filebot
-  qlstephen
+  # qlstephen
   font-inconsolata
   font-open-sans
   font-source-code-pro
