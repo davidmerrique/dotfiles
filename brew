@@ -19,7 +19,10 @@ echo "tapping..."
 brew tap ${taps[@]}
 
 binaries=(
+  gnu-sed --default-names
   zsh
+  zsh-completions
+  zsh-syntax-highlighting
   python
   sqlite
   sshfs
@@ -41,14 +44,16 @@ binaries=(
   libevent
   mackup
   rcm
+  moreutils
   coreutils
   findutils
   bash
   grc
   hub
-  wget --enable-iri
+  wget --with-iri
   vim --override-system-vi
   homebrew/dupes/grep
+  homebrew/dupes/screen
   php54
   php54-mcrypt
   php54-memcached

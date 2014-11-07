@@ -1,12 +1,11 @@
 NPM_PACKAGES="$HOME/.npm-packages"
 NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 
-plugins=(osx composer brew brew-cask bower laravel4 node npm rbenv z atom)
-
 export DOTFILES=$HOME/.dotfiles
 
-for topic_folder ($DOTFILES/*) if [ -d $topic_folder ]; then  fpath=($topic_folder $fpath); fi;
+for topic_folder ($DOTFILES/*) if [ -d $topic_folder ]; then fpath=($topic_folder $fpath); fi;
 
+fpath=( /usr/local/share/zsh-completions $fpath )
 fpath=( /usr/local/share/zsh/site-functions $fpath )
 fpath=( "$HOME/.zfunctions" $fpath )
 
@@ -68,6 +67,17 @@ unsetopt nomatch
 unsetopt RM_STAR_SILENT
 setopt RM_STAR_WAIT
 
+# Tab completion from both ends
+setopt completeinword
+
+# Tab completion should be case-insensitive
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+
+# Better completion for killall.
+zstyle ':completion:*:killall:*' command 'ps -u $USER -o cmd'
+
+setopt nocasematch
+
 # handy keybindings
 bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line
@@ -112,4 +122,4 @@ BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
 [[ -f ~/.aliases ]] && source ~/.aliases
 
 # Syntax highlighting
-source $DOTFILES/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
