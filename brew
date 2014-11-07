@@ -23,6 +23,7 @@ binaries=(
   zsh
   zsh-completions
   zsh-syntax-highlighting
+  zsh-history-substring-search
   python
   sqlite
   sshfs
