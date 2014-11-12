@@ -14,14 +14,19 @@ git -C $DOTFILES submodule foreach "(git checkout master; git pull)"
 if [ -e ~/.oh-my-zsh/custom/pure.zsh-theme ]; then
   rm ~/.oh-my-zsh/custom/pure.zsh-theme
 fi
-ln -s "$DOTFILES/zsh/pure/pure.zsh" "$HOME/.zfunctions/prompt_pure_setup"
+
+if [ ! -e "$HOME/.zfunctions/prompt_pure_setup" ]; then
+  ln -s "$DOTFILES/zsh/pure/pure.zsh" "$HOME/.zfunctions/prompt_pure_setup"
+fi
 
 if [ ! -e ~/.rbenv ]; then
   ln -s /usr/local/opt/rbenv ~/.rbenv
 fi
 
-sudo /bin/cp -RfX $(brew --prefix osxfuse)/Library/Filesystems/osxfusefs.fs /Library/Filesystems
-sudo chmod +s /Library/Filesystems/osxfusefs.fs/Support/load_osxfusefs
+if [ -e $(brew --prefix osxfuse)/Library/Filesystems/osxfusefs.fs ]; then
+  sudo /bin/cp -RfX $(brew --prefix osxfuse)/Library/Filesystems/osxfusefs.fs /Library/Filesystems
+  sudo chmod +s /Library/Filesystems/osxfusefs.fs/Support/load_osxfusefs
+fi
 
 curl -o /usr/local/bin/gifify -O https://raw.githubusercontent.com/jclem/gifify/master/gifify.sh
 chmod +x /usr/local/bin/gifify
