@@ -6,3 +6,6 @@
 	path = iterm/themes/base-16
 	url = git://github.com/chriskempson/base16-iterm2.git
 	ignore = dirty
+[submodule "zsh/modules/completion/external"]
+	path = zsh/modules/completion/external
+	url = git@github.com:zsh-users/zsh-completions.git
