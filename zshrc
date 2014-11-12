@@ -2,6 +2,7 @@ NPM_PACKAGES="$HOME/.npm-packages"
 NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 
 export DOTFILES=$HOME/.dotfiles
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"

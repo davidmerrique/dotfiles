@@ -30,7 +30,7 @@ zfiles=(
 )
 
 for rcfile in "${zfiles[@]}"; do
-  if [ ! -e "$rcfile" ]; then
-    ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+  if [ ! -L "$rcfile" ]; then
+    ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.$(basename $rcfile)"
   fi
 done
