@@ -1,1 +1,2 @@
-prefix=~/.npm-packages
+prefix=/Users/davidmerrique/.npm-packages
+loglevel=error
