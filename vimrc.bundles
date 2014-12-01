@@ -3,32 +3,28 @@ if &compatible
 end
 
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
 
-" Let Vundle manage Vundle
-Plugin 'gmarik/Vundle.vim'
+call plug#begin('~/.vim/plugged')
 
-" Define bundles via Github repos
-Plugin 'croaky/vim-colors-github'
-Plugin 'danro/rename.vim'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'maksimr/vim-jsbeautify'
-Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'thoughtbot/vim-rspec'
-Plugin 'tpope/vim-bundler'
-Plugin 'tpope/vim-cucumber'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-surround'
-Plugin 'vim-scripts/matchit.zip'
-Plugin 'vim-scripts/ctags.vim'
-Plugin 'vim-scripts/tComment'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'chriskempson/base16-vim'
+Plug 'croaky/vim-colors-github'
+Plug 'danro/rename.vim'
+Plug 'kchmck/vim-coffee-script'
+Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
+Plug 'maksimr/vim-jsbeautify'
+Plug 'kien/ctrlp.vim'
+Plug 'scrooloose/syntastic'
+Plug 'thoughtbot/vim-rspec'
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-cucumber'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-surround'
+Plug 'vim-scripts/matchit.zip'
+Plug 'vim-scripts/ctags.vim'
+Plug 'vim-scripts/tComment'
+Plug 'flazz/vim-colorschemes'
+Plug 'chriskempson/base16-vim'
 
-call vundle#end()
+call plug#end()
 filetype on
