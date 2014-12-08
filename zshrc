@@ -1,7 +1,3 @@
-NPM_PACKAGES="$HOME/.npm-packages"
-NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
-
-export DOTFILES=$HOME/.dotfiles
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
@@ -14,27 +10,6 @@ for topic_folder ($DOTFILES/*) if [ -d $topic_folder ]; then fpath=($topic_folde
 fpath=( /usr/local/share/zsh-completions $fpath )
 fpath=( /usr/local/share/zsh/site-functions $fpath )
 fpath=( "$HOME/.zfunctions" $fpath )
-
-export GOPATH=$HOME/go
-
-path=(
-  ./bin
-  $NPM_PACKAGES/bin
-  $HOME/.rbenv/shims
-  $HOME/.rbenv/bin
-  $HOME/.bin
-  $HOME/bin
-  $HOME/.composer/bin
-  $GOPATH/bin
-  $DOTFILES/bin
-  ./vendor/bin
-  /usr/local/bin
-  /usr/local/sbin
-  /usr/local/share/npm/bin
-  /usr/local/mysql/bin
-  /usr/local/opt/coreutils/libexec/gnubin
-  $path
-)
 
 # Unset manpath so we can inherit from /etc/manpath via the `manpath`
 # command
@@ -50,8 +25,16 @@ autoload -U $DOTFILES/zsh/functions/*(:t)
 autoload -U promptinit && promptinit
 prompt pure
 
+# makes color constants available
+autoload -U colors
+colors
+
+# enable colored output from ls, etc
+export LSCOLORS="exfxcxdxbxegedabagacad"
+export CLICOLOR=true
+
 # history settings
-setopt histignoredups
+setopt hist_ignore_all_dups inc_append_history
 HISTFILE=~/.zsh_history
 SAVEHIST=4096
 HISTSIZE=4096
@@ -97,27 +80,11 @@ bindkey -s "^T" "^[Isudo ^[A" # "t" for "toughguy"
 # running watch processes on a large number of files
 ulimit -S -n 2048
 
-# use vim as the visual editor
-export VISUAL=vim
-export EDITOR=$VISUAL
-
 # php-version
 source $(brew --prefix php-version)/php-version.sh && php-version 5
 
-# load rbenv if available
-if which rbenv &>/dev/null ; then
-  eval "$(rbenv init - zsh --no-rehash)"
-fi
-
 # z
 . `brew --prefix`/etc/profile.d/z.sh
-
-autoload -U colors
-colors
-
-# enable colored output from ls, etc
-export LSCOLORS="exfxcxdxbxegedabagacad"
-export CLICOLOR=true
 
 # Base16 Shell
 BASE16_SCHEME="default"
@@ -126,6 +93,9 @@ BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
 
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
+
+# Local config
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
 # # Syntax highlighting
 # source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
