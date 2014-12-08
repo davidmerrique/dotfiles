@@ -26,7 +26,6 @@ zfiles=(
   "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/zlogin
   "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/zpreztorc
   "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/zprofile
-  "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/zshenv
 )
 
 for rcfile in "${zfiles[@]}"; do

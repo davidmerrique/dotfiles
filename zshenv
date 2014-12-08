@@ -1,18 +1,18 @@
 NPM_PACKAGES="$HOME/.npm-packages"
 NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export DOTFILES=$HOME/.dotfiles
 
 # use vim as the visual editor
 export VISUAL=vim
 export EDITOR=$VISUAL
 
-# ensure dotfiles bin directory is loaded first
-export PATH="$HOME/.bin:/usr/local/sbin:$PATH"
-
 export GOPATH=$HOME/go
 
 path=(
+  ./bin
+  $DOTFILES/bin
   $NPM_PACKAGES/bin
   $HOME/.rbenv/shims
   $HOME/.rbenv/bin
@@ -20,7 +20,6 @@ path=(
   $HOME/bin
   $HOME/.composer/bin
   $GOPATH/bin
-  $DOTFILES/bin
   ./vendor/bin
   /usr/local/bin
   /usr/local/sbin

@@ -1,5 +1,3 @@
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
   pmodload 'history-substring-search' 'syntax-highlighting'
