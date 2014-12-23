@@ -10,26 +10,25 @@ export EDITOR=$VISUAL
 
 export GOPATH=$HOME/go
 
-path=(
-  ./bin
-  $DOTFILES/bin
-  $NPM_PACKAGES/bin
-  $HOME/.chefdk/gem/ruby/2.1.0/bin
-  /opt/chefdk/bin
-  $HOME/.rbenv/shims
-  $HOME/.rbenv/bin
-  $HOME/.bin
-  $HOME/bin
-  $HOME/.composer/bin
-  $GOPATH/bin
-  ./vendor/bin
-  /usr/local/bin
-  /usr/local/sbin
-  /usr/local/share/npm/bin
-  /usr/local/mysql/bin
-  /usr/local/opt/coreutils/libexec/gnubin
-  $path
-)
+path+=./bin
+path+=$DOTFILES/bin
+path+=$NPM_PACKAGES/bin
+path+=/opt/chefdk/bin
+path+=$HOME/.rbenv/shims
+path+=$HOME/.rbenv/bin
+path+=$HOME/.bin
+path+=$HOME/bin
+path+=$HOME/.composer/bin
+path+=$GOPATH/bin
+path+=./vendor/bin
+path+=/usr/local/bin
+path+=/usr/local/sbin
+path+=/usr/local/share/npm/bin
+path+=/usr/local/mysql/bin
+path+=/usr/local/opt/coreutils/libexec/gnubin
+path+=/usr/bin
+path+=/usr/sbin
+path+=/sbin
 
 # load rbenv if available
 if which rbenv &>/dev/null ; then

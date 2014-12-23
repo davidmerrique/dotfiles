@@ -33,6 +33,10 @@ alias hidehidden="defaults write com.apple.finder AppleShowAllFiles FALSE && kil
 alias artisan="php artisan"
 alias node='node --harmony'
 
+if [ -f $NPM_PACKAGES/bin/npm ]; then
+  alias npm=$NPM_PACKAGES/bin/npm
+fi
+
 alias dotfiles="cd $DOTFILES"
 alias dotedit="atom $DOTFILES"
 
