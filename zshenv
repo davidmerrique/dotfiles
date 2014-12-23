@@ -14,6 +14,8 @@ path=(
   ./bin
   $DOTFILES/bin
   $NPM_PACKAGES/bin
+  $HOME/.chefdk/gem/ruby/2.1.0/bin
+  /opt/chefdk/bin
   $HOME/.rbenv/shims
   $HOME/.rbenv/bin
   $HOME/.bin
