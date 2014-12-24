@@ -1,0 +1,12 @@
+#!/bin/bash
+
+packages=(
+  trash
+  bower
+  gulp
+  browserify
+  npm
+)
+
+echo "installing packages..."
+npm install -g ${packages[@]}
