@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -e
+
+NVMDIR="$HOME/.nvm"
+
+git -C "$NVMDIR" fetch --tags
+TAG=$(git -C "$NVMDIR" describe --tags `git -C "$NVMDIR" rev-list --tags --max-count=1`)
+echo "Checking out tag $TAG..."
+git -C "$NVMDIR" checkout "$TAG"
+
+source "$NVMDIR/nvm.sh"

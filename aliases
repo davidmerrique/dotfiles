@@ -33,7 +33,7 @@ alias hidehidden="defaults write com.apple.finder AppleShowAllFiles FALSE && kil
 alias artisan="php artisan"
 alias node='node --harmony'
 
-if [ -f $NPM_PACKAGES/bin/npm ]; then
+if [ -d $NPM_PACKAGES/bin/npm ]; then
   alias npm=$NPM_PACKAGES/bin/npm
 fi
 
@@ -67,7 +67,7 @@ alias permissions="diskutil repairPermissions /"
 alias gurl="curl --compressed"
 
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='brew update; brew upgrade; npm cache clean -g; npm update -g; sudo -v; gem update; gem update --system; brew prune; brew cleanup; brew linkapps'
+# alias update='brew update; brew upgrade; npm cache clean -g; npm update -g; sudo -v; gem update; gem update --system; brew prune; brew cleanup; brew linkapps'
 
 # Launch iOS Simulator
 alias ios="open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app"

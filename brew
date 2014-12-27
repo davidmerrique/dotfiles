@@ -68,7 +68,6 @@ binaries=(
   git
   graphicsmagick --with-libtiff
   lynx
-  node
   pigz
   rename
   rhino

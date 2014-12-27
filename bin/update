@@ -1,0 +1,21 @@
+#!/bin/bash
+
+commands=(
+  "brew update"
+  "brew upgrade"
+  "brew prune"
+  "brew cleanup"
+  "brew linkapps"
+  "$DOTFILES/bin/nvmup"
+  "npm cache clean -g"
+  "npm update -g"
+  "sudo -v"
+  "gem update"
+  "gem update --system"
+)
+
+echo "updating..."
+for i in "${commands[@]}"; do
+  printf "\n**** Running: $i *****\n\n"
+  eval $i
+done
