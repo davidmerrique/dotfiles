@@ -31,7 +31,6 @@ alias flushdns="dscacheutil -flushcache"
 alias showhidden="defaults write com.apple.finder AppleShowAllFiles TRUE && killall Finder"
 alias hidehidden="defaults write com.apple.finder AppleShowAllFiles FALSE && killall Finder"
 alias artisan="php artisan"
-alias node='node --harmony'
 
 if [ -f $NPM_PACKAGES/bin/npm ]; then
   alias npm=$NPM_PACKAGES/bin/npm
