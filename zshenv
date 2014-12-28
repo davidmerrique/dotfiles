@@ -19,6 +19,7 @@ path+=$HOME/.rbenv/bin
 path+=$HOME/.bin
 path+=$HOME/bin
 path+=$HOME/.composer/bin
+path+=$HOME/.composer/vendor/bin
 path+=$GOPATH/bin
 path+=./vendor/bin
 path+=/usr/local/bin
