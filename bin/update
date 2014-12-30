@@ -1,6 +1,7 @@
 #!/bin/bash
 
 commands=(
+  "rcup -d $DOTFILES"
   "brew update"
   "brew upgrade"
   "brew prune"
@@ -12,6 +13,7 @@ commands=(
   "sudo -v"
   "gem update"
   "gem update --system"
+  "antigen update"
 )
 
 echo "updating..."

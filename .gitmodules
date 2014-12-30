@@ -9,3 +9,7 @@
 [submodule "zsh/modules/completion/external"]
 	path = zsh/modules/completion/external
 	url = git@github.com:zsh-users/zsh-completions.git
+[submodule "zsh/antigen"]
+	path = zsh/antigen
+	url = https://github.com/zsh-users/antigen.git
+	ignore = dirty

@@ -18,22 +18,6 @@ if [ ! -e ~/.zfunctions ]; then
   mkdir ~/.zfunctions
 fi
 
-if [ ! -e "${ZDOTDIR:-$HOME}/.zprezto" ]; then
-  git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-fi
-
-zfiles=(
-  "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/zlogin
-  "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/zpreztorc
-  "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/zprofile
-)
-
-for rcfile in "${zfiles[@]}"; do
-  if [ ! -L "$rcfile" ]; then
-    ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.$(basename $rcfile)"
-  fi
-done
-
 if [ ! -e ~/.nvm ]; then
   git clone https://github.com/creationix/nvm.git ~/.nvm && cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`
 fi

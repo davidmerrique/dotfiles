@@ -1,7 +1,10 @@
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-  pmodload 'history-substring-search' 'syntax-highlighting'
-fi
+source ~/.zsh/antigen/antigen.zsh
+
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-history-substring-search
+antigen bundle zsh-users/zsh-completions
+
+antigen apply
 
 for topic_folder ($DOTFILES/*) if [ -d $topic_folder ]; then fpath=($topic_folder $fpath); fi;
 
@@ -13,10 +16,6 @@ fpath=( "$HOME/.zfunctions" $fpath )
 # command
 unset MANPATH  # delete if you already modified MANPATH elsewhere in your config
 MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
-
-# initialize autocomplete here, otherwise functions won't be loaded
-autoload -U compinit
-compinit
 
 autoload -U $DOTFILES/zsh/functions/*(:t)
 
@@ -95,23 +94,43 @@ BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
 # Local config
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
-# # Syntax highlighting
-# source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-#
-# # Substring history search
-# source /usr/local/opt/zsh-history-substring-search/zsh-history-substring-search.zsh
-#
-# # bind UP and DOWN arrow keys
-# bindkey '^[[A' history-substring-search-up
-# bindkey '^[[B' history-substring-search-down
-#
-# # bind P and N for EMACS mode
-# bindkey -M emacs '^P' history-substring-search-up
-# bindkey -M emacs '^N' history-substring-search-down
-#
-# # bind k and j for VI mode
-# bindkey -M vicmd 'k' history-substring-search-up
-# bindkey -M vicmd 'j' history-substring-search-down
+# bind UP and DOWN arrow keys
+zmodload zsh/terminfo
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
+
+# bind UP and DOWN arrow keys
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
+# bind P and N for EMACS mode
+bindkey -M emacs '^P' history-substring-search-up
+bindkey -M emacs '^N' history-substring-search-down
+
+# bind k and j for VI mode
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
+
+expand-or-complete-with-dots() {      # This bunch of code displays red dots when autocompleting
+  echo -n "\e[31m......\e[0m"         # a command with the tab key, "Oh-my-zsh"-style.
+  zle expand-or-complete
+  zle redisplay
+}
+zle -N expand-or-complete-with-dots
+bindkey "^I" expand-or-complete-with-dots
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+zstyle ':completion:*:*:*:*:*' menu select
+zstyle ':completion:*:matches' group 'yes'
+zstyle ':completion:*:options' description 'yes'
+zstyle ':completion:*:options' auto-description '%d'
+zstyle ':completion:*:corrections' format ' %F{green}-- %d (errors: %e) --%f'
+zstyle ':completion:*:descriptions' format ' %F{yellow}-- %d --%f'
+zstyle ':completion:*:messages' format ' %F{purple} -- %d --%f'
+zstyle ':completion:*:warnings' format ' %F{red}-- no matches found --%f'
+zstyle ':completion:*:default' list-prompt '%S%M matches%s'
+zstyle ':completion:*' format ' %F{yellow}-- %d --%f'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' verbose yes
