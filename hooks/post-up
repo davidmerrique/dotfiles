@@ -4,9 +4,6 @@ export DOTFILES=~/.dotfiles
 
 vim -u ~/.vimrc.bundles +PlugInstall +qall
 
-git -C $DOTFILES submodule update --init
-git -C $DOTFILES submodule foreach "(git checkout master; git pull)"
-
 if [ -e ~/.oh-my-zsh/custom/pure.zsh-theme ]; then
   rm ~/.oh-my-zsh/custom/pure.zsh-theme
 fi

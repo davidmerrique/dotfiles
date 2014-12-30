@@ -4,6 +4,9 @@ sudo -v
 
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
+git -C $DOTFILES submodule update --init
+git -C $DOTFILES submodule foreach "(git checkout master; git pull)"
+
 export DOTFILES=~/.dotfiles
 
 if [ ! -e ~/.config/base16-shell ]; then
