@@ -6,6 +6,7 @@ packages=(
   gulp
   browserify
   npm
+  keybase-installer
 )
 
 echo "installing packages..."
