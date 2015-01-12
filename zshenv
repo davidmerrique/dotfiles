@@ -1,5 +1,4 @@
 NPM_PACKAGES="$HOME/.npm-packages"
-NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export DOTFILES=$HOME/.dotfiles

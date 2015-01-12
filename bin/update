@@ -12,6 +12,7 @@ commands=(
   "brew cleanup"
   "brew linkapps"
   "$DOTFILES/bin/nvmup"
+  "npm update npm -g"
   "npm cache clean -g"
   "npm update -g"
   "gem update"

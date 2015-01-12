@@ -1,2 +1,4 @@
 prefix=~/.npm-packages
 loglevel=error
+save=true
+save-exact=true
