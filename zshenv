@@ -11,6 +11,7 @@ export GOPATH=$HOME/go
 
 path+=./bin
 path+=$DOTFILES/bin
+path+=./node_modules/.bin
 path+=$NPM_PACKAGES/bin
 path+=/opt/chefdk/bin
 path+=$HOME/.rbenv/shims
