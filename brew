@@ -12,6 +12,7 @@ brew upgrade
 taps=(
   homebrew/dupes
   homebrew/versions
+  homebrew/binary
   homebrew/homebrew-php
   thoughtbot/formulae
   caskroom/cask
@@ -93,6 +94,7 @@ binaries=(
   ffmpeg2theora
   mobile-shell
   the_silver_searcher
+  packer
 )
 
 echo "installing binaries..."
