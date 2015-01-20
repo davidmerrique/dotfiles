@@ -13,7 +13,7 @@ commands=(
   "brew linkapps"
   "$DOTFILES/bin/nvmup"
   "npm cache clean -g"
-  "$DOTFILES/npm-upgrade.sh"
+  "$DOTFILES/npm-upgrade-bleeding.sh"
   "gem update"
   "gem update --system"
 )
