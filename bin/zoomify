@@ -48,6 +48,10 @@ copy_images () {
       $file \
       $folder/${file%%.*}/TileGroup0/${count}-0-0.jpg
 
+      # -fuzz 5% \
+      # -fill "#EBEBEB" \
+      # -opaque white \
+
       if [ $file != "BODY.tif" ]; then
         gm mogrify \
         -strip \
