@@ -11,6 +11,8 @@ commands=(
   "brew prune"
   "brew cleanup"
   "brew linkapps"
+  "phpbrew self-update"
+  "phpbrew known --update"
   "$DOTFILES/bin/nvmup"
   "npm cache clean -g"
   "$DOTFILES/npm-upgrade.sh"
