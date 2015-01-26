@@ -78,7 +78,6 @@ binaries=(
   rbenv
   ruby-build
   composer
-  rename
   speedtest_cli
   z
   go

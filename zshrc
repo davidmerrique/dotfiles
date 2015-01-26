@@ -77,8 +77,8 @@ bindkey -s "^T" "^[Isudo ^[A" # "t" for "toughguy"
 # running watch processes on a large number of files
 ulimit -S -n 2048
 
-# php-version
-source $(brew --prefix php-version)/php-version.sh && php-version 5
+# phpbrew
+source ~/.phpbrew/bashrc
 
 # z
 . `brew --prefix`/etc/profile.d/z.sh
