@@ -1,0 +1,33 @@
+{
+  "asi": true,
+  "browser": true,
+  "browserify": true,
+  "devel": true,
+  "eqeqeq": true,
+  "eqnull": true,
+  "esnext": true,
+  "expr": true,
+  "globals": {
+    "atom": true,
+    "chrome": false,
+    "FileList": false,
+    "Promise": true,
+    "require": true,
+    "window": true
+  },
+  "immed": true,
+  "indent": 2,
+  "latedef": "nofunc",
+  "laxbreak": true,
+  "loopfunc": true,
+  "newcap": true,
+  "noarg": true,
+  "node": true,
+  "predef": [
+    "escape",
+    "unescape"
+  ],
+  "quotmark": "single",
+  "strict": false,
+  "undef": true
+}
