@@ -13,7 +13,6 @@ taps=(
   homebrew/dupes
   homebrew/versions
   homebrew/binary
-  homebrew/homebrew-php
   thoughtbot/formulae
   caskroom/cask
   caskroom/fonts
@@ -62,9 +61,6 @@ binaries=(
   vim --override-system-vi
   homebrew/dupes/grep
   homebrew/dupes/screen
-  php54
-  php54-mcrypt
-  php54-memcached
   ack
   git
   graphicsmagick --with-libtiff

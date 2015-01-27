@@ -25,12 +25,11 @@ if [ ! -e ~/.nvm ]; then
   git clone https://github.com/creationix/nvm.git ~/.nvm && cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`
 fi
 
-if [ ! -e /usr/bin/phpbrew ]; then
+if [ ! -e ~/.phpbrew ]; then
   curl -L -O https://github.com/phpbrew/phpbrew/raw/master/phpbrew
   chmod +x phpbrew
   sudo mv phpbrew /usr/bin/phpbrew
   phpbrew init
-  phpbrew lookup-prefix homebrew
 fi
 
 # Plug
