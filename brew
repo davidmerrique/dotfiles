@@ -108,6 +108,15 @@ brew link ${links[@]}
 apps=(
   filebot
   # qlstephen
+  qlcolorcode
+  qlmarkdown
+  quicklook-json
+  qlprettypatch
+  quicklook-csv
+  betterzipql
+  qlimagesize
+  webpquicklook
+  suspicious-package
   font-inconsolata
   font-open-sans
   font-source-code-pro
