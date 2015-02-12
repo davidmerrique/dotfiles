@@ -36,6 +36,8 @@ if [ -f $NPM_PACKAGES/bin/npm ]; then
   alias npm=$NPM_PACKAGES/bin/npm
 fi
 
+alias npr="npm run"
+
 alias dotfiles="cd $DOTFILES"
 alias dotedit="atom $DOTFILES"
 
