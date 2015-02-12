@@ -121,6 +121,9 @@ export NVM_DIR="$HOME/.nvm"
 export NODE_PATH=$NODE_PATH:`npm root -g`
 export PATH="$(npm bin):$PATH"
 
+# npm completion
+. <(npm completion)
+
 zstyle ':completion:*:*:*:*:*' menu select
 zstyle ':completion:*:matches' group 'yes'
 zstyle ':completion:*:options' description 'yes'
