@@ -121,6 +121,9 @@ export NVM_DIR="$HOME/.nvm"
 export NODE_PATH=$NODE_PATH:`npm root -g`
 export PATH="$(npm bin):$PATH"
 
+# nvm completion
+[[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
+
 # npm completion
 . <(npm completion)
 
