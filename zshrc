@@ -3,8 +3,42 @@ source ~/.zsh/antigen/antigen.zsh
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-history-substring-search
 antigen bundle zsh-users/zsh-completions
+antigen bundle sharat87/autoenv
 
 antigen apply
+
+if [ -x /usr/libexec/path_helper ]; then
+  PATH=''
+  eval `/usr/libexec/path_helper -s`
+fi
+
+path=( "/sbin" $path )
+path=( "/usr/sbin" $path )
+path=( "/usr/bin" $path )
+path=( "/usr/local/bin" $path )
+path=( "/usr/local/opt/coreutils/libexec/gnubin" $path )
+path=( "/usr/local/sbin" $path )
+path=( "$GOPATH/bin" $path )
+path=( "$HOME/.composer/vendor/bin" $path )
+path=( "$HOME/.composer/bin" $path )
+path=( "$HOME/bin" $path )
+path=( "$HOME/.bin" $path )
+path=( "$HOME/.rbenv/bin" $path )
+path=( "$HOME/.rbenv/shims" $path )
+path=( "$DOTFILES/bin" $path )
+path=( "$NPM_PACKAGES/bin" $path )
+path=( "./vendor/bin" $path )
+path=( "./node_modules/.bin" $path )
+path=( "./bin" $path )
+
+typeset -U PATH
+
+export PATH
+
+# load rbenv if available
+if which rbenv &>/dev/null ; then
+  eval "$(rbenv init - --no-rehash)"
+fi
 
 for topic_folder ($DOTFILES/*) if [ -d $topic_folder ]; then fpath=($topic_folder $fpath); fi;
 
