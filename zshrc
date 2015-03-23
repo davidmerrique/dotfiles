@@ -111,6 +111,7 @@ bindkey -s "^T" "^[Isudo ^[A" # "t" for "toughguy"
 ulimit -S -n 2048
 
 # phpbrew
+# +default+dbs+mcrypt+iconv+icu+session+mcrypt+openssl
 source ~/.phpbrew/bashrc
 
 # z
