@@ -21,7 +21,8 @@
   merge-branch = !git checkout master && git merge @{-1}
   pr = !hub pull-request
   st = status
-  up = !git fetch origin && git rebase origin/master
+  # up = !git fetch origin && git rebase origin/master
+  up = !git fetch origin && git pull --rebase --prune $@ && git submodule update --init --recursive
   graph = log --all --graph --decorate --oneline -n30
   ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
   ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
@@ -48,6 +49,11 @@
   lt = describe --tags --abbrev=0
 
   fetchall = "!f() { for branch in `git branch -a | grep remotes | grep -v HEAD | grep -v master`; do git branch --track ${branch##*/} $branch; done; git fetch --all; git pull --all; }; f"
+
+  save = !git add -A && git commit -m 'SAVEPOINT'
+  wip = !git add -u && git commit -m 'WIP'
+  undo = reset HEAD~1 --mixed
+  wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
 [color]
   diff = auto
   status = auto
