@@ -118,10 +118,10 @@ S.bind('[:ctrl;alt;cmd', function(win) {
 })
 
 S.bnda({
-  'right:cmd;alt': S.op('nudge', { 'x': '+3%', 'y': '+0' }),
-  'left:cmd;alt': S.op('nudge', { 'x': '-3%', 'y': '+0' }),
-  'up:cmd;alt': S.op('nudge', { 'x': '+0', 'y': '-3%' }),
-  'down:cmd;alt': S.op('nudge', { 'x': '+0', 'y': '+3%' }),
+  // 'right:cmd;alt': S.op('nudge', { 'x': '+3%', 'y': '+0' }),
+  // 'left:cmd;alt': S.op('nudge', { 'x': '-3%', 'y': '+0' }),
+  // 'up:cmd;alt': S.op('nudge', { 'x': '+0', 'y': '-3%' }),
+  // 'down:cmd;alt': S.op('nudge', { 'x': '+0', 'y': '+3%' }),
   'right:ctrl;alt': S.op('resize', { 'width': '+3%', 'height': '+0' }),
   'left:ctrl;alt': S.op('resize', { 'width': '-3%', 'height': '+0' }),
   'up:ctrl;alt': S.op('resize', { 'width': '+0', 'height': '-3%' }),
