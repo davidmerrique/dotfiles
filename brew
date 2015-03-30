@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Ask for the administrator password upfront.
+sudo -v
+
+# Keep-alive: update existing `sudo` time stamp until the script has finished.
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
 # Check for Homebrew
 if test ! $(which brew); then
   echo "Installing homebrew..."
@@ -19,13 +25,14 @@ taps=(
   caskroom/versions
   peco/peco
   mpv-player/mpv
+  bramstein/webfonttools
 )
 
 echo "tapping..."
 brew tap ${taps[@]}
 
 binaries=(
-  gnu-sed --default-names
+  gnu-sed --with-default-names
   zsh
   zsh-completions
   zsh-syntax-highlighting
@@ -55,11 +62,13 @@ binaries=(
   coreutils
   findutils
   bash
+  bash-completion
   grc
   hub
   wget --with-iri
   vim --override-system-vi
   homebrew/dupes/grep
+  homebrew/dupes/openssh
   homebrew/dupes/screen
   ack
   git
@@ -90,6 +99,9 @@ binaries=(
   mobile-shell
   the_silver_searcher
   packer
+  sfnt2woff
+  sfnt2woff-zopfli
+  woff2
 )
 
 echo "installing binaries..."
@@ -97,6 +109,8 @@ for i in "${binaries[@]}"
 do
   brew install $i
 done
+
+sudo ln -s /usr/local/bin/gsha256sum /usr/local/bin/sha256sum
 
 links=(
   icu4c --force
