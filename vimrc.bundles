@@ -32,6 +32,7 @@ Plug 'plasticboy/vim-markdown'
 
 Plug 'kien/ctrlp.vim'
 Plug 'bling/vim-airline'
+Plug 'jeetsukumaran/vim-buffergator'
 
 call plug#end()
 filetype on
