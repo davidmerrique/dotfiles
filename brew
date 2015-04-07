@@ -66,7 +66,7 @@ binaries=(
   grc
   hub
   wget --with-iri
-  vim --override-system-vi
+  vim --override-system-vi --with-lua
   homebrew/dupes/grep
   homebrew/dupes/openssh
   homebrew/dupes/screen

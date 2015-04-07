@@ -6,26 +6,32 @@ filetype off
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'croaky/vim-colors-github'
-Plug 'danro/rename.vim'
-Plug 'kchmck/vim-coffee-script'
-Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
-Plug 'maksimr/vim-jsbeautify'
-Plug 'kien/ctrlp.vim'
-Plug 'scrooloose/syntastic'
-Plug 'thoughtbot/vim-rspec'
-Plug 'tpope/vim-bundler'
-Plug 'tpope/vim-cucumber'
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rails'
+Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
+Plug 'junegunn/goyo.vim'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
-Plug 'vim-scripts/matchit.zip'
-Plug 'vim-scripts/ctags.vim'
-Plug 'vim-scripts/tComment'
-Plug 'flazz/vim-colorschemes'
-Plug 'chriskempson/base16-vim'
-Plug 'mileszs/ack.vim'
+
+" Colors
+Plug 'chriskempson/vim-tomorrow-theme'
+
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-commentary', { 'on': '<Plug>Commentary' }
+Plug 'mbbill/undotree',      { 'on': 'UndotreeToggle'   }
+Plug 'ConradIrwin/vim-bracketed-paste'
+
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle'    }
+
+Plug 'justinmk/vim-gtfo'
+
+Plug 'pangloss/vim-javascript'
+Plug 'kchmck/vim-coffee-script'
+Plug 'plasticboy/vim-markdown'
+
+Plug 'kien/ctrlp.vim'
+Plug 'bling/vim-airline'
 
 call plug#end()
 filetype on
