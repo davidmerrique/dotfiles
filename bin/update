@@ -1,10 +1,14 @@
-#!/bin/bash
+#!/usr/bin/env zsh
 
 sudo -v
 
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-commands=(
+source ~/.zsh/antigen/antigen.zsh
+source ~/.dotfiles/zsh/aliases.zsh
+source $DOTFILES/lib/utils
+
+update_commands=(
   "rcup -d $DOTFILES"
   "brew update"
   "brew upgrade --all"
@@ -19,13 +23,13 @@ commands=(
   "gem update"
   "gem update --system"
   "composer self-update"
-  "zgen selfupdate"
-  "zgen update"
-  "zgen save"
+  "antigen update"
+  "antigen cleanup --force"
+  "reload!"
 )
 
-echo "updating..."
-for i in "${commands[@]}"; do
-  printf "\n**** Running: $i *****\n\n"
-  eval $i
+e_header "Updating..."
+for i in "${update_commands[@]}"; do
+  e_header "**** Running: $i *****"
+  eval ${i}
 done

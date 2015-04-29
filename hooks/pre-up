@@ -9,10 +9,6 @@ export DOTFILES=~/.dotfiles
 git -C $DOTFILES submodule update --init
 git -C $DOTFILES submodule foreach "(git checkout master; git pull)"
 
-if [ ! -e ~/zgen/zgen ]; then
-  git clone git@github.com:tarjoilija/zgen.git ~/zgen
-fi
-
 if [ ! -e ~/.config/base16-shell ]; then
   git clone git://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
 fi
