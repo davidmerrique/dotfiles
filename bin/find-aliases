@@ -1,7 +1,0 @@
-#!/bin/sh
-
-for i in `find . -type f`; do   # find all files in/under current dir
-echo "========"
-echo $i                         # print file name
-cat $i | grep "alias"           # find if it has alias and if it does print the line containing it
-done
