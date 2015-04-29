@@ -4,14 +4,6 @@ export DOTFILES=~/.dotfiles
 
 vim -u ~/.vimrc.bundles +PlugInstall +qall
 
-if [ -e ~/.oh-my-zsh/custom/pure.zsh-theme ]; then
-  rm ~/.oh-my-zsh/custom/pure.zsh-theme
-fi
-
-if [ ! -e "$HOME/.zfunctions/prompt_pure_setup" ]; then
-  ln -s "$DOTFILES/zsh/pure/pure.zsh" "$HOME/.zfunctions/prompt_pure_setup"
-fi
-
 if [ ! -e ~/.rbenv ]; then
   ln -s /usr/local/opt/rbenv ~/.rbenv
 fi

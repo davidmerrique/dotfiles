@@ -19,6 +19,9 @@ commands=(
   "gem update"
   "gem update --system"
   "composer self-update"
+  "zgen selfupdate"
+  "zgen update"
+  "zgen save"
 )
 
 echo "updating..."
