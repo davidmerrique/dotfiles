@@ -41,6 +41,8 @@ zstyle ':completion:*:killall:*' command 'ps -u $USER -o cmd'
 
 setopt nocasematch
 
+setopt AUTO_CD
+
 # Increases the open file descriptor limit, helps avoid errors when
 # running watch processes on a large number of files
 ulimit -S -n 2048
