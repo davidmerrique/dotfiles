@@ -1,12 +1,11 @@
 #!/usr/bin/env zsh
 
+source ~/.zsh/antigen/antigen.zsh
+source ~/.dotfiles/zsh/aliases.zsh
+
 sudo -v
 
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
-
-source ~/.zsh/antigen/antigen.zsh
-source ~/.dotfiles/zsh/aliases.zsh
-source $DOTFILES/lib/utils
 
 update_commands=(
   "rcup -d $DOTFILES"
@@ -20,16 +19,15 @@ update_commands=(
   "$DOTFILES/bin/nvmup"
   "npm cache clean -g"
   "$DOTFILES/npm-upgrade.sh"
-  "gem update"
-  "gem update --system"
-  "composer self-update"
+  "rbenv exec gem update"
+  "rbenv exec gem update --system"
   "antigen update"
   "antigen cleanup --force"
   "reload!"
 )
 
-e_header "Updating..."
+printf "\n**** Running: $i *****\n\n"
 for i in "${update_commands[@]}"; do
-  e_header "**** Running: $i *****"
+  printf "\n**** Running: $i *****\n\n"
   eval ${i}
 done
