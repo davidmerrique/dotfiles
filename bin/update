@@ -18,6 +18,7 @@ commands=(
   "$DOTFILES/npm-upgrade.sh"
   "gem update"
   "gem update --system"
+  "composer self-update"
 )
 
 echo "updating..."
