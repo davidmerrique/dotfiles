@@ -1,5 +1,4 @@
 autoload -U promptinit && promptinit
-prompt pure
 
 # makes color constants available
 autoload -U colors
