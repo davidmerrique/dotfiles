@@ -6,9 +6,11 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until the script has finished.
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
+source $DOTFILES/lib/utils
+
 # Check for Homebrew
 if test ! $(which brew); then
-  echo "Installing homebrew..."
+  e_header "Installing homebrew..."
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
@@ -28,8 +30,9 @@ taps=(
   bramstein/webfonttools
 )
 
-echo "tapping..."
+e_header "tapping..."
 brew tap ${taps[@]}
+[[ $? ]] && e_success "Done"
 
 binaries=(
   gnu-sed --with-default-names
@@ -91,7 +94,8 @@ binaries=(
   macvim
   brew-cask
   peco
-  mpv-player/mpv/libass-ct --HEAD
+  libass
+  libass-ct
   mpv
   homebrew/science/vips --with-webp --with-graphicsmagick
   ffmpeg --with-theora --with-tools --with-libvorbis --with-libvpx
@@ -99,12 +103,9 @@ binaries=(
   mobile-shell
   the_silver_searcher
   packer
-  sfnt2woff
-  sfnt2woff-zopfli
-  woff2
 )
 
-echo "installing binaries..."
+e_header "installing binaries..."
 for i in "${binaries[@]}"
 do
   brew install $i
@@ -116,8 +117,9 @@ links=(
   icu4c --force
 )
 
-echo "linking..."
+e_header "linking..."
 brew link ${links[@]}
+[[ $? ]] && e_success "Done"
 
 apps=(
   filebot
@@ -142,8 +144,10 @@ apps=(
   font-roboto
 )
 
-echo "installing apps..."
+e_header "installing apps..."
 brew cask install --appdir="/Applications" ${apps[@]}
+[[ $? ]] && e_success "Done"
+
 brew cask alfred link
 
 brew cleanup
