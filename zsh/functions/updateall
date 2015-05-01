@@ -19,11 +19,10 @@ update_commands=(
   "$DOTFILES/bin/nvmup"
   "npm cache clean -g"
   "$DOTFILES/npm-upgrade.sh"
-  "rbenv exec gem update"
-  "rbenv exec gem update --system"
+  "gem update"
+  "gem update --system"
   "antigen update"
   "antigen cleanup --force"
-  "reload!"
 )
 
 printf "\n**** Running: $i *****\n\n"
