@@ -154,3 +154,37 @@ alias hosts="head -2 ~/.ssh/known_hosts | tail -1 > ~/.ssh/known_hosts"
 
 # Pipe my public key to my clipboard. Fuck you, pay me.
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
+
+function updateall() {
+  source ~/.zsh/antigen/antigen.zsh
+  source ~/.dotfiles/zsh/aliases.zsh
+
+  sudo -v
+
+  while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+  update_commands=(
+    "rcup -d $DOTFILES"
+    "brew update"
+    "brew upgrade --all"
+    "brew prune"
+    "brew cleanup"
+    "brew linkapps"
+    "phpbrew self-update"
+    "phpbrew known --update"
+    "$DOTFILES/bin/nvmup"
+    "npm cache clean -g"
+    "$DOTFILES/npm-upgrade.sh"
+    "gem update"
+    "gem update --system"
+    "antigen update"
+    "antigen cleanup --force"
+  )
+
+  printf "\n**** Running: $i *****\n\n"
+  for i in "${update_commands[@]}"; do
+    printf "\n**** Running: $i *****\n\n"
+    eval ${i}
+  done
+
+}

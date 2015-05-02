@@ -4,7 +4,7 @@ autoload -U promptinit && promptinit
 autoload -U colors
 colors
 
-autoload -U $DOTFILES/zsh/functions/*(:t)
+autoload -Uz $DOTFILES/zsh/functions/*(:t)
 
 # history settings
 setopt hist_ignore_all_dups inc_append_history
