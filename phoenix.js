@@ -1,3 +1,5 @@
+/* global api */
+
 var mash = ['cmd', 'alt', 'ctrl']
 var mashShift = ['shift', 'alt', 'cmd']
 var margin = 20
@@ -96,9 +98,9 @@ moveFocusedWindowOn('m', mash, function (frame) {
   frame.y += margin
 })
 moveFocusedWindowOn('c', mash, function (frame) {
-  frame.width *= 0.75
+  frame.width *= 0.65
   frame.height *= 0.75
-  frame.x += frame.width * 0.15
+  frame.x += frame.width * 0.25
   frame.y += frame.height * 0.15
 })
 

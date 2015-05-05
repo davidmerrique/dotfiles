@@ -1,3 +1,5 @@
+/* global S */
+
 var margin = 20
 
 S.cfga({
