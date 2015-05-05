@@ -177,8 +177,8 @@ function updateall() {
     "$DOTFILES/npm-upgrade.sh"
     "gem update"
     "gem update --system"
-    "antigen update"
-    "antigen cleanup --force"
+    "zgen selfupdate"
+    "zgen update"
   )
 
   printf "\n**** Running: $i *****\n\n"

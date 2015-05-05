@@ -1,11 +1,15 @@
-source ~/.zsh/antigen/antigen.zsh
+source ~/zgen/zgen.zsh
 
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-history-substring-search
-antigen bundle zsh-users/zsh-completions
-antigen bundle sindresorhus/pure
+if ! zgen saved; then
+  echo "Creating a zgen save"
 
-antigen apply
+  zgen load zsh-users/zsh-syntax-highlighting
+  zgen load zsh-users/zsh-history-substring-search
+  zgen load zsh-users/zsh-completions src
+  zgen load sindresorhus/pure
+
+  zgen save
+fi
 
 source ~/.dotfiles/zsh/paths.zsh
 source ~/.dotfiles/zsh/vendor.zsh
