@@ -1,6 +1,7 @@
 /* global S */
 
 var margin = 20
+var Screen = S.screen
 
 S.cfga({
   'defaultToCurrentScreen': true,
@@ -73,12 +74,20 @@ var fullscreen = S.operation('move', {
   'height': 'screenSizeY-' + margin * 2
 })
 
-var centered = S.operation('move', {
-  'x': 'screenOriginX+350',
-  'y': 'screenOriginY+130',
-  'width': 'screenSizeX-700',
-  'height': 'screenSizeY-260'
-})
+var centered = function (win) {
+  var screen = win.screen()
+  var rect = screen.rect()
+  var width = rect.width * 1 / 7
+  var height = rect.height * 1 / 9
+  win.resize({
+    'width': rect.width - (width * 2),
+    'height': rect.height - (height * 2)
+  })
+  win.move({
+    'x': width,
+    'y': height
+  })
+}
 
 S.bind('down:shift;alt;cmd', bottomLeft)
 S.bind('right:shift;alt;cmd', bottomRight)
@@ -88,10 +97,10 @@ S.bind('left:ctrl;alt;cmd', pushLeft)
 S.bind('right:ctrl;alt;cmd', pushRight)
 S.bind('down:ctrl;alt;cmd', pushBottom)
 S.bind('up:ctrl;alt;cmd', pushTop)
-S.bind('c:ctrl;alt;cmd', centered)
 S.bind('m:ctrl;alt;cmd', fullscreen)
+S.bind('c:ctrl;alt;cmd', centered)
 
-S.bind(']:ctrl;alt;cmd', function(win) {
+S.bind(']:ctrl;alt;cmd', function (win) {
   var size = win.size()
   var position = win.topLeft()
   var distance = 50
@@ -105,7 +114,7 @@ S.bind(']:ctrl;alt;cmd', function(win) {
   })
 })
 
-S.bind('[:ctrl;alt;cmd', function(win) {
+S.bind('[:ctrl;alt;cmd', function (win) {
   var size = win.size()
   var position = win.topLeft()
   var distance = 50
