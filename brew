@@ -85,7 +85,6 @@ binaries=(
   zopfli
   rbenv
   ruby-build
-  composer
   speedtest_cli
   z
   go

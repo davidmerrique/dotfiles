@@ -31,6 +31,7 @@ alias flushdns="dscacheutil -flushcache"
 alias showhidden="defaults write com.apple.finder AppleShowAllFiles TRUE && killall Finder"
 alias hidehidden="defaults write com.apple.finder AppleShowAllFiles FALSE && killall Finder"
 alias artisan="php artisan"
+alias composer="php $HOME/bin/composer.phar"
 
 if [ -f $NPM_PACKAGES/bin/npm ]; then
   alias npm=$NPM_PACKAGES/bin/npm
@@ -170,7 +171,8 @@ function updateall() {
     "brew prune"
     "brew cleanup"
     "brew linkapps"
-    "phpbrew self-update"
+    "composer self-update"
+    # "phpbrew self-update"
     "phpbrew known --update"
     "$DOTFILES/bin/nvmup"
     "npm cache clean -g"
