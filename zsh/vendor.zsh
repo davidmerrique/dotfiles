@@ -5,9 +5,7 @@ fi
 
 # phpbrew
 # +default+dbs+mcrypt+iconv+icu+session+mcrypt+openssl
-if [ -d ~/.phpbrew ]; then
-  source ~/.phpbrew/bashrc
-fi
+source ~/.phpbrew/bashrc
 
 # z
 . `brew --prefix`/etc/profile.d/z.sh

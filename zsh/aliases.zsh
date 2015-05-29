@@ -172,7 +172,7 @@ function updateall() {
     "brew cleanup"
     "brew linkapps"
     "composer self-update"
-    # "phpbrew self-update"
+    "phpbrew self-update"
     "phpbrew known --update"
     "$DOTFILES/bin/nvmup"
     "npm cache clean -g"
