@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+set -e
+
+echo ''
+
+args=("$@")
+sizes=("${args[@]:1}")
+file="${args[0]}"
+
+for size in "${sizes[@]}"; do
+  convert $file -resize "${size}x" -quality 90 ${1%.*}-${size}.${1##*.}
+done
