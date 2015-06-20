@@ -102,6 +102,7 @@ binaries=(
   mobile-shell
   the_silver_searcher
   packer
+  libav
 )
 
 e_header "installing binaries..."
