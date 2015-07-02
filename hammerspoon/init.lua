@@ -1,6 +1,5 @@
 function reloadConfig(files)
   doReload = false
-    print("file")
   for _,file in pairs(files) do
     if file:sub(-4) == '.lua' then
       doReload = true
