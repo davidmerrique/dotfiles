@@ -76,7 +76,7 @@ hs.hotkey.bind(pushShiftKey, 'down', function() push(50, 50, 50, 50) end) -- bot
 hs.hotkey.bind(pushShiftKey, 'left', function() push(0, 50, 50, 50) end) -- bottom left
 
 -- Center window
-hs.hotkey.bind(pushKey, 'c', function() push(10, 5, 80, 85) end)
+hs.hotkey.bind(pushKey, 'c', function() push(14, 7, 72, 85) end)
 
 -- Fullscreen
 hs.hotkey.bind(pushKey, 'f', function() push(0, 0, 100, 100) end)
