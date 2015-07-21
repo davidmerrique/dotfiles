@@ -9,8 +9,10 @@ local screenHeight = hs.window.focusedWindow():screen():frame().h
 
 if screenWidth > 1680 then
   grid.GRIDWIDTH = 12
+  goCenter = {x = 2, y = 1, w = 8, h = 10}
 else
   grid.GRIDWIDTH = 10
+  goCenter = {x = gw/8, y = 1, w = gw-((gw/8)*2), h = 10}
 end
 
 grid.GRIDHEIGHT = 12
@@ -29,7 +31,6 @@ local goTopRight = {x = gw/2, y = 0, w = gw/2, h = gh/2}
 local goBottomRight = {x = gw/2, y = gh/2, w = gw/2, h = gh/2}
 local goBottomLeft = {x = 0, y = gh/2, w = gw/2, h = gh/2}
 
-local goCenter = {x = gw/8, y = 1, w = gw-((gw/8)*2), h = 10}
 local goFull = {x = 0, y = 0, w = gw, h = gh}
 
 -- Shortcuts
