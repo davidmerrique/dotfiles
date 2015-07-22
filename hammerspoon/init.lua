@@ -4,8 +4,8 @@ local grid = require 'hs.grid'
 -- Disable animation
 hs.window.animationDuration = 0
 
-local screenWidth = hs.window.focusedWindow():screen():frame().w
-local screenHeight = hs.window.focusedWindow():screen():frame().h
+local screenWidth = hs.screen.mainScreen():frame().w
+local screenHeight = hs.screen.mainScreen():frame().h
 
 if screenWidth > 1680 then
   grid.GRIDWIDTH = 12
