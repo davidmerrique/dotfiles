@@ -12,6 +12,7 @@ if screenWidth > 1680 then
   goCenter = {x = 2, y = 1, w = 8, h = 10}
 else
   grid.GRIDWIDTH = 10
+  local gw = grid.GRIDWIDTH
   goCenter = {x = gw/8, y = 1, w = gw-((gw/8)*2), h = 10}
 end
 
