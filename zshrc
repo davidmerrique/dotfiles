@@ -20,5 +20,10 @@ source ~/.dotfiles/zsh/exports.zsh
 source ~/.dotfiles/zsh/keybindings.zsh
 source ~/.dotfiles/zsh/aliases.zsh
 
+for file in ~/.dotfiles/zsh/functions/*
+do
+  source $file
+done
+
 # Local config
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
