@@ -28,3 +28,4 @@ export PATH
 
 fpath=( /usr/local/share/zsh-completions $fpath )
 fpath=( /usr/local/share/zsh/site-functions $fpath )
+fpath=( $DOTFILES/zsh/functions $fpath )

@@ -6,6 +6,8 @@ colors
 
 autoload -Uz $DOTFILES/zsh/functions/*(:t)
 
+autoload -U compinit && compinit
+
 # history settings
 setopt hist_ignore_all_dups inc_append_history
 HISTFILE=~/.zsh_history
