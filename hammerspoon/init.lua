@@ -4,21 +4,10 @@ local grid = require 'hs.grid'
 -- Disable animation
 hs.window.animationDuration = 0
 
-local screenWidth = hs.screen.mainScreen():frame().w
-local screenHeight = hs.screen.mainScreen():frame().h
-
-if screenWidth > 1680 then
-  grid.GRIDWIDTH = 12
-  goCenter = {x = 2, y = 1, w = 8, h = 10}
-else
-  grid.GRIDWIDTH = 10
-  local gw = grid.GRIDWIDTH
-  goCenter = {x = gw/8, y = 1, w = gw-((gw/8)*2), h = 10}
-end
-
-grid.GRIDHEIGHT = 12
-grid.MARGINX = 10
-grid.MARGINY = 10
+grid.GRIDWIDTH = 4
+grid.GRIDHEIGHT = 4
+grid.MARGINX = 15
+grid.MARGINY = 15
 
 local gw = grid.GRIDWIDTH
 local gh = grid.GRIDHEIGHT
@@ -74,11 +63,21 @@ hs.hotkey.bind(pushShiftKey, 'right', function() gridSet(goTopRight) end)
 hs.hotkey.bind(pushShiftKey, 'down', function() gridSet(goBottomRight) end)
 hs.hotkey.bind(pushShiftKey, 'left', function() gridSet(goBottomLeft) end)
 
--- Center window
-hs.hotkey.bind(moveKey, 'c', function() gridSet(goCenter) end)
-
 -- Fullscreen
 hs.hotkey.bind(moveKey, 'f', function() gridSet(goFull) end)
+
+-- Center window. More complicated
+hs.hotkey.bind(moveKey, 'c', function()
+  local screenWidth = hs.window.focusedWindow():screen():frame().w
+  local percentW = (screenWidth > 1920 and 0.85 or 0.88) * gw
+  local percentH = 0.92 * gh
+  local centerX = gw - percentW
+  local centerY = gh - percentH
+  local centerW = gw - (centerX * 2)
+  local centerH = gh - (centerY * 2)
+
+  gridSet({x = centerX, y = centerY, w = centerW, h = centerH})
+end)
 
 -- Auto reload config
 function reloadConfig(files)
