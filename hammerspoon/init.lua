@@ -7,7 +7,7 @@ hs.window.animationDuration = 0
 hs.grid.ui.textSize = 80
 
 grid.GRIDWIDTH = 5
-grid.GRIDHEIGHT = 5
+grid.GRIDHEIGHT = 4
 grid.MARGINX = 15
 grid.MARGINY = 15
 
