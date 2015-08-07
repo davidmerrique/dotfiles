@@ -4,24 +4,15 @@ local grid = require 'hs.grid'
 -- Disable animation
 hs.window.animationDuration = 0
 
-grid.GRIDWIDTH = 4
-grid.GRIDHEIGHT = 4
+hs.grid.ui.textSize = 80
+
+grid.GRIDWIDTH = 5
+grid.GRIDHEIGHT = 5
 grid.MARGINX = 15
 grid.MARGINY = 15
 
 local gw = grid.GRIDWIDTH
 local gh = grid.GRIDHEIGHT
-
-local goLeft = {x = 0, y = 0, w = gw/2, h = gh}
-local goRight = {x = gw/2, y = 0, w = gw/2, h = gh}
-local goUp = {x = 0, y = 0, w = gw, h = gh/2}
-local goDown = {x = 0, y = gh/2, w = gw, h = gh}
-local goTopLeft = {x = 0, y = 0, w = gw/2, h = gh/2}
-local goTopRight = {x = gw/2, y = 0, w = gw/2, h = gh/2}
-local goBottomRight = {x = gw/2, y = gh/2, w = gw/2, h = gh/2}
-local goBottomLeft = {x = 0, y = gh/2, w = gw/2, h = gh/2}
-
-local goFull = {x = 0, y = 0, w = gw, h = gh}
 
 -- Shortcuts
 local pushKey = {'alt', 'ctrl'}
@@ -29,13 +20,52 @@ local resizeKey = {'alt', 'ctrl', 'shift'}
 local moveKey = {'ctrl', 'alt', 'cmd'}
 local pushShiftKey = {'shift', 'alt', 'cmd'}
 
+function switch(t)
+  t.case = function (self,x)
+    local f=self[x] or self.default
+    if f then
+      if type(f)=="function" then
+        f(x,self)
+      else
+        error("case "..tostring(x).." not a function")
+      end
+    end
+  end
+  return t
+end
+
 -- Position a window in grid
-function gridSet(frame)
+function gridSet(name)
   local win = hs.window.focusedWindow()
-  if win then
-    grid.set(win, frame, win:screen())
+  local screenWidth = hs.window.focusedWindow():screen():frame().w
+  local percentW = (screenWidth > 1920 and 0.85 or 0.88) * gw
+  local percentH = 0.92 * gh
+  local centerX = gw - percentW
+  local centerY = gh - percentH
+  local centerW = gw - (centerX * 2)
+  local centerH = gh - (centerY * 2)
+
+  local table = {
+    left = {x = 0, y = 0, w = gw/2, h = gh},
+    right = {x = gw/2, y = 0, w = gw/2, h = gh},
+    up = {x = 0, y = 0, w = gw, h = gh/2},
+    down = {x = 0, y = gh/2, w = gw, h = gh},
+    topLeft = {x = 0, y = 0, w = gw/2, h = gh/2},
+    topRight = {x = gw/2, y = 0, w = gw/2, h = gh/2},
+    bottomRight = {x = gw/2, y = gh/2, w = gw/2, h = gh/2},
+    bottomLeft = {x = 0, y = gh/2, w = gw/2, h = gh/2},
+    full = {x = 0, y = 0, w = gw, h = gh},
+    center = {x = centerX, y = centerY, w = centerW, h = centerH}
+  }
+
+  if table[name] then
+    if win then
+      grid.set(win, table[name], win:screen())
+    else
+      alert.show('No focused window')
+    end
   else
-    alert.show('No focused window')
+    alert.show('Unknown position')
   end
 end
 
@@ -52,32 +82,25 @@ hs.hotkey.bind(resizeKey, 'right', hs.grid.resizeWindowWider)
 hs.hotkey.bind(resizeKey, 'left', hs.grid.resizeWindowThinner)
 
 -- Push to screen edge
-hs.hotkey.bind(moveKey, 'left', function() gridSet(goLeft) end)
-hs.hotkey.bind(moveKey, 'right', function() gridSet(goRight) end)
-hs.hotkey.bind(moveKey, 'up', function() gridSet(goUp) end)
-hs.hotkey.bind(moveKey, 'down', function() gridSet(goDown) end)
+hs.hotkey.bind(moveKey, 'left', function() gridSet('left') end)
+hs.hotkey.bind(moveKey, 'right', function() gridSet('right') end)
+hs.hotkey.bind(moveKey, 'up', function() gridSet('up') end)
+hs.hotkey.bind(moveKey, 'down', function() gridSet('down') end)
 
 -- Push to corner
-hs.hotkey.bind(pushShiftKey, 'up', function() gridSet(goTopLeft) end)
-hs.hotkey.bind(pushShiftKey, 'right', function() gridSet(goTopRight) end)
-hs.hotkey.bind(pushShiftKey, 'down', function() gridSet(goBottomRight) end)
-hs.hotkey.bind(pushShiftKey, 'left', function() gridSet(goBottomLeft) end)
+hs.hotkey.bind(pushShiftKey, 'up', function() gridSet('topLeft') end)
+hs.hotkey.bind(pushShiftKey, 'right', function() gridSet('topRight') end)
+hs.hotkey.bind(pushShiftKey, 'down', function() gridSet('bottomRight') end)
+hs.hotkey.bind(pushShiftKey, 'left', function() gridSet('bottomLeft') end)
 
 -- Fullscreen
-hs.hotkey.bind(moveKey, 'f', function() gridSet(goFull) end)
+hs.hotkey.bind(moveKey, 'f', function() gridSet('full') end)
 
 -- Center window. More complicated
-hs.hotkey.bind(moveKey, 'c', function()
-  local screenWidth = hs.window.focusedWindow():screen():frame().w
-  local percentW = (screenWidth > 1920 and 0.85 or 0.88) * gw
-  local percentH = 0.92 * gh
-  local centerX = gw - percentW
-  local centerY = gh - percentH
-  local centerW = gw - (centerX * 2)
-  local centerH = gh - (centerY * 2)
+hs.hotkey.bind(moveKey, 'c', function() gridSet('center') end)
 
-  gridSet({x = centerX, y = centerY, w = centerW, h = centerH})
-end)
+-- Show the grid
+hs.hotkey.bind(moveKey, 'g', hs.grid.show)
 
 -- Auto reload config
 function reloadConfig(files)
@@ -91,5 +114,6 @@ function reloadConfig(files)
     hs.reload()
   end
 end
+
 hs.pathwatcher.new(os.getenv('HOME') .. '/.dotfiles/hammerspoon/', reloadConfig):start()
 hs.alert.show('Config loaded')
