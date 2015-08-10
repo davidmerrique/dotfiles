@@ -22,7 +22,6 @@ taps=(
   homebrew/versions
   homebrew/binary
   thoughtbot/formulae
-  caskroom/cask
   caskroom/fonts
   caskroom/versions
   peco/peco
@@ -31,8 +30,10 @@ taps=(
 )
 
 e_header "tapping..."
-brew tap ${taps[@]}
-[[ $? ]] && e_success "Done"
+for i in "${taps[@]}"
+do
+  brew tap $i
+done
 
 binaries=(
   gnu-sed --with-default-names
@@ -42,7 +43,6 @@ binaries=(
   zsh-history-substring-search
   python
   sqlite
-  sshfs
   trash
   automake
   autoconf
@@ -91,7 +91,7 @@ binaries=(
   encfs
   cmake
   macvim
-  brew-cask
+  caskroom/cask/brew-cask
   peco
   libass
   libass-ct
@@ -118,8 +118,10 @@ links=(
 )
 
 e_header "linking..."
-brew link ${links[@]}
-[[ $? ]] && e_success "Done"
+for i in "${links[@]}"
+do
+  brew link $i
+done
 
 apps=(
   filebot
@@ -145,10 +147,10 @@ apps=(
 )
 
 e_header "installing apps..."
-brew cask install --appdir="/Applications" ${apps[@]}
-[[ $? ]] && e_success "Done"
-
-brew cask alfred link
+for i in "${apps[@]}"
+do
+  brew cask install --appdir="/Applications" $i
+done
 
 brew cleanup
 brew linkapps

@@ -9,30 +9,30 @@ export DOTFILES=~/.dotfiles
 git -C $DOTFILES submodule update --init
 git -C $DOTFILES submodule foreach "(git checkout master; git pull)"
 
-if [ ! -e ~/.config/base16-shell ]; then
+if [ ! -d ~/.config/base16-shell ]; then
   git clone git://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
 fi
 
-if [ ! -e ~/.npm-packages ]; then
+if [ ! -d ~/.npm-packages ]; then
   mkdir ~/.npm-packages
 fi
 
-if [ ! -e ~/.zfunctions ]; then
+if [ ! -d ~/.zfunctions ]; then
   mkdir ~/.zfunctions
 fi
 
-if [ ! -e ~/.nvm ]; then
+if [ ! -d ~/.nvm ]; then
   git clone https://github.com/creationix/nvm.git ~/.nvm && cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`
 fi
 
-if [ ! -e ~/.phpbrew ]; then
+if [ ! -d ~/.phpbrew ]; then
   curl -L -O https://github.com/phpbrew/phpbrew/raw/master/phpbrew
   chmod +x phpbrew
   sudo mv phpbrew /usr/bin/phpbrew
   phpbrew init
 fi
 
-if [ ! -e ~/zgen ]; then
+if [ ! -d ~/zgen ]; then
   git clone git@github.com:tarjoilija/zgen.git ~/zgen
 fi
 
