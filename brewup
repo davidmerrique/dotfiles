@@ -88,7 +88,7 @@ binaries=(
   speedtest_cli
   z
   go
-  encfs
+  homebrew/fuse/encfs
   cmake
   macvim
   caskroom/cask/brew-cask
