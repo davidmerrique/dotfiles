@@ -1,4 +1,6 @@
-source ~/zgen/zgen.zsh
+export DOTFILES=$HOME/.dotfiles
+
+source $HOME/zgen/zgen.zsh
 
 if ! zgen saved; then
   echo "Creating a zgen save"
@@ -13,12 +15,15 @@ if ! zgen saved; then
   zgen save
 fi
 
-source ~/.dotfiles/zsh/paths.zsh
-source ~/.dotfiles/zsh/vendor.zsh
-source ~/.dotfiles/zsh/config.zsh
-source ~/.dotfiles/zsh/exports.zsh
-source ~/.dotfiles/zsh/keybindings.zsh
-source ~/.dotfiles/zsh/aliases.zsh
+source $DOTFILES/zsh/paths.zsh
+source $DOTFILES/zsh/vendor.zsh
+source $DOTFILES/zsh/config.zsh
+source $DOTFILES/zsh/exports.zsh
+source $DOTFILES/zsh/keybindings.zsh
+source $DOTFILES/zsh/aliases.zsh
+for function in $DOTFILES/zsh/functions/*; do
+  source $function
+done
 
 # Local config
-[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+[[ -f $HOME/.zshrc.local ]] && source $HOME/.zshrc.local

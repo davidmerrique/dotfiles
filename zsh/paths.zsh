@@ -16,11 +16,11 @@ path=( "$HOME/bin" $path )
 path=( "$HOME/.bin" $path )
 path=( "$HOME/.rbenv/bin" $path )
 path=( "$HOME/.rbenv/shims" $path )
-path=( "$DOTFILES/bin" $path )
 path=( "$NPM_PACKAGES/bin" $path )
 path=( "./vendor/bin" $path )
 path=( "./node_modules/.bin" $path )
 path=( "./bin" $path )
+path=( "$DOTFILES/bin" $path )
 
 typeset -U PATH
 
@@ -28,4 +28,3 @@ export PATH
 
 fpath=( /usr/local/share/zsh-completions $fpath )
 fpath=( /usr/local/share/zsh/site-functions $fpath )
-fpath=( $DOTFILES/zsh/functions $fpath )

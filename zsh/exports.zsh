@@ -2,10 +2,6 @@
 export LSCOLORS="exfxcxdxbxegedabagacad"
 export CLICOLOR=true
 
-# use vim as the visual editor
-export VISUAL=vim
-export EDITOR=$VISUAL
-
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8

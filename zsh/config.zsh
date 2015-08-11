@@ -4,8 +4,6 @@ autoload -U promptinit && promptinit
 autoload -U colors
 colors
 
-autoload -Uz $DOTFILES/zsh/functions/*(:t)
-
 autoload -U compinit && compinit
 
 # history settings

@@ -1,11 +1,45 @@
 #!/bin/sh
 
-export DOTFILES=~/.dotfiles
+export DOTFILES=$HOME/.dotfiles
 
-vim -u ~/.vimrc.bundles +PlugInstall +qall
+if [ ! -d $HOME/.config/base16-shell ]; then
+  git clone git://github.com/chriskempson/base16-shell.git $HOME/.config/base16-shell
+fi
 
-if [ ! -e ~/.rbenv ]; then
-  ln -s /usr/local/opt/rbenv ~/.rbenv
+if [ ! -d $HOME/.npm-packages ]; then
+  mkdir $HOME/.npm-packages
+fi
+
+if [ ! -d $HOME/.zfunctions ]; then
+  mkdir $HOME/.zfunctions
+fi
+
+if [ ! -d $HOME/.nvm ]; then
+  git clone https://github.com/creationix/nvm.git $HOME/.nvm && cd $HOME/.nvm && git checkout `git describe --abbrev=0 --tags`
+fi
+
+if [ ! -d $HOME/.phpbrew ]; then
+  curl -L -O https://github.com/phpbrew/phpbrew/raw/master/phpbrew
+  chmod +x phpbrew
+  sudo mv phpbrew /usr/bin/phpbrew
+  phpbrew init
+fi
+
+if [ ! -d $HOME/zgen ]; then
+  git clone git@github.com:tarjoilija/zgen.git $HOME/zgen
+fi
+
+if [ ! -f $HOME/bin/composer.phar ]; then
+  curl -sS https://getcomposer.org/installer | php -- --install-dir="$HOME/bin"
+fi
+
+if [ ! -e $HOME/.vim/autoload/plug.vim ]; then
+  curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+fi
+vim -u $HOME/.vimrc.bundles +PlugInstall +PlugClean! +qa
+
+if [ ! -e $HOME/.rbenv ]; then
+  ln -s /usr/local/opt/rbenv $HOME/.rbenv
 fi
 
 if [ -e $(brew --prefix osxfuse)/Library/Filesystems/osxfusefs.fs ]; then
