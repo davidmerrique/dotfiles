@@ -4,9 +4,9 @@ packages=(
   trash
   bower
   gulp
-  browserify
   npm
   keybase-installer
+  david
 )
 
 echo "installing packages..."

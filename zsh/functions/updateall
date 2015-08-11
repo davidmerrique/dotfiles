@@ -17,7 +17,7 @@ function updateall() {
     "phpbrew known --update"
     "$DOTFILES/bin/nvmup"
     "npm cache clean -g"
-    "$DOTFILES/npm-upgrade.sh"
+    "$DOTFILES/lib/npm-upgrade.sh"
     "gem update"
     "gem update --system"
     "zgen selfupdate"

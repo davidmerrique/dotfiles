@@ -1,3 +1,2 @@
-EXCLUDES="README.md LICENSE brewup node set-defaults.sh npm-upgrade.sh npm-upgrade-bleeding.sh shell lib"
+EXCLUDES="README.md lib"
 DOTFILES_DIRS="$HOME/.dotfiles"
-SYMLINK_DIRS="iterm zsh/antigen"
