@@ -1,81 +1,29 @@
-[hub]
-  protocol = https
-[user]
-	name = David Merrique
-	email = david.merrique@gmail.com
-  helper = osxkeychain
-[credential]
+[init]
+  templatedir = ~/.git_template
+[push]
+  default = current
+[color]
+  ui = auto
 [alias]
-  co = checkout
-  promote = !$DOTFILES/bin/git-promote
-  wtf     = !$DOTFILES/bin/git-wtf
-  rank-contributers = !$DOTFILES/bin/git-rank-contributers
-  count   = !git shortlog -sn
   aa = add --all
   ap = add --patch
-  ca = commit --amend
+  branches = for-each-ref --sort=-committerdate --format=\"%(color:blue)%(authordate:relative)\t%(color:red)%(authorname)\t%(color:white)%(color:bold)%(refname:short)\" refs/remotes
   ci = commit -v
   co = checkout
+  st = status
   create-branch = !sh -c 'git push origin HEAD:refs/heads/$1 && git fetch origin && git branch --track $1 origin/$1 && cd . && git checkout $1' -
   delete-branch = !sh -c 'git push origin :refs/heads/$1 && git remote prune origin && git branch -D $1' -
   merge-branch = !git checkout master && git merge @{-1}
-  pr = !hub pull-request
-  st = status
-  # up = !git fetch origin && git rebase origin/master
   up = !git fetch origin && git pull --rebase --prune $@ && git submodule update --init --recursive
-  graph = log --all --graph --decorate --oneline -n30
-  ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
-  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
-  lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
-  ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
-  f = "!git ls-files | grep -i"
-  grep = grep -Ii
-  gr = grep -Ii
-  la = "!git config -l | grep alias | cut -c 7-"
-  done = "!f() { git branch | grep "$1" | cut -c 3- | grep -v done | xargs -I{} git branch -m {} done-{}; }; f"
-  pull-remote = "!git checkout --track $1"
-
-  # If you interact with big corporate projects - like Java projects under
-  # Subversion - you might run into the need to ignore certain files which
-  # are under subversion control but you need to modify them but not commit.
-  # The assume-unchanged flag comes to the rescue.
-  assume = update-index --assume-unchanged
-  unassume = update-index --no-assume-unchanged
-  assumed = "!git ls-files -v | grep ^h | cut -c 3-"
-  unassumeall = "!git assumed | xargs git update-index --no-assume-unchanged"
-  assumeall = "!git st -s | awk {'print $2'} | xargs git assume"
-
-  lasttag = describe --tags --abbrev=0
-  lt = describe --tags --abbrev=0
-
   fetchall = "!f() { for branch in `git branch -a | grep remotes | grep -v HEAD | grep -v master`; do git branch --track ${branch##*/} $branch; done; git fetch --all; git pull --all; }; f"
-
-  save = !git add -A && git commit -m 'SAVEPOINT'
-  wip = !git add -u && git commit -m 'WIP'
-  undo = reset HEAD~1 --mixed
-  wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
-[color]
-  diff = auto
-  status = auto
-  branch = auto
-  ui = true
 [core]
   excludesfile = ~/.gitignore
-  editor = vim
-	autocrlf = input
-[apply]
-  whitespace = nowarn
-[mergetool]
-  keepBackup = false
-[difftool]
-  prompt = false
-[help]
-  autocorrect = 1
-[push]
-	default = simple
-# [merge]
-#   ff = only
-[filter "media"]
-	required = true
-	clean = git media clean %f
-	smudge = git media smudge %f
+  autocrlf = input
+[merge]
+  ff = only
+[fetch]
+  prune = true
+[rebase]
+  autosquash = true
+[include]
+  path = ~/.gitconfig.local
