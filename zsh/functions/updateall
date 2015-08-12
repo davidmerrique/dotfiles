@@ -1,10 +1,6 @@
 #!/usr/bin/env zsh
 
 function updateall() {
-  sudo -v
-
-  while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
-
   update_commands=(
     "rcup -d $DOTFILES"
     "brew update"
