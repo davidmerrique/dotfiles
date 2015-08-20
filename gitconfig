@@ -14,6 +14,7 @@
   merge-branch = !git checkout master && git merge @{-1}
   up = !git fetch origin && git pull --rebase --prune $@ && git submodule update --init --recursive
   fetchall = "!f() { for branch in `git branch -a | grep remotes | grep -v HEAD | grep -v master`; do git branch --track ${branch##*/} $branch; done; git fetch --all; git pull --all; }; f"
+  scrub = "!f() { filter=\"git rm --cached --ignore-unmatch $1\" git filter-branch --force --index-filter \"$filter\" --prune-empty --tag-name-filter cat -- --all; }; f"
 [core]
   excludesfile = ~/.gitignore
   autocrlf = input
