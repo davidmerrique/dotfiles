@@ -2,18 +2,6 @@
 
 export DOTFILES=$HOME/.dotfiles
 
-if [ ! -d $HOME/.config/base16-shell ]; then
-  git clone git://github.com/chriskempson/base16-shell.git $HOME/.config/base16-shell
-fi
-
-if [ ! -d $HOME/.config/oceanic-next-shell ]; then
-  git clone git://github.com/mhartington/oceanic-next-shell.git $HOME/.config/oceanic-next-shell
-fi
-
-if [ ! -d $HOME/.iterm/themes/oceanic-next-iterm ]; then
-  git clone git@github.com:mhartington/oceanic-next-iterm.git $HOME/.iterm/themes/oceanic-next-iterm
-fi
-
 if [ ! -d $HOME/.npm-packages ]; then
   mkdir $HOME/.npm-packages
 fi
