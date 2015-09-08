@@ -9,5 +9,7 @@ export EDITOR=$VISUAL
 
 export GOPATH=$HOME/go
 
+ZGEN_RESET_ON_CHANGE=($DOTFILES/zshrc)
+
 # Local config
 [[ -f ~/.zshenv.local ]] && source ~/.zshenv.local
