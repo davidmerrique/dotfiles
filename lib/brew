@@ -22,7 +22,7 @@ taps=(
   homebrew/versions
   homebrew/binary
   thoughtbot/formulae
-  caskroom/fonts
+  caskroom/homebrew-fonts
   caskroom/versions
   peco/peco
   mpv-player/mpv
