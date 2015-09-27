@@ -31,10 +31,6 @@ alias flushdns="dscacheutil -flushcache"
 alias artisan="php artisan"
 alias composer="php $HOME/bin/composer.phar"
 
-if [ -f $NPM_PACKAGES/bin/npm ]; then
-  alias npm=$NPM_PACKAGES/bin/npm
-fi
-
 alias npr="npm run"
 
 alias dotfiles="cd $DOTFILES"
