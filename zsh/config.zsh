@@ -25,9 +25,6 @@ setopt INC_APPEND_HISTORY
 setopt autocd autopushd pushdminus pushdsilent pushdtohome cdablevars
 DIRSTACKSIZE=5
 
-# Try to correct command line spelling
-setopt correct correctall
-
 # Enable extended globbing
 setopt extendedglob
 
