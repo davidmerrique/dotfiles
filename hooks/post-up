@@ -2,10 +2,6 @@
 
 export DOTFILES=$HOME/.dotfiles
 
-if [ ! -d $HOME/.npm-packages ]; then
-  mkdir $HOME/.npm-packages
-fi
-
 if [ ! -d $HOME/.zfunctions ]; then
   mkdir $HOME/.zfunctions
 fi
@@ -43,8 +39,10 @@ if [ -e $(brew --prefix osxfuse)/Library/Filesystems/osxfusefs.fs ]; then
   sudo chmod +s /Library/Filesystems/osxfusefs.fs/Support/load_osxfusefs
 fi
 
-curl -o /usr/local/bin/gifify -O https://raw.githubusercontent.com/jclem/gifify/master/gifify.sh
-chmod +x /usr/local/bin/gifify
+if [ ! -e /usr/local/bin/gifify ]; then
+  curl -o /usr/local/bin/gifify -O https://raw.githubusercontent.com/jclem/gifify/master/gifify.sh
+  chmod +x /usr/local/bin/gifify
+fi
 
 if ! grep -Fxq "$(command -v zsh)" /etc/shells
 then
