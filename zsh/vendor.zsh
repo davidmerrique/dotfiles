@@ -1,7 +1,5 @@
 # load rbenv if available
-if which rbenv &>/dev/null ; then
-  eval "$(rbenv init - --no-rehash)"
-fi
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # phpbrew
 # +default+dbs+mcrypt+iconv+icu+session+mcrypt+openssl
