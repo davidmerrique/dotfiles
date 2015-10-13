@@ -1,11 +1,10 @@
 #!/bin/bash
 
 packages=(
-  trash
+  trash-cli
   bower
   gulp
   npm
-  keybase-installer
   david
 )
 
