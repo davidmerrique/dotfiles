@@ -2,8 +2,14 @@
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # phpbrew
-# +default+dbs+mcrypt+iconv+icu+session+mcrypt+openssl
-source ~/.phpbrew/bashrc
+# brew link icu4c gettext --force
+# phpbrew -d install 5.6.13 +default+dbs+mcrypt+iconv+icu+session+mcrypt+openssl
+# phpbrew -d install 5.6.13 +default+dbs+mcrypt+iconv+icu+session+mcrypt+openssl+gd -- --with-gd=shared --enable-gd-natf --with-jpeg-dir=/usr/local --with-png-dir=/usr/local
+# phpbrew -d ext install gd -- --with-gd-native--ttf --with-jpeg-dir=/usr/local --with-png-dir=/usr/local --with-zlib-dir=/usr/local --with-freetype-dir=/usr/local
+# source ~/.phpbrew/bashrc
+
+# php-version
+source $(brew --prefix php-version)/php-version.sh && php-version 5
 
 # z
 . `brew --prefix`/etc/profile.d/z.sh
