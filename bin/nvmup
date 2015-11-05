@@ -1,7 +1,5 @@
 #!/bin/sh
 
-set -e
-
 NVMDIR="$HOME/.nvm"
 
 git -C "$NVMDIR" fetch --tags

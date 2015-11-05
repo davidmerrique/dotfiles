@@ -12,8 +12,6 @@
 # Stolen from Ryan Tomayko
 # http://github.com/rtomayko/dotfiles/blob/rtomayko/bin/git-up
 
-set -e
-
 PULL_ARGS="$@"
 
 # when invoked as git-reup, run as `git pull --rebase'
