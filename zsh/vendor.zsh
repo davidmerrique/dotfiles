@@ -29,3 +29,5 @@ export PATH="$(npm bin):$PATH"
 
 # npm completion
 . <(npm completion)
+
+[[ -f $HOME/torch/install/bin/torch-activate ]] && . $HOME/torch/install/bin/torch-activate
