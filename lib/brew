@@ -97,7 +97,7 @@ binaries=(
   libass-ct
   mpv
   homebrew/science/vips --with-webp --with-graphicsmagick
-  ffmpeg --with-theora --with-tools --with-libvorbis --with-libvpx
+  ffmpeg --with-faac --with-theora --with-tools --with-libvorbis --with-libvpx
   ffmpeg2theora
   mobile-shell
   the_silver_searcher

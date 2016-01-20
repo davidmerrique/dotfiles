@@ -7,5 +7,5 @@ sizes=("${args[@]:1}")
 file="${args[0]}"
 
 for size in "${sizes[@]}"; do
-  convert $file -resize "${size}x" -quality 90 ${1%.*}-${size}.${1##*.}
+  convert $file -resize "${size}x" -quality 80 ${1%.*}-${size}.${1##*.}
 done
