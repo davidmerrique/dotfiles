@@ -94,7 +94,7 @@ binaries=(
   peco
   libass
   libass-ct
-  mpv
+  mpv --with-libaacs
   homebrew/science/vips --with-webp --with-graphicsmagick
   ffmpeg --with-faac --with-theora --with-tools --with-libvorbis --with-libvpx
   ffmpeg2theora
