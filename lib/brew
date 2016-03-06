@@ -145,6 +145,7 @@ apps=(
   font-clear-sans
   font-roboto
   font-roboto-mono
+  font-fira-mono
 )
 
 e_header "installing apps..."
