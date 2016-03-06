@@ -91,7 +91,6 @@ binaries=(
   homebrew/fuse/encfs
   cmake
   macvim
-  caskroom/cask/brew-cask
   peco
   libass
   libass-ct
