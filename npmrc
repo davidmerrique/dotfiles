@@ -1,4 +1,4 @@
 loglevel=error
 save=true
 save-exact=true
-progress=false
+progress=true
