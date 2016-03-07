@@ -91,11 +91,10 @@ binaries=(
   homebrew/fuse/encfs
   cmake
   macvim
-  caskroom/cask/brew-cask
   peco
   libass
   libass-ct
-  mpv
+  mpv --with-libaacs --with-bundle
   homebrew/science/vips --with-webp --with-graphicsmagick
   ffmpeg --with-faac --with-theora --with-tools --with-libvorbis --with-libvpx
   ffmpeg2theora
@@ -145,6 +144,7 @@ apps=(
   font-clear-sans
   font-roboto
   font-roboto-mono
+  font-fira-mono
 )
 
 e_header "installing apps..."
