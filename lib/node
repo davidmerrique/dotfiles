@@ -6,6 +6,8 @@ packages=(
   gulp
   npm
   david
+  eslint-config-airbnb
+  eslint
 )
 
 echo "installing packages..."
