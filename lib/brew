@@ -102,6 +102,7 @@ binaries=(
   the_silver_searcher
   packer
   libav
+  mas
 )
 
 e_header "installing binaries..."

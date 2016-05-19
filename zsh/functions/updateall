@@ -16,6 +16,7 @@ function updateall() {
     "$DOTFILES/lib/npm-upgrade.sh"
     "gem update"
     "gem update --system"
+    "mas upgrade"
     "zgen selfupdate"
     "zgen update"
   )
