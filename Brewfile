@@ -142,7 +142,7 @@ cask 'font-source-sans-pro'
 cask 'font-source-serif-pro'
 
 cask 'gas-mask'
-cask 'github'
+cask 'github-desktop'
 cask 'handbrake'
 cask 'libreoffice'
 cask 'macdown'
