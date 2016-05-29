@@ -8,6 +8,7 @@ function updateall() {
     "brew prune"
     "brew cleanup"
     "brew linkapps"
+    "$DOTFILES/bin/brew-cask-cleanup"
     "composer self-update"
     # "phpbrew self-update"
     # "phpbrew known --update"
