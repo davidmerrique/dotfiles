@@ -1,11 +1,9 @@
 #!/bin/sh
 
-NVMDIR="$HOME/.nvm"
+NVM_DIR="$HOME/.nvm"
 
-git -C "$NVMDIR" fetch --tags
-TAG=$(git -C "$NVMDIR" describe --tags `git -C "$NVMDIR" rev-list --tags --max-count=1`)
-echo "Checking out tag $TAG..."
-git -C "$NVMDIR" checkout "$TAG"
+git -C "$NVM_DIR" fetch origin
+git -C "$NVM_DIR" checkout `git describe --abbrev=0 --tags`
 
-source "$NVMDIR/nvm.sh"
+source "$NVM_DIR/nvm.sh"
 export NODE_PATH=$NODE_PATH:`npm root -g`

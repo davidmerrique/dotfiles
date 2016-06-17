@@ -24,6 +24,19 @@ export NVM_DIR="$HOME/.nvm"
 export NODE_PATH=$NODE_PATH:`npm root -g`
 export PATH="$(npm bin):$PATH"
 
+# place this after nvm initialization!
+autoload -U add-zsh-hook
+load-nvmrc() {
+  if [[ -f .nvmrc && -r .nvmrc ]]; then
+    nvm use
+  elif [[ $(nvm version) != $(nvm version default)  ]]; then
+    echo "Reverting to nvm default version"
+    nvm use default
+  fi
+}
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
+
 # nvm completion
 [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
 
