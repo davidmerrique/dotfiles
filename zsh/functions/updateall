@@ -12,7 +12,7 @@ function updateall() {
     "composer self-update"
     # "phpbrew self-update"
     # "phpbrew known --update"
-    "$DOTFILES/bin/nvmup"
+    "$DOTFILES/bin/nvm-update"
     "npm cache clean -g"
     "$DOTFILES/lib/npm-upgrade.sh"
     "gem update"
