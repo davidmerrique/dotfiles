@@ -6,11 +6,9 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until the script has finished.
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-source ./lib/utils
-
 # Check for Homebrew
 if test ! $(which brew); then
-  e_header "Installing homebrew..."
+  echo "Installing homebrew..."
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
@@ -29,7 +27,7 @@ taps=(
   bramstein/webfonttools
 )
 
-e_header "tapping..."
+echo "tapping..."
 for i in "${taps[@]}"
 do
   brew tap $i
@@ -105,7 +103,7 @@ binaries=(
   mas
 )
 
-e_header "installing binaries..."
+echo "installing binaries..."
 for i in "${binaries[@]}"
 do
   brew install $i
@@ -117,7 +115,7 @@ links=(
   icu4c --force
 )
 
-e_header "linking..."
+echo "linking..."
 for i in "${links[@]}"
 do
   brew link $i
@@ -148,7 +146,7 @@ apps=(
   font-fira-mono
 )
 
-e_header "installing apps..."
+echo "installing apps..."
 for i in "${apps[@]}"
 do
   brew cask install --appdir="/Applications" $i
