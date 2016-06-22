@@ -1,0 +1,9 @@
+#!/bin/sh
+
+NVM_DIR="$HOME/.nvm"
+latest=$(git -C "$NVM_DIR" describe --abbrev=0 --tags)
+
+git -C "$NVM_DIR" fetch origin
+git -C "$NVM_DIR" checkout "$latest"
+
+. "$NVM_DIR/nvm.sh"

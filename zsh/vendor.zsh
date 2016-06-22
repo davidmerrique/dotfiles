@@ -21,8 +21,6 @@ BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-export NODE_PATH="$(npm root -g):$NODE_PATH"
-export PATH="$(npm bin):$PATH"
 
 # place this after nvm initialization!
 autoload -U add-zsh-hook

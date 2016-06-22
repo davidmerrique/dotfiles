@@ -1,9 +1,0 @@
-#!/bin/sh
-
-NVM_DIR="$HOME/.nvm"
-
-git -C "$NVM_DIR" fetch origin
-git -C "$NVM_DIR" checkout `git describe --abbrev=0 --tags`
-
-source "$NVM_DIR/nvm.sh"
-export NODE_PATH=$NODE_PATH:`npm root -g`
