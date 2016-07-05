@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "dependencies": {
     "commander": "2.9.0",
-    "gm": "1.22.0"
+    "gm": "1.22.0",
+    "shelljs": "0.7.0"
   }
 }
