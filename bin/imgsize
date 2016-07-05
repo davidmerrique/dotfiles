@@ -14,13 +14,13 @@ function list(val) {
 
 program
   .usage('[options] <file ...>')
-  .option('-q, --quality <n>', 'Image Quality', parseInt)
-  .option('-s, --sizes <items>', 'Image Sizes to Generate', list)
+  .option('-q, --quality <n>', 'Image Quality', parseInt, 80)
+  .option('-s, --sizes <items>', 'Image Sizes to Generate - "2500 1800 1280 768"', list, [])
   .parse(process.argv);
 
 const file = program.args[0];
-const sizes = program.sizes || [];
-const quality = program.quality || 80;
+const sizes = program.sizes
+const quality = program.quality;
 
 if (file && sizes && sizes.length) {
   for (let size of sizes) {

@@ -15,6 +15,7 @@ function updateall() {
     "$DOTFILES/bin/nvm-update"
     "npm cache clean -g"
     "$DOTFILES/lib/npm-upgrade.sh"
+    "(cd $DOTFILES && npm i && npm update)"
     "gem update"
     "gem update --system"
     "mas upgrade"
