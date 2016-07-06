@@ -7,32 +7,53 @@
 const path = require('path');
 const gm = require('gm');
 const program = require('commander');
+const min = require('lodash/min');
+const last = require('lodash/last');
 
-function list(val) {
-  return val.split(' ').map(n => parseInt(n, 10));
-}
+const list = val => val.split(',');
 
 program
   .usage('[options] <file ...>')
   .option('-q, --quality <n>', 'Image Quality', parseInt, 80)
-  .option('-s, --sizes <items>', 'Image Sizes to Generate - "2500 1800 1280 768"', list, [])
+  .option('-s, --sizes <items>', 'Image Sizes to Generate - 2500,1800,1280,768', list, [])
+  .option('-f, --formats <items>', 'Additional Image Formats to Generate - jpg,webp,png', list, [])
   .parse(process.argv);
 
 const file = program.args[0];
 const sizes = program.sizes
 const quality = program.quality;
+const formats = program.formats;
+
+const filepath = path.resolve(file);
+formats.push(path.extname(filepath).replace('.', ''));
+
+const imgSrces = formats.map(format => {
+  const srcset = sizes.map(size => `${path.basename(filepath, path.extname(filepath))}-${size}.${format} ${size}w`);
+  return `<source srcset="${srcset.join(',\n')}" type="image/${format}">`
+})
+
+const pictureEl = `
+<picture>
+  ${imgSrces.join('\n')}
+  <img src="${path.basename(filepath, path.extname(filepath))}-${min(sizes)}${path.extname(filepath)}" alt="" />
+</picture>
+`;
+
+console.log(pictureEl);
 
 if (file && sizes && sizes.length) {
-  for (let size of sizes) {
-    const filepath = path.resolve(file);
-    const filedest = `${path.dirname(filepath)}/${path.basename(filepath, path.extname(filepath))}-${size}${path.extname(filepath)}`;
-    gm(filepath)
-      .resize(size)
-      .quality(quality)
-      .write(filedest, err => {
-        if (!err) {
-          console.log(`Wrote ${filedest}`);
-        }
-      })
+  for (let format of formats) {
+    for (let size of sizes) {
+      const filedest = `${path.dirname(filepath)}/${path.basename(filepath, path.extname(filepath))}-${size}.${format}`;
+      gm(filepath)
+        .resize(size)
+        .quality(format === 'webp' ? quality - 15 : quality)
+        .noProfile()
+        .write(filedest, err => {
+          if (!err) {
+            console.log(`Wrote ${filedest}`);
+          }
+        });
+    }
   }
 }
