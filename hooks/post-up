@@ -27,27 +27,12 @@ if [ ! -f $HOME/bin/composer.phar ]; then
   curl -sS https://getcomposer.org/installer | php -- --install-dir="$HOME/bin"
 fi
 
-if [ ! -e $HOME/.vim/autoload/plug.vim ]; then
-  curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-fi
-vim -u $HOME/.vimrc.bundles +PlugInstall +PlugClean! +qa
-
 if [ ! -e $HOME/.rbenv ]; then
   ln -s /usr/local/opt/rbenv $HOME/.rbenv
-fi
-
-if [ ! -e /usr/local/bin/gifify ]; then
-  curl -o /usr/local/bin/gifify -O https://raw.githubusercontent.com/jclem/gifify/master/gifify.sh
-  chmod +x /usr/local/bin/gifify
 fi
 
 if ! grep -Fxq "$(command -v zsh)" /etc/shells
 then
   command -v zsh | sudo tee -a /etc/shells
   sudo chsh -s "$(command -v zsh)" "${USER}"
-fi
-
-# Install spot
-if test ! $(which spot); then
-  curl -L https://raw.github.com/guille/spot/master/spot.sh -o /usr/local/bin/spot && chmod +x /usr/local/bin/spot
 fi

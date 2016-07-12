@@ -15,7 +15,6 @@ tap 'homebrew/science'
 tap 'homebrew/services'
 tap 'homebrew/versions'
 tap 'mpv-player/mpv'
-tap 'neovim/neovim'
 tap 'thoughtbot/formulae'
 
 brew 'openssl'
