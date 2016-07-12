@@ -36,11 +36,6 @@ if [ ! -e $HOME/.rbenv ]; then
   ln -s /usr/local/opt/rbenv $HOME/.rbenv
 fi
 
-if [ -e $(brew --prefix osxfuse)/Library/Filesystems/osxfusefs.fs ]; then
-  sudo /bin/cp -RfX $(brew --prefix osxfuse)/Library/Filesystems/osxfusefs.fs /Library/Filesystems
-  sudo chmod +s /Library/Filesystems/osxfusefs.fs/Support/load_osxfusefs
-fi
-
 if [ ! -e /usr/local/bin/gifify ]; then
   curl -o /usr/local/bin/gifify -O https://raw.githubusercontent.com/jclem/gifify/master/gifify.sh
   chmod +x /usr/local/bin/gifify
