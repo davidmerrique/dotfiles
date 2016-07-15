@@ -1,18 +1,13 @@
--- Import
-local grid = require 'hs.grid'
-
 -- Disable animation
 hs.window.animationDuration = 0
 
-hs.grid.ui.textSize = 80
+-- Set up grid
+local gw = 8
+local gh = 8
 
-grid.GRIDWIDTH = 6
-grid.GRIDHEIGHT = 4
-grid.MARGINX = 15
-grid.MARGINY = 15
-
-local gw = grid.GRIDWIDTH
-local gh = grid.GRIDHEIGHT
+hs.grid.setGrid(gw .. 'x' .. gh)
+hs.grid.setMargins({w = 0, h = 0})
+hs.grid.ui.textSize = 16
 
 -- Shortcuts
 local pushKey = {'alt', 'ctrl'}
@@ -20,45 +15,69 @@ local resizeKey = {'alt', 'ctrl', 'shift'}
 local moveKey = {'ctrl', 'alt', 'cmd'}
 local pushShiftKey = {'shift', 'alt', 'cmd'}
 
--- Movement
-hs.hotkey.bind(pushKey, 'down', hs.grid.pushWindowDown)
-hs.hotkey.bind(pushKey, 'up', hs.grid.pushWindowUp)
-hs.hotkey.bind(pushKey, 'right', hs.grid.pushWindowRight)
-hs.hotkey.bind(pushKey, 'left', hs.grid.pushWindowLeft)
+-- move while snapping size to grid
+local moves = {
+  up = hs.grid.pushWindowUp,
+  down = hs.grid.pushWindowDown,
+  left = hs.grid.pushWindowLeft,
+  right = hs.grid.pushWindowRight,
+}
 
--- Resize
-hs.hotkey.bind(resizeKey, 'up', hs.grid.resizeWindowShorter)
-hs.hotkey.bind(resizeKey, 'down', hs.grid.resizeWindowTaller)
-hs.hotkey.bind(resizeKey, 'right', hs.grid.resizeWindowWider)
-hs.hotkey.bind(resizeKey, 'left', hs.grid.resizeWindowThinner)
+for direction, mover in pairs(moves) do
+  hs.hotkey.bind(pushKey, direction, mover)
+end
+
+-- resize while keeping top-left anchored
+local resizes = {
+  up = hs.grid.resizeWindowShorter,
+  down = hs.grid.resizeWindowTaller,
+  left = hs.grid.resizeWindowThinner,
+  right = hs.grid.resizeWindowWider
+}
+
+for direction, resizer in pairs(resizes) do
+  hs.hotkey.bind(resizeKey, direction, resizer)
+end
 
 -- Push to screen edge
-hs.hotkey.bind(moveKey, 'left', function()
-  hs.grid.set(hs.window.focusedWindow(), {x = 0, y = 0, w = gw/2, h = gh})
-end)
-hs.hotkey.bind(moveKey, 'right', function()
-  hs.grid.set(hs.window.focusedWindow(), {x = gw/2, y = 0, w = gw/2, h = gh})
-end)
-hs.hotkey.bind(moveKey, 'up', function()
-  hs.grid.set(hs.window.focusedWindow(), {x = 0, y = 0, w = gw, h = gh/2})
-end)
-hs.hotkey.bind(moveKey, 'down', function()
-  hs.grid.set(hs.window.focusedWindow(), {x = 0, y = gh/2, w = gw, h = gh/2})
-end)
+local SIDES = {
+  up = {x = 0, y = 0, w = gw, h = gh/2},
+  down = {x = 0, y = gh/2, w = gw, h = gh/2},
+  left = {x = 0, y = 0, w = gw/2, h = gh},
+  right = {x = gw/2, y = 0, w = gw/2, h = gh}
+}
+
+for direction, geom in pairs(SIDES) do
+  hs.hotkey.bind(moveKey, direction, function()
+    hs.grid.set(hs.window.focusedWindow(), geom)
+  end)
+end
 
 -- Push to corner
-hs.hotkey.bind(pushShiftKey, 'up', function()
-  hs.grid.set(hs.window.focusedWindow(), {x = 0, y = 0, w = gw/2, h = gh/2})
-end)
-hs.hotkey.bind(pushShiftKey, 'right', function()
-  hs.grid.set(hs.window.focusedWindow(), {x = gw/2, y = 0, w = gw/2, h = gh/2})
-end)
-hs.hotkey.bind(pushShiftKey, 'down', function()
-  hs.grid.set(hs.window.focusedWindow(), {x = gw/2, y = gh/2, w = gw/2, h = gh/2})
-end)
-hs.hotkey.bind(pushShiftKey, 'left', function()
-  hs.grid.set(hs.window.focusedWindow(), {x = 0, y = gh/2, w = gw/2, h = gh/2})
-end)
+local CORNERS = {
+  topLeft = {
+    direction = 'up',
+    geom = {x = 0, y = 0, w = gw/2, h = gh/2}
+  },
+  topRight = {
+    direction = 'right',
+    geom = {x = gw/2, y = 0, w = gw/2, h = gh/2}
+  },
+  bottomRight = {
+    direction = 'down',
+    geom = {x = gw/2, y = gh/2, w = gw/2, h = gh/2}
+  },
+  bottomLeft = {
+    direction = 'left',
+    geom = {x = 0, y = gh/2, w = gw/2, h = gh/2}
+  }
+}
+
+for corner, obj in pairs(CORNERS) do
+  hs.hotkey.bind(pushShiftKey, obj.direction, function()
+    hs.grid.set(hs.window.focusedWindow(), obj.geom)
+  end)
+end
 
 -- Fullscreen
 hs.hotkey.bind(moveKey, 'f', function()
