@@ -9,7 +9,7 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # source ~/.phpbrew/bashrc
 
 # php-version
-source $(brew --prefix php-version)/php-version.sh && php-version 5
+# source $(brew --prefix php-version)/php-version.sh && php-version 5
 
 # z
 . `brew --prefix`/etc/profile.d/z.sh
