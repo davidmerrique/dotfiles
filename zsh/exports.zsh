@@ -19,3 +19,5 @@ export COPYFILE_DISABLE=true
 
 # Disable homebrew analytics
 export HOMEBREW_NO_ANALYTICS=1
+
+export EDITOR=vim
