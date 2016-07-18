@@ -2,6 +2,8 @@
 
 export DOTFILES=$HOME/.dotfiles
 
+vim -u ~/.vimrc.bundles +PlugInstall +qall
+
 if [ ! -d $HOME/.zfunctions ]; then
   mkdir $HOME/.zfunctions
 fi
@@ -9,15 +11,6 @@ fi
 if [ ! -d $HOME/.nvm ]; then
   git clone https://github.com/creationix/nvm.git $HOME/.nvm && cd $HOME/.nvm && git checkout `git describe --abbrev=0 --tags`
 fi
-
-# if [ ! -d $HOME/.phpbrew ]; then
-#   curl -L -O https://github.com/phpbrew/phpbrew/raw/master/phpbrew
-#   chmod +x phpbrew
-#   sudo mkdirp /opt/phpbrew/bin
-#   sudo mv phpbrew /opt/phpbrew/bin/phpbrew
-#   sudo ln -s /opt/phpbrew/bin/phpbrew /usr/local/bin/phpbrew
-#   phpbrew init
-# fi
 
 if [ ! -d $HOME/zgen ]; then
   git clone git@github.com:tarjoilija/zgen.git $HOME/zgen
