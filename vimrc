@@ -1,9 +1,5 @@
 " vim: set foldmethod=marker foldlevel=0:
 
-if filereadable(expand("~/.vimrc.bundles"))
-  source ~/.vimrc.bundles
-endif
-
 let mapleader      = ' '
 let maplocalleader = ' '
 
@@ -52,8 +48,6 @@ set directory=/tmp//,.
 if v:version >= 703
   set undodir=/tmp//,.
 endif
-
-colorscheme Tomorrow-Night-Eighties
 
 set complete-=i
 

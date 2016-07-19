@@ -2,8 +2,6 @@
 
 export DOTFILES=$HOME/.dotfiles
 
-vim -u ~/.vimrc.bundles +PlugInstall +qall
-
 if [ ! -d $HOME/.zfunctions ]; then
   mkdir $HOME/.zfunctions
 fi
