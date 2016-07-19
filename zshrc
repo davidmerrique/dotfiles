@@ -9,6 +9,7 @@ if ! zgen saved; then
   zgen load zsh-users/zsh-history-substring-search
   zgen load zsh-users/zsh-completions src
   zgen load mafredri/zsh-async
+  zgen load lukechilds/zsh-nvm
   zgen load rimraf/k
   zgen load sindresorhus/pure
 
