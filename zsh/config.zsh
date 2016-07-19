@@ -5,6 +5,27 @@ autoload -U colors
 colors
 
 autoload -U compinit && compinit
+autoload -Uz async && async
+autoload -U run-help
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zmodload -i zsh/parameter
+
+setopt auto_cd
+setopt auto_pushd
+setopt pushd_ignore_dups
+setopt pushdminus
+setopt pushdsilent
+setopt pushdtohome
+setopt cdablevars
+setopt dotglob
+
+setopt extended_history
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+setopt hist_ignore_space
+setopt share_history
+setopt ignoreeof
 
 # history settings
 setopt hist_ignore_all_dups inc_append_history
@@ -21,8 +42,6 @@ setopt HIST_SAVE_NO_DUPS
 setopt HIST_VERIFY
 setopt INC_APPEND_HISTORY
 
-# awesome cd movements from zshkit
-setopt autocd autopushd pushdminus pushdsilent pushdtohome cdablevars
 DIRSTACKSIZE=5
 
 # Enable extended globbing
@@ -46,12 +65,11 @@ zstyle ':completion:*:killall:*' command 'ps -u $USER -o cmd'
 
 setopt nocasematch
 
-setopt AUTO_CD
-
 # Increases the open file descriptor limit, helps avoid errors when
 # running watch processes on a large number of files
 ulimit -S -n 2048
 
+zstyle ':completion:*' rehash true
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zshcache
 zstyle ':completion:*:(all-|)files' ignored-patterns '(|*/)CVS'

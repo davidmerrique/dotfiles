@@ -6,7 +6,7 @@ local gw = 8
 local gh = 8
 
 hs.grid.setGrid(gw .. 'x' .. gh)
-hs.grid.setMargins({w = 0, h = 0})
+hs.grid.setMargins({w = 10, h = 10})
 hs.grid.ui.textSize = 16
 
 -- Shortcuts

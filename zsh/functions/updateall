@@ -10,9 +10,6 @@ function updateall() {
     "brew cask cleanup"
     "brew linkapps"
     "composer self-update"
-    # "phpbrew self-update"
-    # "phpbrew known --update"
-    # "$DOTFILES/bin/nvm-update"
     "nvm_update"
     "npm cache clean -g"
     "$DOTFILES/lib/npm-upgrade.sh"
@@ -20,8 +17,8 @@ function updateall() {
     "gem update"
     "gem update --system"
     "mas upgrade"
-    "zgen selfupdate"
-    "zgen update"
+    "zplug update --self"
+    "zplug update"
   )
 
   printf "\n**** Running: $i *****\n\n"

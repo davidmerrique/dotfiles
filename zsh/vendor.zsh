@@ -11,9 +11,6 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # php-version
 # source $(brew --prefix php-version)/php-version.sh && php-version 5
 
-# z
-. `brew --prefix`/etc/profile.d/z.sh
-
 # Base16 Shell
 BASE16_SCHEME="tomorrow"
 BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"

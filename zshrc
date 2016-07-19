@@ -1,20 +1,32 @@
 export DOTFILES=$HOME/.dotfiles
 
-source $HOME/zgen/zgen.zsh
+source ~/.zplug/init.zsh
 
-if ! zgen saved; then
-  echo "Creating a zgen save"
+zplug "rupa/z", use:z.sh
+zplug "zsh-users/zsh-syntax-highlighting", nice:10
+zplug "knu/zsh-manydots-magic", use:manydots-magic, nice:11
+zplug "robbyrussell/oh-my-zsh", use:plugins/sudo/sudo.plugin.zsh
+zplug "djui/alias-tips"
+zplug "zsh-users/zsh-history-substring-search"
+zplug "zsh-users/zsh-completions"
+zplug "mafredri/zsh-async"
+zplug "so-fancy/diff-so-fancy", as:command
+zplug "supercrabtree/bam-pow", use:bam.sh
+zplug "lukechilds/zsh-nvm"
+zplug "supercrabtree/k"
+zplug "sindresorhus/pure"
 
-  zgen load zsh-users/zsh-syntax-highlighting
-  zgen load zsh-users/zsh-history-substring-search
-  zgen load zsh-users/zsh-completions src
-  zgen load mafredri/zsh-async
-  zgen load lukechilds/zsh-nvm
-  zgen load rimraf/k
-  zgen load sindresorhus/pure
-
-  zgen save
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+  printf "Install? [y/N]: "
+  if read -q; then
+    echo; zplug install
+  else
+    echo
+  fi
 fi
+
+zplug load
 
 source $DOTFILES/zsh/paths.zsh
 source $DOTFILES/zsh/vendor.zsh
