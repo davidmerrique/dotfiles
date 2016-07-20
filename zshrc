@@ -3,20 +3,24 @@ export DOTFILES=$HOME/.dotfiles
 source ~/.zplug/init.zsh
 
 zplug "zplug/zplug"
-zplug "rupa/z", use:z.sh
-zplug "zsh-users/zsh-syntax-highlighting", nice:10
-zplug "knu/zsh-manydots-magic", use:manydots-magic, nice:11
-zplug "robbyrussell/oh-my-zsh", use:plugins/sudo/sudo.plugin.zsh
-zplug "plugins/git", from:oh-my-zsh, if:"(( $+commands[git] ))", nice:13
+zplug "mafredri/zsh-async"
+zplug "sindresorhus/pure"
 zplug "djui/alias-tips"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-completions"
-zplug "mafredri/zsh-async"
-zplug "so-fancy/diff-so-fancy", as:command
-zplug "supercrabtree/bam-pow", use:bam.sh
-zplug "lukechilds/zsh-better-npm-completion", nice:12
 zplug "supercrabtree/k"
-zplug "sindresorhus/pure"
+zplug "rupa/z", use:z.sh
+zplug "supercrabtree/bam-pow", use:bam.sh
+zplug "b4b4r07/enhancd", use:init.sh
+zplug "mathiasbynens/dotfiles", as:command, use:".macos", rename-to:"macos"
+zplug "so-fancy/diff-so-fancy", as:command
+zplug "peco/peco", as:command, from:gh-r, frozen:1
+zplug "junegunn/fzf-bin", as:command, from:gh-r, rename-to:"fzf", frozen:1
+zplug "Jxck/dotfiles", as:command, use:bin/l
+zplug "b4b4r07/emoji-cli", if:'(( $+commands[jq] ))', on:"junegunn/fzf-bin"
+zplug "zsh-users/zsh-syntax-highlighting", nice:10
+zplug "knu/zsh-manydots-magic", use:manydots-magic, nice:11
+zplug "lukechilds/zsh-better-npm-completion", nice:12
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then

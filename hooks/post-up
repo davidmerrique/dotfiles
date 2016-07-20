@@ -12,7 +12,7 @@ if [ ! -d $HOME/.nvm ]; then
 fi
 
 if [ ! -d $HOME/.zplug ]; then
-  git clone https://github.com/zplug/zplug $ZPLUG_HOME
+  curl -sL zplug.sh/installer | zsh
 fi
 
 if [ ! -d /usr/local/m-cli ]; then

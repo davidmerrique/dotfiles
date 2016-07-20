@@ -7,6 +7,11 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 
+export HISTFILE=~/.zsh_history
+export HISTSIZE=SAVEHIST=99999
+
+export DIRSTACKSIZE=5
+
 # Don't clear the screen after quitting a manual page
 export MANPAGER="less -X"
 

@@ -1,31 +1,22 @@
-if [ -x /usr/libexec/path_helper ]; then
-  PATH=''
-  eval `/usr/libexec/path_helper -s`
-fi
-
-path=( "/sbin" $path )
-path=( "/usr/sbin" $path )
-path=( "/usr/bin" $path )
-path=( "/usr/local/bin" $path )
-path=( "/usr/local/m-cli" $path )
-path=( "$(brew --prefix coreutils)/libexec/gnubin" $path )
-path=( "/usr/local/sbin" $path )
-path=( "$GOPATH/bin" $path )
-path=( "$HOME/.composer/vendor/bin" $path )
-path=( "$HOME/.composer/bin" $path )
-path=( "$HOME/bin" $path )
-path=( "$HOME/.bin" $path )
-path=( "$HOME/.cargo/bin" $path )
-path=( "$HOME/.rbenv/bin" $path )
-path=( "$HOME/.rbenv/shims" $path )
-path=( "./vendor/bin" $path )
-path=( "./node_modules/.bin" $path )
-path=( "./bin" $path )
-path=( "$DOTFILES/bin" $path )
-
-typeset -U PATH
-
-export PATH
+export PATH="/sbin:$PATH"
+export PATH="/usr/sbin:$PATH"
+export PATH="/usr/bin:$PATH"
+export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/m-cli:$PATH"
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
+export PATH="$GOPATH/bin:$PATH"
+export PATH="$HOME/.composer/vendor/bin:$PATH"
+export PATH="$HOME/.composer/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/.bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.rbenv/shims:$PATH"
+export PATH="./vendor/bin:$PATH"
+export PATH="./node_modules/.bin:$PATH"
+export PATH="./bin:$PATH"
+export PATH="$DOTFILES/bin:$PATH"
 
 fpath=( /usr/local/share/zsh-completions $fpath )
 fpath=( /usr/local/share/zsh/site-functions $fpath )
