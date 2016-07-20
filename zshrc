@@ -2,7 +2,6 @@ export DOTFILES=$HOME/.dotfiles
 
 source ~/.zplug/init.zsh
 
-zplug "zplug/zplug"
 zplug "mafredri/zsh-async"
 zplug "sindresorhus/pure"
 zplug "djui/alias-tips"
@@ -40,6 +39,7 @@ source $DOTFILES/zsh/config.zsh
 source $DOTFILES/zsh/exports.zsh
 source $DOTFILES/zsh/keybindings.zsh
 source $DOTFILES/zsh/aliases.zsh
+source $DOTFILES/zsh/functions.zsh
 
 # Local config
 [[ -f $HOME/.zshrc.local ]] && source $HOME/.zshrc.local
