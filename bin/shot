@@ -1,0 +1,5 @@
+#!/usr/bin/env zsh
+
+function shot() {
+  webkit2png -D ~/SyncThing/Images/Screenshots -W 1600 -H 900 -F -d --delay=10 "$@"
+}
