@@ -33,13 +33,13 @@ fi
 
 zplug load
 
-source $DOTFILES/home/zsh/paths.zsh
-source $DOTFILES/home/zsh/vendor.zsh
-source $DOTFILES/home/zsh/config.zsh
-source $DOTFILES/home/zsh/exports.zsh
-source $DOTFILES/home/zsh/keybindings.zsh
-source $DOTFILES/home/zsh/aliases.zsh
-source $DOTFILES/home/zsh/functions.zsh
+source $DOTFILES/home/.zsh/paths.zsh
+source $DOTFILES/home/.zsh/vendor.zsh
+source $DOTFILES/home/.zsh/config.zsh
+source $DOTFILES/home/.zsh/exports.zsh
+source $DOTFILES/home/.zsh/keybindings.zsh
+source $DOTFILES/home/.zsh/aliases.zsh
+source $DOTFILES/home/.zsh/functions.zsh
 
 # Local config
 [[ -f $HOME/.zshrc.local ]] && source $HOME/.zshrc.local

@@ -2,28 +2,26 @@
 
 export DOTFILES=$HOME/.dotfiles
 
-BASEDIR="$DOTFILES/home"
+BASE="$DOTFILES/home"
 DEST=$HOME
 
 link() {
 	for i in $(find $1 -mindepth 1 -maxdepth 1); do
-		BASEFILE=$DEST/$(realpath --relative-to="$BASEDIR" "$i")
-		FILEDIR=`dirname $i`
-		FILE=`basename $i`
+	file=$DEST${i/$BASE/""}
 
 		if [ ! -d $i ]; then
-			if [ -f $BASEFILE -o -h $BASEFILE ]; then
-		    echo "Replacing file: $BASEFILE"
-		    rm $BASEFILE
+			if [ -f $file -o -h $file ]; then
+		    echo "Replacing file: $file"
+		    rm $file
 			else
-		    echo "Creating link: $BASEFILE"
+		    echo "Creating link: $file"
 			fi
 
-			ln -s $i $BASEFILE
+			ln -s $i $file
 		else
-			if [ ! -d "$BASEFILE" ]; then
-				echo "Creating directory: $BASEFILE"
-			  mkdir $BASEFILE
+			if [ ! -d "$file" ]; then
+				echo "Creating directory: $file"
+			  mkdir $file
 			fi
 
 			link $i
@@ -31,7 +29,7 @@ link() {
 	done
 }
 
-link $BASEDIR
+link $BASE
 . "hooks/post-up"
 
 # deleting stale links, if any
