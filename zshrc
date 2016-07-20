@@ -14,7 +14,6 @@ zplug "zsh-users/zsh-completions"
 zplug "mafredri/zsh-async"
 zplug "so-fancy/diff-so-fancy", as:command
 zplug "supercrabtree/bam-pow", use:bam.sh
-zplug "lukechilds/zsh-nvm"
 zplug "lukechilds/zsh-better-npm-completion", nice:12
 zplug "supercrabtree/k"
 zplug "sindresorhus/pure"

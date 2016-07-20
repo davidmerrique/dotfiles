@@ -7,9 +7,9 @@ if [ ! -d $HOME/.zfunctions ]; then
   mkdir $HOME/.zfunctions
 fi
 
-# if [ ! -d $HOME/.nvm ]; then
-#   git clone https://github.com/creationix/nvm.git $HOME/.nvm && cd $HOME/.nvm && git checkout `git describe --abbrev=0 --tags`
-# fi
+if [ ! -d $HOME/.nvm ]; then
+  git clone https://github.com/creationix/nvm.git $HOME/.nvm && cd $HOME/.nvm && git checkout `git describe --abbrev=0 --tags`
+fi
 
 if [ ! -d $HOME/.zplug ]; then
   git clone https://github.com/zplug/zplug $ZPLUG_HOME
