@@ -15,7 +15,7 @@ updateall() {
     "gem update"
     "gem update --system"
     "mas upgrade"
-    "zplug update --self"
+    "(cd $ZPLUG_HOME && git pull)"
     "zplug update"
   )
 

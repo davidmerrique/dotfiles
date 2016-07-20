@@ -3,16 +3,12 @@
 export DOTFILES=$HOME/.dotfiles
 export ZPLUG_HOME=$HOME/.zplug
 
-if [ ! -d $HOME/.zfunctions ]; then
-  mkdir $HOME/.zfunctions
+if [ ! -d $ZPLUG_HOME ]; then
+  git clone https://github.com/zplug/zplug $ZPLUG_HOME
 fi
 
 if [ ! -d $HOME/.nvm ]; then
   git clone https://github.com/creationix/nvm.git $HOME/.nvm && cd $HOME/.nvm && git checkout `git describe --abbrev=0 --tags`
-fi
-
-if [ ! -d $HOME/.zplug ]; then
-  curl -sL zplug.sh/installer | zsh
 fi
 
 if [ ! -d /usr/local/m-cli ]; then
