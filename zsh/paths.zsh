@@ -13,10 +13,10 @@ export PATH="$HOME/.bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.rbenv/shims:$PATH"
-export PATH="./vendor/bin:$PATH"
-export PATH="./node_modules/.bin:$PATH"
-export PATH="./bin:$PATH"
 export PATH="$DOTFILES/bin:$PATH"
+export PATH="$(npm bin):$PATH"
+export PATH="./vendor/bin:$PATH"
+export PATH="./bin:$PATH"
 
 fpath=( /usr/local/share/zsh-completions $fpath )
 fpath=( /usr/local/share/zsh/site-functions $fpath )
