@@ -1,6 +1,6 @@
 updateall() {
   update_commands=(
-    "rcup -d $DOTFILES"
+    "(cd $DOTFILES && ./install.sh)"
     "brew update"
     "brew upgrade --all"
     "brew prune"

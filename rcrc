@@ -1,2 +1,0 @@
-EXCLUDES="README.md lib"
-DOTFILES_DIRS="$HOME/.dotfiles"

@@ -1,6 +1,0 @@
-#!/bin/sh
-
-export DOTFILES=~/.dotfiles
-
-git -C $DOTFILES submodule update --init
-git -C $DOTFILES submodule foreach "(git checkout master; git pull)"
