@@ -36,9 +36,6 @@ source $DOTFILES/zsh/config.zsh
 source $DOTFILES/zsh/exports.zsh
 source $DOTFILES/zsh/keybindings.zsh
 source $DOTFILES/zsh/aliases.zsh
-for function in $DOTFILES/zsh/functions/*; do
-  source $function
-done
 
 # Local config
 [[ -f $HOME/.zshrc.local ]] && source $HOME/.zshrc.local
