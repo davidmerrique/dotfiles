@@ -30,7 +30,7 @@ link() {
 }
 
 link $BASE
-. "lib/postinstall"
+. "lib/postinstall.sh"
 
 # deleting stale links, if any
 for i in $HOME/.*; do
