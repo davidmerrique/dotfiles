@@ -30,7 +30,7 @@ link() {
 }
 
 link $BASE
-. "hooks/post-up"
+. "lib/postinstall"
 
 # deleting stale links, if any
 for i in $HOME/.*; do
