@@ -13,8 +13,8 @@ zplug "supercrabtree/bam-pow", use:bam.sh
 zplug "b4b4r07/enhancd", use:init.sh
 zplug "mathiasbynens/dotfiles", as:command, use:".macos", rename-to:"macos"
 zplug "so-fancy/diff-so-fancy", as:command
-zplug "peco/peco", as:command, from:gh-r, frozen:1
-zplug "junegunn/fzf-bin", as:command, from:gh-r, rename-to:"fzf", frozen:1
+zplug "peco/peco", as:command, from:gh-r
+zplug "junegunn/fzf-bin", as:command, from:gh-r, rename-to:"fzf"
 zplug "Jxck/dotfiles", as:command, use:bin/l
 zplug "b4b4r07/emoji-cli", if:'(( $+commands[jq] ))', on:"junegunn/fzf-bin"
 zplug "zsh-users/zsh-syntax-highlighting", nice:10
