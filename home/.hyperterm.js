@@ -11,7 +11,8 @@ module.exports = {
   plugins: [
     'hyperlinks',
     'hyperterm-visor',
-    'hyperterm-dracula',
+    'hyperterm-title',
+    'hyperterm-snazzy',
     'hyperterm-final-say'
   ],
   localPlugins: []
