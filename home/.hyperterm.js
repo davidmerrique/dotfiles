@@ -24,7 +24,7 @@ module.exports = {
       position: 'top',
       primaryDisplay: true,
       startup: true,
-      size: 0.4,
+      size: 0.49,
       tray: true,
       unique: true
     }
