@@ -2,6 +2,11 @@ module.exports = {
   config: {
     fontSize: 18,
     fontFamily: '"Operator Mono", Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
+    termCSS: `
+      .cursor-node {
+        transition: opacity 0.3s ease-in-out;
+      }
+    `,
     shell: 'zsh',
     cursorShape: 'BEAM',
     visor: {
@@ -21,7 +26,7 @@ module.exports = {
       startup: true,
       size: 0.4,
       tray: true,
-      unique: false
+      unique: true
     }
   },
   plugins: [
@@ -30,6 +35,7 @@ module.exports = {
     'hyperterm-overlay',
     'hyperterm-title',
     'hyperterm-snazzy',
+    'hyperterm-blink',
     'hyperterm-final-say'
   ],
   localPlugins: []
