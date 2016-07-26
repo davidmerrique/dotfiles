@@ -15,7 +15,7 @@ module.exports = {
     },
     overlay: {
       animate: false,
-      alwaysOnTop: true,
+      alwaysOnTop: false,
       hasShadow: false,
       hideOnBlur: false,
       hideDock: false,
