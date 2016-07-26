@@ -6,6 +6,7 @@ module.exports = {
       hotkey: 'Control+`',
       position: 'top'
     },
+    shell: 'zsh'
   },
   plugins: [
     'hyperlinks',
