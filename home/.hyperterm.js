@@ -3,6 +3,9 @@ module.exports = {
     fontSize: 18,
     fontFamily: '"Operator Mono", Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
     termCSS: `
+      body {
+        font-feature-settings: "liga" 0;
+      }
       .cursor-node {
         transition: opacity 0.3s ease-in-out;
       }
