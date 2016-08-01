@@ -10,7 +10,6 @@ zplug "zsh-users/zsh-completions"
 zplug "supercrabtree/k"
 zplug "rupa/z", use:z.sh
 zplug "supercrabtree/bam-pow", use:bam.sh
-zplug "b4b4r07/enhancd", use:init.sh
 zplug "mathiasbynens/dotfiles", as:command, use:".macos", rename-to:"macos"
 zplug "so-fancy/diff-so-fancy", as:command
 zplug "peco/peco", as:command, from:gh-r
