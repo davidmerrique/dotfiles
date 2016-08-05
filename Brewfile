@@ -45,7 +45,6 @@ brew 'node'
 brew 'youtube-dl'
 brew 'mpv', args: ['with-libaacs', 'with-bundle']
 brew 'ruby-build'
-brew 'rbenv'
 brew 'rename'
 brew 'speedtest_cli'
 brew 'syncthing', restart_service: :changed

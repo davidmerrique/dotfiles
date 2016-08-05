@@ -19,10 +19,6 @@ if [ ! -f $HOME/bin/composer.phar ]; then
   curl -sS https://getcomposer.org/installer | php -- --install-dir="$HOME/bin"
 fi
 
-if [ ! -e $HOME/.rbenv ]; then
-  ln -s /usr/local/opt/rbenv $HOME/.rbenv
-fi
-
 if ! grep -Fxq "$(command -v zsh)" /etc/shells
 then
   command -v zsh | sudo tee -a /etc/shells

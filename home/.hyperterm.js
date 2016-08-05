@@ -29,7 +29,7 @@ module.exports = {
       startup: true,
       size: 0.49,
       tray: true,
-      unique: true
+      unique: false
     }
   },
   plugins: [
