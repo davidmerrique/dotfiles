@@ -16,6 +16,31 @@ function git_current_branch() {
   git symbolic-ref HEAD 2> /dev/null | sed -e 's/refs\/heads\///'
 }
 
+# Use coreutils `ls` if possible
+hash gls >/dev/null 2>&1 || alias gls="ls"
+
+# Always use color output for `ls`
+# Detect which `ls` flavor is in use
+if gls --color > /dev/null 2>&1; then # GNU `ls`
+  colorflag="--color"
+else # OS X `ls`
+  colorflag="-G"
+fi
+
+export CLICOLOR_FORCE=1
+
+# List all files colorized in long format
+alias l="ls -lF ${colorflag}"
+
+# ls options: A = include hidden (but not . or ..), F = put `/` after folders, h = byte unit suffixes
+alias ls='ls -AFh ${colorflag} --group-directories-first'
+
+# List all files colorized in long format, including dot files
+alias la="ls -la ${colorflag}"
+
+# List only directories
+alias lsd='gls -l | grep "^d"'
+
 alias flushdns="dscacheutil -flushcache"
 alias artisan="php artisan"
 alias composer="php $HOME/bin/composer.phar"
