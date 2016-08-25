@@ -52,6 +52,8 @@ setopt hist_no_store
 setopt hist_save_no_dups
 # Whenever the user enters a line with history expansion, don't execute the line directly; instead, perform history expansion and reload the line into the editing buffer.
 setopt hist_verify
+# If set, parameter expansion, command substitution and arithmetic expansion are performed in prompts. Substitutions within prompts do not affect the command status.
+setopt prompt_subst
 
 # Treat the '#', '~' and '^' characters as part of patterns for filename generation, etc. (An initial unquoted '~' always produces named directory expansion.)
 setopt extended_glob
