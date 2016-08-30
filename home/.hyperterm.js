@@ -12,34 +12,13 @@ module.exports = {
     `,
     shell: 'zsh',
     cursorShape: 'BEAM',
-    visor: {
-      hotkey: 'Control+`',
-      position: 'top'
-    },
-    overlay: {
-      animate: false,
-      alwaysOnTop: false,
-      hasShadow: false,
-      hideOnBlur: false,
-      hideDock: false,
-      hotkeys: ['Control+`'],
-      resizable: true,
-      position: 'top',
-      primaryDisplay: true,
-      startup: true,
-      size: 0.49,
-      tray: true,
-      unique: false
-    }
+    summonShortcut: 'Control+`'
   },
   plugins: [
     'hyperlinks',
-    // 'hyperterm-visor',
-    'hyperterm-overlay',
     'hyperterm-title',
     'hyperterm-snazzy',
-    'hyperterm-blink',
-    'hyperterm-final-say'
+    'hyperterm-summon'
   ],
   localPlugins: []
 };
