@@ -6,9 +6,6 @@ module.exports = {
       body {
         font-feature-settings: "liga" 0;
       }
-      .cursor-node {
-        transition: opacity 0.3s ease-in-out;
-      }
     `,
     shell: 'zsh',
     cursorShape: 'BEAM',
