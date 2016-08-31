@@ -9,3 +9,6 @@ tmp/**/*
 !tmp/cache/.keep
 node_modules/
 npm-debug.log
+typings/*
+jsconfig.json
+.vscode*

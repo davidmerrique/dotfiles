@@ -4,6 +4,8 @@ export DOTFILES=$HOME/.dotfiles
 
 BASE="$DOTFILES/home"
 DEST=$HOME
+SAVEIFS=$IFS
+IFS=$(echo -en "\n\b")
 
 link() {
 	for i in $(find $1 -mindepth 1 -maxdepth 1); do
@@ -41,3 +43,5 @@ for i in $HOME/.*; do
 		rm $i
 	fi
 done
+
+IFS=$SAVEIFS
