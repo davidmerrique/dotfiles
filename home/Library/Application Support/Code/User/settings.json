@@ -2,10 +2,5 @@
 {
   "editor.fontFamily": "'Operator Mono', Menlo, Monaco, 'Courier New', monospace",
   "editor.fontSize": 17,
-  "editor.tabSize": 2,
-  "search.exclude": {
-    "**/node_modules": true,
-    "**/bower_components": true,
-    "public/**": true
-  }
+  "editor.tabSize": 2
 }
