@@ -13,3 +13,6 @@ function precmd() {
 
 # npm completion
 . <(npm completion)
+
+# Swift
+if which swiftenv > /dev/null; then eval "$(swiftenv init -)"; fi
