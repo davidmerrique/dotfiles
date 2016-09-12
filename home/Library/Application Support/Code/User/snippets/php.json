@@ -1,0 +1,22 @@
+{
+/*
+	 // Place your snippets for PHP here. Each snippet is defined under a snippet name and has a prefix, body and 
+	 // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	 // $1, $2 for tab stops, ${id} and ${id:label} and ${1:label} for variables. Variables with the same id are connected.
+	 // Example:
+	 "Pretty print_r": {
+		"prefix": "ppr",
+		"body": [
+			"echo "<pre>".print_r($1, true)."</pre>";exit;"
+		],
+		"description": "print_r() inside a <pre></pre>"
+	}
+*/
+  "Pretty print_r": {
+		"prefix": "ppr",
+		"body": [
+			"echo \"<pre>\".print_r($1, true).\"</pre>\";exit;"
+		],
+		"description": "print_r() inside a <pre></pre>"
+	}
+}

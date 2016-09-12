@@ -4,5 +4,6 @@
   "editor.fontSize": 17,
   "editor.tabSize": 2,
   "editor.renderWhitespace": true,
-  "editor.wrappingColumn": -1
+  "editor.wrappingColumn": -1,
+  "editor.snippetSuggestions": "inline",
 }
