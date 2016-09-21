@@ -7,5 +7,10 @@
   {
     "key": "cmd+shift+]",
     "command": "workbench.action.nextEditor"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "editor.emmet.action.expandAbbreviation",
+    "when": "config.emmet.triggerExpansionOnTab && editorTextFocus && !editorHasMultipleSelections && !editorHasSelection && !editorReadonly && !editorTabMovesFocus"
   }
 ]
