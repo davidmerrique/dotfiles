@@ -1,6 +1,7 @@
 export DOTFILES=$HOME/.dotfiles
 
-source ~/.zplug/init.zsh
+export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
 
 zplug "mafredri/zsh-async"
 zplug "sindresorhus/pure"
