@@ -9,7 +9,7 @@ zplug "djui/alias-tips"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-completions"
 zplug "rupa/z", use:z.sh
-zplug "supercrabtree/k"
+zplug "supercrabtree/k", use:k.sh
 zplug "zsh-users/zsh-syntax-highlighting", nice:10
 zplug "lukechilds/zsh-better-npm-completion", nice:12
 
