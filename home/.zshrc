@@ -8,6 +8,7 @@ zplug "sindresorhus/pure"
 zplug "djui/alias-tips"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-completions"
+zplug "zsh-users/zsh-autosuggestions"
 zplug "rupa/z", use:z.sh
 zplug "supercrabtree/k", use:k.sh
 zplug "zsh-users/zsh-syntax-highlighting", nice:10
