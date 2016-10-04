@@ -2,7 +2,7 @@ updateall() {
   update_commands=(
     "(cd $DOTFILES && ./install.sh)"
     "brew update"
-    "brew upgrade --all"
+    "brew upgrade"
     "brew prune"
     "brew cleanup"
     "brew cask cleanup"
