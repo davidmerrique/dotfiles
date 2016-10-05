@@ -14,7 +14,8 @@ module.exports = {
   plugins: [
     'hyperterm-title',
     'hyperterm-snazzy',
-    'hyperterm-summon'
+    'hyperterm-summon',
+    'hyperline'
   ],
   localPlugins: []
 };
