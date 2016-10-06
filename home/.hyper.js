@@ -13,6 +13,7 @@ module.exports = {
     summonShortcut: 'Control+`'
   },
   plugins: [
+    'hyperterm-title',
     'hyperterm-snazzy',
     'hyperterm-summon'
   ],
