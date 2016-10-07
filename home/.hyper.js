@@ -10,7 +10,8 @@ module.exports = {
     `,
     shell: 'zsh',
     cursorShape: 'BEAM',
-    summonShortcut: 'Control+`'
+    summonShortcut: 'Control+`',
+    copyOnSelect: true
   },
   plugins: [
     'hyperterm-title',
