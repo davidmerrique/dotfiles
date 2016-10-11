@@ -10,13 +10,8 @@
   "editor.fontLigatures": true,
   "editor.renderControlCharacters": true,
   "editor.renderIndentGuides": true,
-  "editor.formatOnSave": true,
-
   "files.trimTrailingWhitespace": true,
-
   "extensions.autoUpdate": true,
-
   "terminal.external.osxExec": "Hyperterm.app",
-
   "telemetry.enableCrashReporter": false
 }
