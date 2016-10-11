@@ -3,7 +3,7 @@
   "editor.fontFamily": "'Operator Mono', Menlo, Monaco, 'Courier New', monospace",
   "editor.fontSize": 17,
   "editor.tabSize": 2,
-  "editor.renderWhitespace": true,
+  "editor.renderWhitespace": "all",
   "editor.wrappingColumn": -1,
   "editor.snippetSuggestions": "inline",
   "editor.cursorBlinking": "phase",
