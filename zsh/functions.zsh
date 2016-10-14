@@ -11,7 +11,7 @@ updateall() {
     "$DOTFILES/bin/nvm-update"
     "npm cache clean -g"
     "npm update -g"
-    "(cd $DOTFILES && npm install && npm update)"
+    "(cd $DOTFILES && yarn install)"
     "gem update"
     "gem update --system"
     "mas upgrade"
