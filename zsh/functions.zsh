@@ -20,7 +20,6 @@ updateall() {
     "zplug update"
   )
 
-  printf "\n**** Running: $i *****\n\n"
   for i in "${update_commands[@]}"; do
     printf "\n**** Running: $i *****\n\n"
     eval ${i}
