@@ -12,6 +12,7 @@ zplug "zsh-users/zsh-syntax-highlighting", nice:10
 zplug "lukechilds/zsh-better-npm-completion", nice:12
 zplug "mafredri/zsh-async", on:sindresorhus/pure
 zplug "sindresorhus/pure", nice:13
+zplug "zplug/zplug"
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
