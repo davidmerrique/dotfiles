@@ -15,6 +15,7 @@ updateall() {
     "gem update"
     "gem update --system"
     "mas upgrade"
+    "zplug update --self"
     "zplug clean --force"
     "zplug update"
   )

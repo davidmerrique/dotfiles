@@ -1,10 +1,7 @@
 export DOTFILES=$HOME/.dotfiles
 
-export ZPLUG_HOME=/usr/local/opt/zplug
-source $ZPLUG_HOME/init.zsh
+source $HOME/.zplug/init.zsh
 
-zplug "mafredri/zsh-async"
-zplug "sindresorhus/pure"
 zplug "djui/alias-tips"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-completions"
@@ -13,6 +10,8 @@ zplug "rupa/z", use:z.sh
 zplug "supercrabtree/k", use:k.sh
 zplug "zsh-users/zsh-syntax-highlighting", nice:10
 zplug "lukechilds/zsh-better-npm-completion", nice:12
+zplug "mafredri/zsh-async", on:sindresorhus/pure
+zplug "sindresorhus/pure", nice:13
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then

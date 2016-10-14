@@ -1,6 +1,5 @@
 autoload -U promptinit && promptinit
 autoload -U compinit && compinit
-autoload -Uz async && async
 autoload -U run-help
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
