@@ -40,6 +40,7 @@ brew 'mas'
 brew 'mcrypt'
 brew 'mongodb'
 brew 'moreutils'
+brew 'yarn'
 brew 'node'
 brew 'youtube-dl'
 brew 'mpv', args: ['with-libaacs', 'with-bundle']
