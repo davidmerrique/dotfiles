@@ -12,6 +12,6 @@
   "editor.renderIndentGuides": true,
   "files.trimTrailingWhitespace": true,
   "extensions.autoUpdate": true,
-  "terminal.external.osxExec": "Hyperterm.app",
+  "terminal.external.osxExec": "Hyper.app",
   "telemetry.enableCrashReporter": false
 }
