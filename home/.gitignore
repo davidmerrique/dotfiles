@@ -9,6 +9,7 @@ tmp/**/*
 !tmp/cache/.keep
 node_modules/
 npm-debug.log
+yarn-error.log
 typings/*
 jsconfig.json
 .vscode*
