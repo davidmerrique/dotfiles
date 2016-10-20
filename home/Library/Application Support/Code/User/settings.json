@@ -13,5 +13,6 @@
   "files.trimTrailingWhitespace": true,
   "extensions.autoUpdate": true,
   "terminal.external.osxExec": "Hyper.app",
+  "telemetry.enableTelemetry": false,
   "telemetry.enableCrashReporter": false
 }
