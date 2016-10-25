@@ -50,6 +50,7 @@ module.exports = {
     }
   },
   plugins: [
+    'hypercwd',
     'hyperclean',
     'hyperterm-title',
     'hyperterm-summon'
