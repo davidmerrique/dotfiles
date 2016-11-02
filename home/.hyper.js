@@ -44,6 +44,7 @@ module.exports = {
     `,
     shell: 'zsh',
     cursorShape: 'BEAM',
+    copyOnSelect: true,
     summonShortcut: 'Control+`',
     hyperClean: {
       hideFirstTabBorder: true
