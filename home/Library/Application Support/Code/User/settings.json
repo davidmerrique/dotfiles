@@ -14,5 +14,6 @@
   "extensions.autoUpdate": true,
   "terminal.external.osxExec": "Hyper.app",
   "telemetry.enableTelemetry": false,
-  "telemetry.enableCrashReporter": false
+  "telemetry.enableCrashReporter": false,
+  "window.zoomLevel": 0
 }
