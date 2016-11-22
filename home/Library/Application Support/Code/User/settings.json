@@ -15,5 +15,8 @@
   "terminal.external.osxExec": "Hyper.app",
   "telemetry.enableTelemetry": false,
   "telemetry.enableCrashReporter": false,
-  "window.zoomLevel": 0
+  "window.zoomLevel": 0,
+  "emmet.syntaxProfiles": {
+    "blade": "html"
+  }
 }
