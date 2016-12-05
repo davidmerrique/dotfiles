@@ -4,7 +4,7 @@
   "dependencies": {
     "commander": "2.9.0",
     "gm": "1.23.0",
-    "lodash": "4.16.6",
+    "lodash": "^4.17.2",
     "shelljs": "0.7.5"
   }
 }
