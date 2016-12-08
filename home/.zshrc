@@ -8,19 +8,17 @@ zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "rupa/z", use:z.sh
 zplug "supercrabtree/k", use:k.sh
-zplug "zsh-users/zsh-syntax-highlighting", nice:10
-zplug "lukechilds/zsh-better-npm-completion", nice:12
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "lukechilds/zsh-better-npm-completion", defer:2
 zplug "mafredri/zsh-async", on:sindresorhus/pure
-zplug "sindresorhus/pure", nice:13
-zplug "zplug/zplug"
+zplug "sindresorhus/pure", as:theme, use:pure.zsh
+zplug "zplug/zplug", use: init.zsh
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
   printf "Install? [y/N]: "
   if read -q; then
     echo; zplug install
-  else
-    echo
   fi
 fi
 
