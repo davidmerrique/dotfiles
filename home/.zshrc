@@ -4,12 +4,12 @@ source $HOME/.zplug/init.zsh
 
 zplug "djui/alias-tips"
 zplug "zsh-users/zsh-history-substring-search"
-zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "rupa/z", use:z.sh
 zplug "supercrabtree/k", use:k.sh
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "lukechilds/zsh-better-npm-completion", defer:2
+zplug "zsh-users/zsh-completions", defer:2
 zplug "mafredri/zsh-async", on:sindresorhus/pure
 zplug "sindresorhus/pure", as:theme, use:pure.zsh
 zplug "zplug/zplug", use: init.zsh
