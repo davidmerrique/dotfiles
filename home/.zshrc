@@ -22,7 +22,7 @@ if ! zplug check --verbose; then
   fi
 fi
 
-zplug load
+zplug load >/dev/null
 
 source $DOTFILES/zsh/paths.zsh
 source $DOTFILES/zsh/vendor.zsh
