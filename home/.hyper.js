@@ -7,7 +7,6 @@ module.exports = {
   },
   plugins: [
     'hypercwd',
-    'hyperterm-title',
     'hyperterm-summon'
   ],
   localPlugins: [
