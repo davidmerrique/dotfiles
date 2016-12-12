@@ -1,4 +1,4 @@
-const backgroundColor = 'rgba(0,0,0,.8)';
+const backgroundColor = 'rgba(0,0,0,0.6)';
 const foregroundColor = '#eff0eb';
 const red = '#ff5c57';
 const green = '#5af78e';
