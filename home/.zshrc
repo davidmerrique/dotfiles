@@ -12,7 +12,6 @@ zplug "lukechilds/zsh-better-npm-completion", defer:2
 zplug "zsh-users/zsh-completions", defer:2
 zplug "mafredri/zsh-async", on:sindresorhus/pure
 zplug "sindresorhus/pure", as:theme, use:pure.zsh
-zplug "zplug/zplug", use: init.zsh
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
