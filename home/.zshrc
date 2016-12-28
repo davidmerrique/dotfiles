@@ -27,7 +27,6 @@ if [[ -f $HOME/.zplug/init.zsh ]]; then
   zplug load
 fi
 
-
 source $DOTFILES/zsh/paths.zsh
 source $DOTFILES/zsh/vendor.zsh
 source $DOTFILES/zsh/config.zsh
