@@ -12,16 +12,14 @@ then
   source `brew --prefix`/etc/grc.bashrc
 fi
 
-function git_current_branch() {
-  git symbolic-ref HEAD 2> /dev/null | sed -e 's/refs\/heads\///'
-}
-
 # Use coreutils `ls` if possible
-hash gls >/dev/null 2>&1 || alias gls="ls"
+if which gls >/dev/null 2>&1; then
+  alias gls="ls"
+fi
 
 # Always use color output for `ls`
 # Detect which `ls` flavor is in use
-if gls --color > /dev/null 2>&1; then # GNU `ls`
+if which gls --color >/dev/null 2>&1; then # GNU `ls`
   colorflag="--color"
 else # OS X `ls`
   colorflag="-G"
@@ -119,7 +117,6 @@ alias gca='git commit -a'
 alias gco='git checkout'
 alias ggpnp='git pull origin $(current_branch) && git push origin $(current_branch)'
 alias oops='git commit --amend -m'
-alias gpthis='git push origin HEAD:$(git_current_branch)'
 alias grb='git rebase -p'
 alias gup='git remote update -p; git merge --ff-only @{u}'
 
