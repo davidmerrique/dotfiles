@@ -5,14 +5,13 @@ if [[ -f $HOME/.zplug/init.zsh ]]; then
 
   zplug "djui/alias-tips"
   zplug "zsh-users/zsh-completions"
+  zplug "zsh-users/zsh-autosuggestions"
   zplug "zsh-users/zsh-history-substring-search"
   zplug "zsh-users/zsh-syntax-highlighting", defer:3
-  zplug "zsh-users/zsh-autosuggestions"
-  zplug "b4b4r07/enhancd", use:init.sh
   zplug "rupa/z", use:z.sh
   zplug "supercrabtree/k", use:k.sh
-  zplug "lukechilds/zsh-better-npm-completion", defer:2
-  zplug "creationix/nvm", use:bash_completion, defer:2
+  zplug "lukechilds/zsh-better-npm-completion"
+  zplug "creationix/nvm", use:bash_completion
   zplug "mafredri/zsh-async", on:sindresorhus/pure
   zplug "sindresorhus/pure", as:theme, use:pure.zsh
 
