@@ -3,6 +3,7 @@ export DOTFILES=$HOME/.dotfiles
 if [[ -f $HOME/.zplug/init.zsh ]]; then
   source $HOME/.zplug/init.zsh
 
+  zplug "plugins/yarn", from:oh-my-zsh
   zplug "zsh-users/zsh-completions"
   zplug "zsh-users/zsh-autosuggestions"
   zplug "zsh-users/zsh-history-substring-search"
