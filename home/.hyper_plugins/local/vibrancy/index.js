@@ -28,11 +28,6 @@ const colors = {
   lightWhite: foregroundColor
 };
 
-module.exports.decorateBrowserOptions = opts => {
-  opts.transparent = false;
-  return opts;
-}
-
 module.exports.onWindow = browserWindow => browserWindow.setVibrancy('ultra-dark');
 
 module.exports.decorateConfig = (cfg) => {
