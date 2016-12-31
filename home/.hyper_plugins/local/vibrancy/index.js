@@ -43,18 +43,7 @@ module.exports.decorateConfig = (cfg) => {
     borderColor: '#222430',
     cursorColor: '#97979b',
     fontSize: 18,
-    fontFamily: '"Fira Code", Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
-    css: `
-      ${cfg.css || ''}
-      .term_fit:not(.term_term) {
-        opacity: 0.6;
-      }
-      .term_fit.term_active {
-        opacity: 1;
-        transition: opacity 0.12s ease-in-out;
-        will-change: opacity;
-      }
-    `
+    fontFamily: '"Fira Code", Menlo, "DejaVu Sans Mono", "Lucida Console", monospace'
   });
   return config;
 }
