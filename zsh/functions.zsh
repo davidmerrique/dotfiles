@@ -11,7 +11,7 @@ updateall () {
     "$DOTFILES/bin/nvm-update"
     "npm cache clean -g"
     "npm update -g"
-    "yarn global upgrade"
+    "$DOTFILES/bin/yarn-global-upgrade"
     "(cd $DOTFILES && yarn upgrade)"
     "gem update"
     "gem update --system"

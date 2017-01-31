@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+deps="$(cat $HOME/.config/yarn/global/package.json | jq -r '.dependencies | keys | map(.+"@latest") | join(" ")')"
+
+yarn global upgrade $deps
