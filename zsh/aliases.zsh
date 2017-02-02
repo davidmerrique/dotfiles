@@ -43,7 +43,8 @@ alias flushdns="dscacheutil -flushcache"
 alias artisan="php artisan"
 alias composer="php $HOME/bin/composer.phar"
 
-alias npr="npm run"
+alias nr="npm run"
+alias yr="yarn run"
 
 alias dotfiles="cd $DOTFILES"
 alias dotedit="atom $DOTFILES"
