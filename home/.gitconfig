@@ -32,3 +32,5 @@
 [user]
 	name = David Merrique
 	email = david.merrique@gmail.com
+[http "https://gopkg.in"]
+	followRedirects = true
