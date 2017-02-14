@@ -3,11 +3,20 @@ module.exports = {
     shell: 'zsh',
     cursorShape: 'BEAM',
     copyOnSelect: true,
-    summonShortcut: 'Control+`'
+    colors: {},
+    summonShortcut: 'Control+`',
+    hyperlinks: {
+      clickAction: 'ignore',
+      defaultBrowser: true
+    }
   },
   plugins: [
     'hypercwd',
-    'hyperterm-summon'
+    'hyperlinks',
+    'hyper-blink',
+    'hyperterm-summon',
+    'hyper-statusline',
+    'hyperterm-paste',
   ],
   localPlugins: [
     'vibrancy'
