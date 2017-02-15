@@ -106,6 +106,7 @@ cask 'transmit'
 cask 'tunnelblick'
 cask 'vlc'
 cask 'webpquicklook'
+cask 'hammerspoon'
 
 cask 'font-anonymous-pro'
 cask 'font-clear-sans'
