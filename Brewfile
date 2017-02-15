@@ -26,7 +26,7 @@ brew 'libpng', args: ['universal']
 brew 'coreutils'
 brew 'curl'
 brew 'libass'
-brew 'ffmpeg', args: ['with-faac', 'with-libvorbis', 'with-libvpx', 'with-theora', 'with-tools']
+brew 'ffmpeg', args: ['with-libvorbis', 'with-libvpx', 'with-theora', 'with-tools']
 brew 'go'
 brew 'lua'
 brew 'ruby'
@@ -48,9 +48,9 @@ brew 'ruby-build'
 brew 'rename'
 brew 'speedtest_cli'
 brew 'syncthing', restart_service: :changed
-brew 'vim', args: ['override-system-vi', 'with-lua']
+brew 'vim', args: ['with-override-system-vi', 'with-lua']
 brew 'watchman'
-brew 'wget', args: ['with-iri']
+brew 'wget'
 brew 'z'
 brew 'zsh'
 brew 'zsh-completions'
