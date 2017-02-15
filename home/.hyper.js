@@ -6,7 +6,6 @@ module.exports = {
     colors: {},
     summonShortcut: 'Control+`',
     hyperlinks: {
-      clickAction: 'ignore',
       defaultBrowser: true
     }
   },
