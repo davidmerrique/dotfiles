@@ -12,7 +12,6 @@ module.exports = {
   plugins: [
     'hypercwd',
     'hyperlinks',
-    'hyper-blink',
     'hyperterm-summon',
     'hyper-statusline',
     'hyperterm-paste',
