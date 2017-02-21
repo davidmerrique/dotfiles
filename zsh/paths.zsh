@@ -14,5 +14,7 @@ export PATH="$(npm bin):$PATH"
 export PATH="./vendor/bin:$PATH"
 export PATH="./bin:$PATH"
 
+[[ "$OSTYPE" == 'linux-gnu' ]] && export PATH=$PATH:/mnt/c/Windows/System32
 
 [[ "$OSTYPE" == 'mac' ]] && fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
+
