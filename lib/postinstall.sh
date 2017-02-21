@@ -11,8 +11,10 @@ if [ ! -d $HOME/.nvm ]; then
   git clone https://github.com/creationix/nvm.git $HOME/.nvm && cd $HOME/.nvm && git checkout `git describe --abbrev=0 --tags`
 fi
 
-if [ ! -d /usr/local/m-cli ]; then
-  curl -fsSL https://raw.githubusercontent.com/rgcr/m-cli/master/install.sh | sh
+if [[ "$OSTYPE" == 'mac' ]]; then
+  if [ ! -d /usr/local/m-cli ]; then
+    curl -fsSL https://raw.githubusercontent.com/rgcr/m-cli/master/install.sh | sh
+  fi
 fi
 
 if [ ! -f $HOME/bin/composer.phar ]; then

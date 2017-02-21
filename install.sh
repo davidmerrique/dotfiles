@@ -34,14 +34,4 @@ link() {
 link $BASE
 . "lib/postinstall.sh"
 
-# deleting stale links, if any
-for i in $HOME/.*; do
-	[ ! -h $i ] && continue
-
-	if [ ! -f $i ]; then
-		echo "Deleting stale link: $i"
-		rm $i
-	fi
-done
-
 IFS=$SAVEIFS
