@@ -17,6 +17,10 @@ if [[ "$OSTYPE" == 'mac' ]]; then
   fi
 fi
 
+if [ ! -d $HOME/bin ]; then
+  mkdir -p $HOME/bin
+fi
+
 if [ ! -f $HOME/bin/composer.phar ]; then
   curl -sS https://getcomposer.org/installer | php -- --install-dir="$HOME/bin"
 fi
