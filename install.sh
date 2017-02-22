@@ -19,6 +19,8 @@ link() {
 				echo "Creating link: $file"
 			fi
 
+			find -L . -name . -o -type d -prune -o -type l -exec rm {} +
+
 			ln -s $i $file
 		else
 			if [ ! -d "$file" ]; then

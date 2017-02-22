@@ -16,7 +16,7 @@ tap 'homebrew/versions'
 tap 'mpv-player/mpv'
 tap 'thoughtbot/formulae'
 
-brew 'openssl'
+brew 'findutils', args: ['with-default-names']
 brew 'bash'
 brew 'bash-completion'
 brew 'mysql'
@@ -72,6 +72,7 @@ brew 'homebrew/php/php56-memcached'
 brew 'homebrew/php/php56-opcache'
 brew 'homebrew/science/vips'
 brew 'thoughtbot/formulae/rcm'
+brew 'homebrew/completions/brew-cask-completion'
 
 cask 'anatine'
 cask 'bettertouchtool'
