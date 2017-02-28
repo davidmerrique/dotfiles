@@ -60,10 +60,16 @@ alias sudo='nocorrect sudo '
 # Repair Disk Permissions
 alias permissions="diskutil repairPermissions /"
 
+# Google Chrome
+alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
+
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en1"
 alias ips="ifconfig -a | grep -o 'inet6\? \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet6* //'"
+
+# Show active network interfaces
+alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'"
 
 # Flush Directory Service cache
 alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
@@ -84,6 +90,9 @@ alias osx-desktop-show="defaults write com.apple.finder CreateDesktop -bool true
 alias osx-desktop-hide="defaults write com.apple.finder CreateDesktop -bool false && osx-refresh"
 
 alias reload!='. ~/.zshrc'
+
+# Print each PATH entry on a separate line
+alias path='echo -e ${PATH//:/\\n}'
 
 # git aliases
 alias gs='git status -sb' # upgrade your git if -sb breaks for you. it's fun.
