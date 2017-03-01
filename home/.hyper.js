@@ -40,6 +40,7 @@ module.exports = {
     shell: 'zsh',
     cursorShape: 'BEAM',
     copyOnSelect: true,
+    bell: false,
     summonShortcut: 'Control+`',
     hyperlinks: {
       defaultBrowser: true
