@@ -13,3 +13,5 @@ yarn-error.log
 typings/*
 jsconfig.json
 .vscode*
+.npmrc
+!./.npmrc
