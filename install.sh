@@ -34,6 +34,5 @@ link() {
 }
 
 link $BASE
-. "lib/postinstall.sh"
 
 IFS=$SAVEIFS

@@ -28,7 +28,7 @@ export CLICOLOR_FORCE=1
 
 alias flushdns="dscacheutil -flushcache"
 alias artisan="php artisan"
-alias composer="php $HOME/bin/composer.phar"
+alias composer="php /usr/local/bin/composer"
 
 alias nr="npm run"
 alias yr="yarn run"
