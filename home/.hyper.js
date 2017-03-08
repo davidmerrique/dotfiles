@@ -50,8 +50,7 @@ module.exports = {
     'hypercwd',
     'hyperlinks',
     'hyperterm-summon',
-    'hyper-statusline',
-    'hyperterm-paste'
+    'hyper-statusline'
   ],
   localPlugins: ['ultra-dark-vibrancy']
 };
