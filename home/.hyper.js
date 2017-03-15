@@ -44,6 +44,7 @@ module.exports = {
     bell: false,
     summonShortcut: 'Control+`',
     hyperlinks: {
+      clickAction: 'ignore',
       defaultBrowser: true
     }
   },
