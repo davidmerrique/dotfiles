@@ -1,3 +1,0 @@
-#!/usr/bin/env zsh
-
-convert -loop 0 -delay 25 ${@}

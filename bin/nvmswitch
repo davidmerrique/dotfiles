@@ -1,0 +1,5 @@
+#!/bin/sh
+
+. ~/.nvm/nvm.sh
+
+nvm install $2 && nvm alias default $2 && npm i -g npm@latest && nvm reinstall-packages $1
