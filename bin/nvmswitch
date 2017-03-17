@@ -2,4 +2,6 @@
 
 . ~/.nvm/nvm.sh
 
-nvm install $2 && nvm alias default $2 && npm i -g npm@latest && nvm reinstall-packages $1
+current=$(node -v)
+
+nvm install $1 && nvm alias default $1 && npm i -g npm@latest && nvm reinstall-packages $current
