@@ -1,3 +1,18 @@
+-- Spoons
+-- hs.loadSpoon('Seal')
+
+-- spoon.Seal:loadPlugins({
+--   'apps',
+--   'calc',
+--   'screencapture'
+-- })
+
+-- spoon.Seal:bindHotkeys({
+--   show = {{'alt', 'cmd'}, 'b'}
+-- })
+
+-- spoon.Seal:start()
+
 -- Disable animation
 hs.window.animationDuration = 0
 
