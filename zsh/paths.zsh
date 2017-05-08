@@ -11,6 +11,8 @@ export PATH="$HOME/.bin:$PATH"
 export PATH="$DOTFILES/bin:$PATH"
 export PATH="`yarn global bin`:$PATH"
 export PATH="$(npm bin):$PATH"
+export PATH="$(npm bin -g):$PATH"
+export PATH="$(npm root -g):$PATH"
 export PATH="./vendor/bin:$PATH"
 export PATH="./bin:$PATH"
 
