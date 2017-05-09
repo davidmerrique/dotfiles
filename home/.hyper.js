@@ -51,8 +51,7 @@ module.exports = {
   plugins: [
     'hypercwd',
     'hyperlinks',
-    'hyperterm-summon',
-    'hyper-statusline'
+    'hyperterm-summon'
   ],
   localPlugins: ['ultra-dark-vibrancy']
 };
