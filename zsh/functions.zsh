@@ -9,7 +9,6 @@ updateall () {
     "brew linkapps"
     "composer self-update"
     "$DOTFILES/bin/nvm-update"
-    "npm cache clean -g"
     "npm update -g"
     "$DOTFILES/bin/yarn-global-upgrade"
     "(cd $DOTFILES && yarn upgrade)"
