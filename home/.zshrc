@@ -11,7 +11,6 @@ if [[ -f $HOME/.zplug/init.zsh ]]; then
   zplug "rupa/z", use:z.sh
   zplug "supercrabtree/k", use:k.sh
   zplug "lukechilds/zsh-better-npm-completion"
-  zplug "lukechilds/zsh-nvm"
   zplug "mafredri/zsh-async", on:sindresorhus/pure
   zplug "sindresorhus/pure", as:theme, use:pure.zsh
 
@@ -32,7 +31,6 @@ source $DOTFILES/zsh/config.zsh
 source $DOTFILES/zsh/exports.zsh
 source $DOTFILES/zsh/keybindings.zsh
 source $DOTFILES/zsh/aliases.zsh
-source $DOTFILES/zsh/functions.zsh
 
 # Local config
 [[ -f $HOME/.zshrc.local ]] && source $HOME/.zshrc.local

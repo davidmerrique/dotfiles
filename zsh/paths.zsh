@@ -20,3 +20,4 @@ export PATH="./bin:$PATH"
 
 [[ "$OSTYPE" == 'mac' ]] && fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
 
+fpath=($DOTFILES/zsh/functions $fpath)
