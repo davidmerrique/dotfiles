@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-deps="$(cat $HOME/.config/yarn/global/package.json | jq -r '.dependencies | keys | map(.+"@latest") | join(" ")')"
+yarndeps=$(find $HOME/.config/yarn/global/node_modules -maxdepth 1 -mindepth 1 -type d -printf "%f@latest ")
+npmdeps=$(find `npm root -g` -maxdepth 1 -mindepth 1 -type d -printf "%f@latest ")
 
-npm -gp outdated | cut -d: -f4 | xargs -n1 npm -g install
-yarn global upgrade $deps
+yarn global upgrade $yarndeps
+npm -g install $npmdeps
