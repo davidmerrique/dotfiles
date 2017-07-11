@@ -2,10 +2,8 @@
 
 modules=(
 	npm
-	img-sizer
+	npx
 	trash-cli
-	speed-test
-	fast-cli
 )
 
 for module in "${modules[@]}"; do
