@@ -42,7 +42,10 @@ module.exports = {
     copyOnSelect: true,
     cursorBlink: true,
     bell: false,
-    summonShortcut: 'Control+`',
+    summon: {
+      hideOnBlur: false,
+      hotkey: 'Control+`'
+    },
     hyperlinks: {
       clickAction: 'ignore',
       defaultBrowser: true
