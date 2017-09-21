@@ -2,9 +2,9 @@
   "name": "dotfiles",
   "version": "1.0.0",
   "dependencies": {
-    "commander": "2.9.0",
+    "commander": "2.11.0",
     "gm": "1.23.0",
     "lodash": "^4.17.2",
-    "shelljs": "^0.7.6"
+    "shelljs": "^0.7.8"
   }
 }
