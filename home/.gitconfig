@@ -29,8 +29,7 @@
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
-[user]
-	name = David Merrique
-	email = david.merrique@gmail.com
 [http "https://gopkg.in"]
 	followRedirects = true
+[credential]
+	helper = osxkeychain

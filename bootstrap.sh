@@ -16,8 +16,8 @@ if [[ `uname` == 'Darwin' ]]; then
       brew bundle
   fi
 
-  echo 'Running macos script'
-  source 'macos'
+  # echo 'Running macos script'
+  # source 'macos'
 fi
 
 echo 'Installing dotfiles'
