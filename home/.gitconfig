@@ -33,3 +33,6 @@
 	followRedirects = true
 [credential]
 	helper = osxkeychain
+[user]
+	name = David Merrique
+	email = david.merrique@gmail.com
