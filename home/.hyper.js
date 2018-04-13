@@ -1,36 +1,33 @@
-// const backgroundColor = 'rgba(0,0,0,0.6)';
-// const foregroundColor = '#eff0eb';
-// const red = '#ff5c57';
-// const green = '#5af78e';
-// const yellow = '#f3f99d';
-// const blue = '#57c7ff';
-// const magenta = '#ff6ac1';
-// const cyan = '#9aedfe';
-// const white = '#f1f1f0';
-// const lightBlack = '#686868';
+const backgroundColor = 'rgba(22, 22, 27, 0.8)';
+const foregroundColor = 'rgba(115,115,115, 0.6)';
+const WHITE = '#ffffff';
+const LIGHT_GRAY = 'rgba(242,242,242, 0.7)';
+const DARK_GRAY = 'rgba(104,104,104, 0.6)';
+const cursorColor = LIGHT_GRAY;
+const borderColor = backgroundColor;
 
+const colors = {
+  black: DARK_GRAY,
+  red: WHITE,
+  green: WHITE,
+  yellow: WHITE,
+  blue: WHITE,
+  magenta: WHITE,
+  cyan: WHITE,
+  white: WHITE,
+  lightBlack: DARK_GRAY,
+  lightRed: LIGHT_GRAY,
+  lightGreen: LIGHT_GRAY,
+  lightYellow: LIGHT_GRAY,
+  lightBlue: LIGHT_GRAY,
+  lightMagenta: LIGHT_GRAY,
+  lightCyan: LIGHT_GRAY,
+  colorCubes: WHITE,
+  grayscale: foregroundColor
+};
 // Future versions of Hyper may add additional config options,
 // which will not automatically be merged into this file.
 // See https://hyper.is#cfg for all currently supported options.
-
-// const colors = {
-//   black: backgroundColor,
-//   red,
-//   green,
-//   yellow,
-//   blue,
-//   magenta,
-//   cyan,
-//   white,
-//   lightBlack,
-//   lightRed: red,
-//   lightGreen: green,
-//   lightYellow: yellow,
-//   lightBlue: blue,
-//   lightMagenta: magenta,
-//   lightCyan: cyan,
-//   lightWhite: foregroundColor
-// };
 
 module.exports = {
   config: {
@@ -60,7 +57,7 @@ module.exports = {
     // backgroundColor,
 
     // border color (window, tabs)
-    borderColor: '#222430',
+    // borderColor: '#222430',
 
     // custom css to embed in the main window
     css: '',
@@ -83,7 +80,7 @@ module.exports = {
     // the full list. if you're going to provide the full color palette,
     // including the 6 x 6 color cubes and the grayscale map, just provide
     // an array here instead of a color map object
-    // colors,
+    colors,
 
     // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
     // if left empty, your system's login shell will be used by default
@@ -137,7 +134,7 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: ['hyper-dracula', 'hypercwd', 'hyperlinks', 'hyperterm-summon'],
+  plugins: ['hypercwd', 'hyperlinks', 'hyperterm-summon'],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
