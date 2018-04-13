@@ -123,6 +123,18 @@ hs.hotkey.bind(moveKey, 'v', function()
   hs.grid.set(hs.window.focusedWindow(), {x = centerX, y = centerY, w = centerW, h = centerH})
 end)
 
+-- Center window smaller!
+hs.hotkey.bind(moveKey, 'b', function()
+  local screenWidth = hs.window.focusedWindow():screen():frame().w
+  local percentW = (screenWidth > 1920 and 0.7 or 0.80) * gw
+  local percentH = 0.78 * gh
+  local centerX = gw - percentW
+  local centerY = gh - percentH
+  local centerW = gw - (centerX * 2)
+  local centerH = gh - (centerY * 2)
+  hs.grid.set(hs.window.focusedWindow(), {x = centerX, y = centerY, w = centerW, h = centerH})
+end)
+
 -- Show the grid
 hs.hotkey.bind(moveKey, 'g', hs.grid.show)
 
