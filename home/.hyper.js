@@ -1,39 +1,12 @@
-const backgroundColor = 'rgba(22, 22, 27, 0.8)';
-const foregroundColor = 'rgba(115,115,115, 0.6)';
-const WHITE = '#ffffff';
-const LIGHT_GRAY = 'rgba(242,242,242, 0.7)';
-const DARK_GRAY = 'rgba(104,104,104, 0.6)';
-const cursorColor = LIGHT_GRAY;
-const borderColor = backgroundColor;
-
-const colors = {
-  black: DARK_GRAY,
-  red: WHITE,
-  green: WHITE,
-  yellow: WHITE,
-  blue: WHITE,
-  magenta: WHITE,
-  cyan: WHITE,
-  white: WHITE,
-  lightBlack: DARK_GRAY,
-  lightRed: LIGHT_GRAY,
-  lightGreen: LIGHT_GRAY,
-  lightYellow: LIGHT_GRAY,
-  lightBlue: LIGHT_GRAY,
-  lightMagenta: LIGHT_GRAY,
-  lightCyan: LIGHT_GRAY,
-  colorCubes: WHITE,
-  grayscale: foregroundColor
-};
 // Future versions of Hyper may add additional config options,
 // which will not automatically be merged into this file.
 // See https://hyper.is#cfg for all currently supported options.
 
 module.exports = {
   config: {
-    // Choose either "stable" for receiving highly polished,
-    // or "canary" for less polished but more frequent updates
-    updateChannel: 'canary',
+    // choose either `'stable'` for receiving highly polished,
+    // or `'canary'` for less polished but more frequent updates
+    updateChannel: 'stable',
 
     // default font size in pixels for all tabs
     fontSize: 18,
@@ -41,46 +14,76 @@ module.exports = {
     // font family with optional fallbacks
     fontFamily: '"Fira Code", Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
 
-    // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
-    cursorColor: '#97979b',
+    // default font weight: 'normal' or 'bold'
+    fontWeight: 'normal',
 
-    // `BEAM` for |, `UNDERLINE` for _, `BLOCK` for █
+    // font weight for bold characters: 'normal' or 'bold'
+    fontWeightBold: 'bold',
+
+    // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
+    cursorColor: 'rgba(248,28,229,0.8)',
+
+    // terminal text color under BLOCK cursor
+    cursorAccentColor: '#000',
+
+    // `'BEAM'` for |, `'UNDERLINE'` for _, `'BLOCK'` for █
     cursorShape: 'BEAM',
 
-    // set to true for blinking cursor
-    cursorBlink: true,
+    // set to `true` (without backticks and without quotes) for blinking cursor
+    cursorBlink: false,
 
     // color of the text
-    // foregroundColor,
+    foregroundColor: '#fff',
 
     // terminal background color
-    // backgroundColor,
+    // opacity is only supported on macOS
+    backgroundColor: '#000',
+
+    // terminal selection color
+    selectionColor: 'rgba(248,28,229,0.3)',
 
     // border color (window, tabs)
-    // borderColor: '#222430',
+    borderColor: '#333',
 
-    // custom css to embed in the main window
+    // custom CSS to embed in the main window
     css: '',
 
-    // custom css to embed in the terminal window
+    // custom CSS to embed in the terminal window
     termCSS: '',
 
-    // set to `true` (without backticks) if you're using a Linux setup that doesn't show native menus
-    // default: `false` on Linux, `true` on Windows (ignored on macOS)
+    // if you're using a Linux setup which show native menus, set to false
+    // default: `true` on Linux, `true` on Windows, ignored on macOS
     showHamburgerMenu: '',
 
-    // set to `false` if you want to hide the minimize, maximize and close buttons
+    // set to `false` (without backticks and without quotes) if you want to hide the minimize, maximize and close buttons
     // additionally, set to `'left'` if you want them on the left, like in Ubuntu
-    // default: `true` on windows and Linux (ignored on macOS)
+    // default: `true` (without backticks and without quotes) on Windows and Linux, ignored on macOS
     showWindowControls: '',
 
-    // custom padding (css format, i.e.: `top right bottom left`)
+    // custom padding (CSS format, i.e.: `top right bottom left`)
     padding: '12px 14px',
 
     // the full list. if you're going to provide the full color palette,
     // including the 6 x 6 color cubes and the grayscale map, just provide
     // an array here instead of a color map object
-    colors,
+    colors: {
+      black: '#000000',
+      red: '#C51E14',
+      green: '#1DC121',
+      yellow: '#C7C329',
+      blue: '#0A2FC4',
+      magenta: '#C839C5',
+      cyan: '#20C5C6',
+      white: '#C7C7C7',
+      lightBlack: '#686868',
+      lightRed: '#FD6F6B',
+      lightGreen: '#67F86F',
+      lightYellow: '#FFFA72',
+      lightBlue: '#6A76FB',
+      lightMagenta: '#FD7CFC',
+      lightCyan: '#68FDFE',
+      lightWhite: '#FFFFFF',
+    },
 
     // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
     // if left empty, your system's login shell will be used by default
@@ -92,26 +95,29 @@ module.exports = {
     // Bash on Windows
     // - Example: `C:\\Windows\\System32\\bash.exe`
     //
-    // Powershell on Windows
+    // PowerShell on Windows
     // - Example: `C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe`
     shell: '',
 
-    // for setting shell arguments (i.e. for using interactive shellArgs: ['-i'])
-    // by default ['--login'] will be used
+    // for setting shell arguments (i.e. for using interactive shellArgs: `['-i']`)
+    // by default `['--login']` will be used
     shellArgs: ['--login'],
 
     // for environment variables
     env: {},
 
-    // set to false for no bell
+    // set to `false` for no bell
     bell: 'SOUND',
 
-    // if true, selected text will automatically be copied to the clipboard
+    // if `true` (without backticks and without quotes), selected text will automatically be copied to the clipboard
     copyOnSelect: true,
 
-    // if true, on right click selected text will be copied or pasted if no
-    // selection is present (true by default on Windows)
-    // quickEdit: true
+    // if `true` (without backticks and without quotes), hyper will be set as the default protocol client for SSH
+    defaultSSHApp: true,
+
+    // if `true` (without backticks and without quotes), on right click selected text will be copied or pasted if no
+    // selection is present (`true` by default on Windows and disables the context menu feature)
+    // quickEdit: true,
 
     // URL to custom bell
     // bellSoundURL: 'http://example.com/bell.mp3',
@@ -122,10 +128,6 @@ module.exports = {
       hideOnBlur: false,
       hotkey: 'Control+`'
     },
-    hyperlinks: {
-      clickAction: 'ignore',
-      defaultBrowser: true
-    }
   },
 
   // a list of plugins to fetch and install from npm
@@ -134,7 +136,7 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: ['hypercwd', 'hyperlinks', 'hyperterm-summon'],
+  plugins: ["hyper-dracula", 'hyperterm-summon', "hypercwd"],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
@@ -144,5 +146,5 @@ module.exports = {
   keymaps: {
     // Example
     // 'window:devtools': 'cmd+alt+o',
-  }
+  },
 };
