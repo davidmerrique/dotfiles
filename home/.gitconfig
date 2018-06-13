@@ -15,6 +15,21 @@
   up = !git fetch origin && git pull --rebase --prune $@ && git submodule update --init --recursive
   fetchall = "!f() { for branch in `git branch -a | grep remotes | grep -v HEAD | grep -v master`; do git branch --track ${branch##*/} $branch; done; git fetch --all; git pull --all; }; f"
   scrub = "!f() { filter=\"git rm --cached --ignore-unmatch $1\" git filter-branch --force --index-filter \"$filter\" --prune-empty --tag-name-filter cat -- --all; }; f"
+  # commit with Jira ticket ID tag in commit message.
+  # current branch name has to start with a valid Jira ticket ID, in upper case.
+  c = "!f() { \
+      if [[ -z $1 ]]; \
+      then \
+          echo "Error: No commit message provided."; \
+          exit 1; \
+      else \
+          local ticketId=$(git rev-parse --abbrev-ref HEAD | grep -Eo "^[A-Z]+-[0-9]+"); \
+          if [[ -z $ticketId ]]; \
+          then git commit -m $1 ${@:2}; \
+          else git commit -m \"$ticketId $1\" ${@:2}; \
+          fi; \
+      fi; \
+  }; f"
 [core]
   excludesfile = ~/.gitignore
   autocrlf = input
