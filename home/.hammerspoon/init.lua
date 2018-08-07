@@ -103,7 +103,7 @@ end)
 hs.hotkey.bind(moveKey, 'c', function()
   local screenWidth = hs.window.focusedWindow():screen():frame().w
   local percentW = (screenWidth > 1920 and 0.85 or 0.88) * gw
-  local percentH = 0.92 * gh
+  local percentH = 0.9 * gh
   local centerX = gw - percentW
   local centerY = gh - percentH
   local centerW = gw - (centerX * 2)
@@ -115,7 +115,7 @@ end)
 hs.hotkey.bind(moveKey, 'v', function()
   local screenWidth = hs.window.focusedWindow():screen():frame().w
   local percentW = (screenWidth > 1920 and 0.77 or 0.80) * gw
-  local percentH = 0.85 * gh
+  local percentH = 0.83 * gh
   local centerX = gw - percentW
   local centerY = gh - percentH
   local centerW = gw - (centerX * 2)
@@ -127,7 +127,7 @@ end)
 hs.hotkey.bind(moveKey, 'b', function()
   local screenWidth = hs.window.focusedWindow():screen():frame().w
   local percentW = (screenWidth > 1920 and 0.7 or 0.80) * gw
-  local percentH = 0.78 * gh
+  local percentH = 0.75 * gh
   local centerX = gw - percentW
   local centerY = gh - percentH
   local centerW = gw - (centerX * 2)
