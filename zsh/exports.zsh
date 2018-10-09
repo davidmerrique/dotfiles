@@ -26,3 +26,7 @@ export COPYFILE_DISABLE=true
 export HOMEBREW_NO_ANALYTICS=1
 
 export EDITOR=vim
+
+export NPM_CONFIG_SAVE=true
+export NPM_CONFIG_SAVE_EXACT=true
+export NPM_CONFIG_PROGRESS=true

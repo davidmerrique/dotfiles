@@ -7,7 +7,6 @@ updateall () {
     "brew upgrade"
     "brew prune"
     "brew cleanup"
-    "brew cask cleanup"
     "composer self-update"
     "$DOTFILES/bin/nvm-update"
     "$DOTFILES/bin/npm-yarn-global-upgrade"
