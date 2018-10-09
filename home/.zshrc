@@ -3,7 +3,6 @@ export DOTFILES=$HOME/.dotfiles
 if [[ -f $HOME/.zplug/init.zsh ]]; then
   source $HOME/.zplug/init.zsh
 
-  zplug "plugins/yarn", from:oh-my-zsh
   zplug "zsh-users/zsh-completions"
   zplug "zsh-users/zsh-autosuggestions"
   zplug "zsh-users/zsh-history-substring-search"
@@ -11,6 +10,8 @@ if [[ -f $HOME/.zplug/init.zsh ]]; then
   zplug "rupa/z", use:z.sh
   zplug "supercrabtree/k", use:k.sh
   zplug "lukechilds/zsh-better-npm-completion"
+  zplug "marzocchi/zsh-notify"
+  zplug "buonomo/yarn-completion", defer:3
   zplug "mafredri/zsh-async", on:sindresorhus/pure
   zplug "sindresorhus/pure", as:theme, use:pure.zsh
 
