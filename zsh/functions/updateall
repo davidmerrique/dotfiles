@@ -8,6 +8,7 @@ updateall () {
     "brew cleanup"
     "composer self-update"
     "$DOTFILES/bin/nvm-update"
+    "yarn global upgrade"
     "$DOTFILES/bin/npm-yarn-global-upgrade"
     "mas upgrade"
     "(cd $HOME/.zplug && git pull && source $HOME/.zplug/init.zsh)"

@@ -1,3 +1,5 @@
+set DOTFILES $HOME/.dotfiles
+
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."

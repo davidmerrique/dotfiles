@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-yarndeps=$(find $HOME/.config/yarn/global/node_modules -maxdepth 1 -mindepth 1 -type d | tr '\n' '\0' | xargs -0 -L1 -I '$' echo '$@latest' | xargs basename)
+# yarndeps=$(find $HOME/.config/yarn/global/node_modules -maxdepth 1 -mindepth 1 -type d | tr '\n' '\0' | xargs -0 -L1 -I '$' echo '$@latest' | xargs basename)
 npmdeps=$(find `npm root -g` -maxdepth 1 -mindepth 1 -type d | tr '\n' '\0' | xargs -0 -L1 -I '$' echo '$@latest' | xargs basename)
 
-yarn global upgrade $yarndeps
+# yarn global upgrade $yarndeps
 npm -g install $npmdeps
