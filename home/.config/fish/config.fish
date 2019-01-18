@@ -1,5 +1,7 @@
 set DOTFILES $HOME/.dotfiles
 
+alias dotfiles='cd $DOTFILES'
+
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
@@ -36,3 +38,6 @@ alias grb='git rebase -p'
 alias gup='git remote update -p; git merge --ff-only @{u}'
 
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
+
+alias yr='yarn run'
+alias nr='npm run'
