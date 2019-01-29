@@ -13,7 +13,9 @@ if [[ -f $HOME/.zplug/init.zsh ]]; then
   zplug "marzocchi/zsh-notify"
   zplug "buonomo/yarn-completion", defer:3
   zplug "mafredri/zsh-async", on:sindresorhus/pure
-  zplug "sindresorhus/pure", as:theme, use:pure.zsh
+  # zplug "sindresorhus/pure", as:theme, use:pure.zsh
+  # zplug "andrepolischuk/min", as:theme, use:min.zsh
+  zplug "LasaleFamine/phi-zsh-theme", as:theme, use:phi.zsh-theme
 
   # Install plugins if there are plugins that have not been installed
   if ! zplug check --verbose; then
