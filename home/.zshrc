@@ -10,12 +10,9 @@ if [[ -f $HOME/.zplug/init.zsh ]]; then
   zplug "rupa/z", use:z.sh
   zplug "supercrabtree/k", use:k.sh
   zplug "lukechilds/zsh-better-npm-completion"
-  zplug "marzocchi/zsh-notify"
   zplug "buonomo/yarn-completion", defer:3
-  zplug "mafredri/zsh-async", on:sindresorhus/pure
-  # zplug "sindresorhus/pure", as:theme, use:pure.zsh
-  # zplug "andrepolischuk/min", as:theme, use:min.zsh
-  zplug "LasaleFamine/phi-zsh-theme", as:theme, use:phi.zsh-theme
+  zplug "mafredri/zsh-async", from:github
+  zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
 
   # Install plugins if there are plugins that have not been installed
   if ! zplug check --verbose; then
