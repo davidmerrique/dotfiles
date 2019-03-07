@@ -12,7 +12,7 @@ if [[ -f $HOME/.zplug/init.zsh ]]; then
   zplug "lukechilds/zsh-better-npm-completion"
   zplug "buonomo/yarn-completion", defer:3
   zplug "mafredri/zsh-async", from:github
-  zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
+  zplug "LasaleFamine/phi-zsh-theme", from:github, as:theme, use:phi.zsh-theme
 
   # Install plugins if there are plugins that have not been installed
   if ! zplug check --verbose; then
