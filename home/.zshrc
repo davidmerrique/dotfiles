@@ -36,5 +36,4 @@ source $DOTFILES/zsh/aliases.zsh
 [[ -f $HOME/.zshrc.local ]] && source $HOME/.zshrc.local
 
 # fnm
-export PATH=$HOME/.fnm:$PATH
-eval `fnm env`
+eval "$(fnm env --multi)"
