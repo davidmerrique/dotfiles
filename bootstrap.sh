@@ -28,11 +28,6 @@ if [ ! -d $ZPLUG_HOME ]; then
   git clone https://github.com/zplug/zplug $ZPLUG_HOME
 fi
 
-if [ ! -d $HOME/.nvm ]; then
-  echo 'Installing nvm'
-  curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.1/install.sh | bash
-fi
-
 if [[ `uname` == 'Darwin' ]]; then
   echo 'Installing m-cli'
   if [ ! -d /usr/local/m-cli ]; then

@@ -1,7 +1,0 @@
-#!/bin/sh
-
-. ~/.nvm/nvm.sh
-
-current=$(node -v)
-
-nvm install $1 && nvm alias default $1 && npm i -g npm@latest && nvm reinstall-packages $current
