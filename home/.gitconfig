@@ -1,6 +1,5 @@
 [branch]
   sort=-committerdate  # DESC
-  sort=committerdate # ASC
 [push]
   default = current
 [color]
