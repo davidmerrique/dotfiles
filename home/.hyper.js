@@ -119,7 +119,15 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: ['hyper-website-theme', 'hyperterm-summon', "hypercwd", "hyperocean"],
+  plugins: [
+    'hyper-website-theme',
+    'hyperterm-summon',
+    "hypercwd",
+    "hyperocean",
+    "hyper-opacity"
+  ],
+
+  opacity: 0.8,
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
