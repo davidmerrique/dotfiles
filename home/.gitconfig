@@ -36,6 +36,7 @@
   excludesfile = ~/.gitignore
   autocrlf = input
   editor = vim
+	ignorecase = false
 [fetch]
   prune = true
 [rebase]
