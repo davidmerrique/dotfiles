@@ -52,3 +52,6 @@ set SPACEFISH_PACKAGE_SHOW false
 set SPACEFISH_NODE_SHOW false
 set SPACEFISH_TIME_SHOW true
 set SPACEFISH_TIME_12HR true
+
+# fnm
+fnm env --multi | source
