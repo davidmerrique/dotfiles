@@ -20,6 +20,4 @@ function updateall -d "Update the system"
   fisher
   fisher self-update
   fish_update_completions
-
-  exit 0
 end
