@@ -27,15 +27,15 @@ if status --is-interactive
   abbr -a -g gco 'git checkout'
   abbr -a -g gco 'git checkout'
   abbr -a -g oops 'git commit --amend -m'
+  abbr -a -g gup 'git fetch origin && git pull && git submodule update --init --recursive'
+  abbr -a -g rm 'trash'
+  abbr -a -g yr 'yarn run'
+  abbr -a -g nr 'npm run'
 end
 
 alias glog="git log --all --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
-alias gup='git remote update -p; git merge --ff-only @{u}'
 
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
-
-alias yr='yarn run'
-alias nr='npm run'
 
 if not functions -q fisher
   set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
