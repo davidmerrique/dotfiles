@@ -50,3 +50,5 @@ set SPACEFISH_TIME_12HR true
 
 # fnm
 fnm env --multi | source
+
+set -g fish_user_paths "./node_modules/.bin" $fish_user_paths

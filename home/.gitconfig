@@ -47,3 +47,5 @@
 [user]
 	name = David Merrique
 	email = david.merrique@gmail.com
+[pull]
+	rebase = false
