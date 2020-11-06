@@ -37,18 +37,9 @@ alias glog="git log --all --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Cr
 
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 
-if not functions -q fisher
-  set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
-  curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
-  fish -c fisher
-end
-
 set SPACEFISH_PACKAGE_SHOW false
 set SPACEFISH_NODE_SHOW false
 set SPACEFISH_TIME_SHOW true
 set SPACEFISH_TIME_12HR true
-
-# fnm
-fnm env | source
 
 set -g fish_user_paths "./node_modules/.bin" $fish_user_paths
