@@ -18,6 +18,6 @@ function updateall -d "Update the system"
 
   echo 'Updating Fish shell'
   fisher
-  fisher self-update
+  fisher update
   fish_update_completions
 end
