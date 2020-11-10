@@ -17,7 +17,6 @@ function updateall -d "Update the system"
   /usr/sbin/softwareupdate -ia
 
   echo 'Updating Fish shell'
-  fisher
   fisher update
   fish_update_completions
 end
