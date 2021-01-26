@@ -1,1 +1,3 @@
-fnm env --use-on-cd | source
+# fnm
+set PATH $HOME/.fnm $PATH
+fnm env | source

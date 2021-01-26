@@ -11,5 +11,5 @@ Install on a new system
 ```bash
 git clone git://github.com/davidmerrique/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
-./bootstrap.sh
+./install.sh
 ```
